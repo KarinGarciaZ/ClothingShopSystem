@@ -373,4 +373,5 @@ Public Class Ventas
     Private Sub dtpFecha_ValueChanged(sender As Object, e As EventArgs) Handles dtpFecha.ValueChanged
         dtpFechaVen.Value = Now.AddDays(30)
     End Sub
+
 End Class

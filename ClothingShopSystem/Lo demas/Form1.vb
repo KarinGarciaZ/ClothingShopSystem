@@ -1,4 +1,8 @@
-﻿Public Class Form1
+﻿Imports System.Data.SqlClient
+Imports Microsoft.Reporting.WinForms
+Imports System.Configuration
+Public Class Form1
+    Dim Conexion As SqlConnection
     Private Sub ProductosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProductosToolStripMenuItem.Click
         Productos.ShowDialog()
     End Sub
@@ -82,4 +86,34 @@
     Private Sub ClientesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem1.Click
         ConsultaClientes.ShowDialog()
     End Sub
+
+    Private Sub ApartadosPorClienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ApartadosPorClienteToolStripMenuItem.Click
+        Conexion = openConnection()
+
+        Conexion.Open()
+
+        Dim Cmd As New SqlCommand("ReporteClientesApartados", Conexion)
+
+        Cmd.CommandType = CommandType.StoredProcedure
+
+        Dim Adaptador As New SqlDataAdapter(Cmd)
+        Dim Data As New Data.DataSet
+
+        Adaptador.Fill(Data)
+        Data.DataSetName = "DataSetSistema"
+
+        Dim Reportes As New ReportDataSource("DataSetSistema", Data.Tables(0))
+
+        Reporte.Reportito.LocalReport.DataSources.Clear()
+        Reporte.Reportito.LocalReport.DataSources.Add(Reportes)
+        Reporte.Reportito.LocalReport.ReportPath = "C:\Users\elektramovil\Desktop\7mo semestre\Raquel\Programa\ClothingShopSystem\ClothingShopSystem\Reportes\ReportesLibros\ReporteClientesApartados.rdlc"
+        Reporte.Reportito.RefreshReport()
+        Reporte.Show()
+        Conexion.Close()
+    End Sub
+
+    Private Sub ProductosVendidosPorPeriodoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProductosVendidosPorPeriodoToolStripMenuItem.Click
+        ProductosVendidosPorPeriodo.ShowDialog()
+    End Sub
+
 End Class

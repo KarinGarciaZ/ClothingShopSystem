@@ -91,6 +91,16 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:ClothingShopSystem.DataSet1.ReporteClientesApartadosDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ClothingShopSystem.DataSet1.ReporteProductosVendidosPeriodoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:ClothingShopSystem.DataSet1.Clientes1DataTable">
 <summary>
 Represents the strongly named DataTable class.
@@ -121,7 +131,7 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:ClothingShopSystem.DataSet1.Tipos2DataTable">
+<member name="T:ClothingShopSystem.DataSet1.Categorias2DataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -156,6 +166,16 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
+<member name="T:ClothingShopSystem.DataSet1.ReporteClientesApartadosRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ClothingShopSystem.DataSet1.ReporteProductosVendidosPeriodoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
 <member name="T:ClothingShopSystem.DataSet1.Clientes1Row">
 <summary>
 Represents strongly named DataRow class.
@@ -186,7 +206,7 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:ClothingShopSystem.DataSet1.Tipos2Row">
+<member name="T:ClothingShopSystem.DataSet1.Categorias2Row">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -221,6 +241,16 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:ClothingShopSystem.DataSet1.ReporteClientesApartadosRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ClothingShopSystem.DataSet1.ReporteProductosVendidosPeriodoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:ClothingShopSystem.DataSet1.Clientes1RowChangeEvent">
 <summary>
 Row event argument class
@@ -251,7 +281,7 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
-<member name="T:ClothingShopSystem.DataSet1.Tipos2RowChangeEvent">
+<member name="T:ClothingShopSystem.DataSet1.Categorias2RowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -282,6 +312,16 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:ClothingShopSystem.DataSet1TableAdapters.CategoriasTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ClothingShopSystem.DataSet1TableAdapters.ReporteClientesApartadosTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ClothingShopSystem.DataSet1TableAdapters.ReporteProductosVendidosPeriodoTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

@@ -47,11 +47,14 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -143,6 +146,18 @@
       <DependentUpon>PrincipaUsuarios.vb</DependentUpon>
     </Compile>
     <Compile Include="Lo demas\PrincipaUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReportes\ProductosVendidosPorPeriodo.Designer.vb">
+      <DependentUpon>ProductosVendidosPorPeriodo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReportes\ProductosVendidosPorPeriodo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Reporte.Designer.vb">
+      <DependentUpon>Reporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Reporte.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Movimientos\AbonoCredito.Designer.vb">
@@ -288,6 +303,12 @@
     <EmbeddedResource Include="Lo demas\PrincipaUsuarios.resx">
       <DependentUpon>PrincipaUsuarios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReportes\ProductosVendidosPorPeriodo.resx">
+      <DependentUpon>ProductosVendidosPorPeriodo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Reporte.resx">
+      <DependentUpon>Reporte.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Movimientos\AbonoCredito.resx">
       <DependentUpon>AbonoCredito.vb</DependentUpon>
     </EmbeddedResource>
@@ -327,6 +348,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteClientesApartados.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteProductosPeriodo.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Lo demas\DataSet1.xsc">
@@ -370,6 +393,7 @@
     <Content Include="Resources\if_meanicons_59_197222.png" />
     <Content Include="Resources\tienda-ropa.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -47,6 +47,9 @@ Partial Class Form1
         Me.ConsultasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ApartadosPorClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProductosVendidosPorPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -54,7 +57,7 @@ Partial Class Form1
         '
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatálogosToolStripMenuItem, Me.MovimientosToolStripMenuItem, Me.ConsultasToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatálogosToolStripMenuItem, Me.MovimientosToolStripMenuItem, Me.ConsultasToolStripMenuItem, Me.ReportesToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(151, 383)
@@ -214,6 +217,25 @@ Partial Class Form1
         Me.ClientesToolStripMenuItem1.Size = New System.Drawing.Size(179, 34)
         Me.ClientesToolStripMenuItem1.Text = "Clientes"
         '
+        'ReportesToolStripMenuItem
+        '
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ApartadosPorClienteToolStripMenuItem, Me.ProductosVendidosPorPeriodoToolStripMenuItem})
+        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(138, 34)
+        Me.ReportesToolStripMenuItem.Text = "Reportes"
+        '
+        'ApartadosPorClienteToolStripMenuItem
+        '
+        Me.ApartadosPorClienteToolStripMenuItem.Name = "ApartadosPorClienteToolStripMenuItem"
+        Me.ApartadosPorClienteToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.ApartadosPorClienteToolStripMenuItem.Text = "Apartados por Cliente"
+        '
+        'ProductosVendidosPorPeriodoToolStripMenuItem
+        '
+        Me.ProductosVendidosPorPeriodoToolStripMenuItem.Name = "ProductosVendidosPorPeriodoToolStripMenuItem"
+        Me.ProductosVendidosPorPeriodoToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.ProductosVendidosPorPeriodoToolStripMenuItem.Text = "Productos Vendidos por Periodo"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -258,4 +280,7 @@ Partial Class Form1
     Friend WithEvents ConsultasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ProductosToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ClientesToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ApartadosPorClienteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ProductosVendidosPorPeriodoToolStripMenuItem As ToolStripMenuItem
 End Class
