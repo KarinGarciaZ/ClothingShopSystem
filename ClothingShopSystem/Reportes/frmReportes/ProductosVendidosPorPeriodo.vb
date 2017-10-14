@@ -42,6 +42,7 @@ Public Class ProductosVendidosPorPeriodo
             Command.ExecuteNonQuery()
         Next
 
+        dg.Rows.Clear()
 
 
         Dim Cmd As New SqlCommand("ReporteProductosVendidosPeriodo", connection)
