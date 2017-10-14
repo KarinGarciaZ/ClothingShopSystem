@@ -10,7 +10,7 @@ Public Class ProductosVendidosPorPeriodo
         command.CommandText = "DELETE from auxProductosVendidosPeriodo"
         Command.ExecuteNonQuery()
 
-        Command.CommandText = "SELECT DetalleVentas.idProducto, Productos.nombre, DetalleVentas.cantidad FROM DetalleVentas inner join Ventas on DetalleVentas.idVenta = Ventas.idVenta inner join Productos on Productos.idProducto = DetalleVentas.idProducto where Ventas.fecha >= '" & DateTimePicker1.Value.Date & "' and Ventas.fecha <= '" & DateTimePicker2.Value.Date & "'"
+        command.CommandText = "SELECT DetalleVentas.idProducto, Productos.nombre, DetalleVentas.cantidad FROM DetalleVentas inner join Ventas on DetalleVentas.idVenta = Ventas.idVenta inner join Productos on Productos.idProducto = DetalleVentas.idProducto where Ventas.fecha >= '" & DateTimePicker1.Value.Date & "' and Ventas.fecha <= '" & DateTimePicker2.Value.Date & "'"
         lector = Command.ExecuteReader
         Dim id As Integer
         Dim nom As String
@@ -41,7 +41,6 @@ Public Class ProductosVendidosPorPeriodo
             Command.CommandText = "INSERT INTO auxProductosVendidosPeriodo VALUES (" & dg.Item(0, x).Value & ",'" & dg.Item(1, x).Value & "'," & dg.Item(2, x).Value & ")"
             Command.ExecuteNonQuery()
         Next
-
         dg.Rows.Clear()
 
 
@@ -64,5 +63,4 @@ Public Class ProductosVendidosPorPeriodo
         Reporte.Show()
         connection.Close()
     End Sub
-
 End Class
