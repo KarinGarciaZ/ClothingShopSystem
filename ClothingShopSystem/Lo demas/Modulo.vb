@@ -17,6 +17,9 @@ Module Modulo
         Return conexionsql
     End Function
 
+    Public Function obtenerRutaReportes()
+        Return "C:\Users\elektramovil\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\Reportes\ReportesLibros"
+    End Function
 
 End Module
 

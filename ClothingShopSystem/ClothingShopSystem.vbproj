@@ -303,6 +303,7 @@
     <EmbeddedResource Include="Lo demas\PrincipaUsuarios.resx">
       <DependentUpon>PrincipaUsuarios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteClaProductos.rdlc" />
     <EmbeddedResource Include="Reportes\frmReportes\ProductosVendidosPorPeriodo.resx">
       <DependentUpon>ProductosVendidosPorPeriodo.vb</DependentUpon>
     </EmbeddedResource>

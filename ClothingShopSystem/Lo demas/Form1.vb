@@ -106,7 +106,7 @@ Public Class Form1
 
         Reporte.Reportito.LocalReport.DataSources.Clear()
         Reporte.Reportito.LocalReport.DataSources.Add(Reportes)
-        Reporte.Reportito.LocalReport.ReportPath = "C:\Users\elektramovil\Desktop\7mo semestre\Raquel\Programa\ClothingShopSystem\ClothingShopSystem\Reportes\ReportesLibros\ReporteClientesApartados.rdlc"
+        Reporte.Reportito.LocalReport.ReportPath = obtenerRutaReportes() & "\ReporteClientesApartados.rdlc"
         Reporte.Reportito.RefreshReport()
         Reporte.Show()
         Conexion.Close()
@@ -116,4 +116,28 @@ Public Class Form1
         ProductosVendidosPorPeriodo.ShowDialog()
     End Sub
 
+    Private Sub ProductosToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ProductosToolStripMenuItem2.Click
+        Conexion = openConnection()
+
+        Conexion.Open()
+
+        Dim Cmd As New SqlCommand("ReporteClasificacionProductos", Conexion)
+
+        Cmd.CommandType = CommandType.StoredProcedure
+
+        Dim Adaptador As New SqlDataAdapter(Cmd)
+        Dim Data As New Data.DataSet
+
+        Adaptador.Fill(Data)
+        Data.DataSetName = "DataSetSistema"
+
+        Dim Reportes As New ReportDataSource("DataSetSistema", Data.Tables(0))
+
+        Reporte.Reportito.LocalReport.DataSources.Clear()
+        Reporte.Reportito.LocalReport.DataSources.Add(Reportes)
+        Reporte.Reportito.LocalReport.ReportPath = obtenerRutaReportes() & "\ReporteClaProductos.rdlc"
+        Reporte.Reportito.RefreshReport()
+        Reporte.Show()
+        Conexion.Close()
+    End Sub
 End Class
