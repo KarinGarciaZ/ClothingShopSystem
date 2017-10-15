@@ -50,6 +50,7 @@ Partial Class Form1
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ApartadosPorClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosVendidosPorPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProductosToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -219,7 +220,7 @@ Partial Class Form1
         '
         'ReportesToolStripMenuItem
         '
-        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ApartadosPorClienteToolStripMenuItem, Me.ProductosVendidosPorPeriodoToolStripMenuItem})
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ApartadosPorClienteToolStripMenuItem, Me.ProductosVendidosPorPeriodoToolStripMenuItem, Me.ProductosToolStripMenuItem2})
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(138, 34)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
@@ -235,6 +236,12 @@ Partial Class Form1
         Me.ProductosVendidosPorPeriodoToolStripMenuItem.Name = "ProductosVendidosPorPeriodoToolStripMenuItem"
         Me.ProductosVendidosPorPeriodoToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
         Me.ProductosVendidosPorPeriodoToolStripMenuItem.Text = "Productos Vendidos por Periodo"
+        '
+        'ProductosToolStripMenuItem2
+        '
+        Me.ProductosToolStripMenuItem2.Name = "ProductosToolStripMenuItem2"
+        Me.ProductosToolStripMenuItem2.Size = New System.Drawing.Size(385, 34)
+        Me.ProductosToolStripMenuItem2.Text = "Productos"
         '
         'Form1
         '
@@ -283,4 +290,5 @@ Partial Class Form1
     Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ApartadosPorClienteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ProductosVendidosPorPeriodoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ProductosToolStripMenuItem2 As ToolStripMenuItem
 End Class

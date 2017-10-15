@@ -58,7 +58,7 @@ Public Class ProductosVendidosPorPeriodo
 
         Reporte.Reportito.LocalReport.DataSources.Clear()
         Reporte.Reportito.LocalReport.DataSources.Add(Reportes)
-        Reporte.Reportito.LocalReport.ReportPath = "C:\Users\elektramovil\Desktop\7mo semestre\Raquel\Programa\ClothingShopSystem\ClothingShopSystem\Reportes\ReportesLibros\ReporteProductosPeriodo.rdlc"
+        Reporte.Reportito.LocalReport.ReportPath = obtenerRutaReportes() & "\ReporteProductosPeriodo.rdlc"
         Reporte.Reportito.RefreshReport()
         Reporte.Show()
         connection.Close()
