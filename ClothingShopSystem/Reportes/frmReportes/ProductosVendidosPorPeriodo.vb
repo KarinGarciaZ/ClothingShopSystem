@@ -55,10 +55,12 @@ Public Class ProductosVendidosPorPeriodo
         Data.DataSetName = "DataSet1"
 
         Dim Reportes As New ReportDataSource("DataSet1", Data.Tables(0))
-
+        Dim p1 As New ReportParameter("p1", CDate(DateTimePicker1.Text))
+        Dim p2 As New ReportParameter("p2", CDate(DateTimePicker2.Text))
         Reporte.Reportito.LocalReport.DataSources.Clear()
         Reporte.Reportito.LocalReport.DataSources.Add(Reportes)
         Reporte.Reportito.LocalReport.ReportPath = obtenerRutaReportes() & "\ReporteProductosPeriodo.rdlc"
+        Reporte.Reportito.LocalReport.SetParameters(New ReportParameter() {p1, p2})
         Reporte.Reportito.RefreshReport()
         Reporte.Show()
         connection.Close()

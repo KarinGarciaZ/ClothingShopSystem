@@ -22,7 +22,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>total</Value>
+                              <Value>Column1</Value>
                               <Style>
                                 <FontFamily>Verdana</FontFamily>
                                 <FontWeight>Bold</FontWeight>
@@ -55,14 +55,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="total">
+                    <Textbox Name="Column1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!total.Value)</Value>
+                              <Value>=Sum(Fields!Column1.Value)</Value>
                               <Style>
                                 <FontFamily>Verdana</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -72,7 +72,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>total</rd:DefaultName>
+                      <rd:DefaultName>Column1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#e5e5e5</Color>
@@ -109,7 +109,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>nombre</Value>
+                            <Value>id Venta</Value>
                             <Style>
                               <FontFamily>Verdana</FontFamily>
                               <FontWeight>Bold</FontWeight>
@@ -147,7 +147,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>id Apartado</Value>
+                                <Value>fecha</Value>
                                 <Style>
                                   <FontFamily>Verdana</FontFamily>
                                   <FontWeight>Bold</FontWeight>
@@ -185,7 +185,7 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>Fecha</Value>
+                                    <Value>condicion</Value>
                                     <Style>
                                       <FontFamily>Verdana</FontFamily>
                                       <FontWeight>Bold</FontWeight>
@@ -223,7 +223,7 @@
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>abono</Value>
+                                        <Value>nombre</Value>
                                         <Style>
                                           <FontFamily>Verdana</FontFamily>
                                           <FontWeight>Bold</FontWeight>
@@ -260,27 +260,27 @@
               </TablixMembers>
             </TablixMember>
             <TablixMember>
-              <Group Name="nombre">
+              <Group Name="idVenta">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!nombre.Value</GroupExpression>
+                  <GroupExpression>=Fields!idVenta.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!nombre.Value</Value>
+                  <Value>=Fields!idVenta.Value</Value>
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
                 <Size>2.5cm</Size>
                 <CellContents>
-                  <Textbox Name="nombre">
+                  <Textbox Name="idVenta">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>=Fields!nombre.Value</Value>
+                            <Value>=Fields!idVenta.Value</Value>
                             <Style>
                               <FontFamily>Verdana</FontFamily>
                               <FontSize>9pt</FontSize>
@@ -292,7 +292,7 @@
                         <Style />
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>nombre</rd:DefaultName>
+                    <rd:DefaultName>idVenta</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>#de9646</Color>
@@ -309,27 +309,27 @@
               </TablixHeader>
               <TablixMembers>
                 <TablixMember>
-                  <Group Name="idApartado">
+                  <Group Name="fecha">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!idApartado.Value</GroupExpression>
+                      <GroupExpression>=Fields!fecha.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!idApartado.Value</Value>
+                      <Value>=Fields!fecha.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
                     <Size>2.5cm</Size>
                     <CellContents>
-                      <Textbox Name="idApartado">
+                      <Textbox Name="fecha">
                         <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>=Fields!idApartado.Value</Value>
+                                <Value>=Fields!fecha.Value</Value>
                                 <Style>
                                   <FontFamily>Verdana</FontFamily>
                                   <FontSize>9pt</FontSize>
@@ -341,7 +341,7 @@
                             <Style />
                           </Paragraph>
                         </Paragraphs>
-                        <rd:DefaultName>idApartado</rd:DefaultName>
+                        <rd:DefaultName>fecha</rd:DefaultName>
                         <Style>
                           <Border>
                             <Color>#e8a25a</Color>
@@ -358,27 +358,27 @@
                   </TablixHeader>
                   <TablixMembers>
                     <TablixMember>
-                      <Group Name="Fecha">
+                      <Group Name="condicion">
                         <GroupExpressions>
-                          <GroupExpression>=Fields!Fecha.Value</GroupExpression>
+                          <GroupExpression>=Fields!condicion.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=Fields!Fecha.Value</Value>
+                          <Value>=Fields!condicion.Value</Value>
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
                         <Size>2.5cm</Size>
                         <CellContents>
-                          <Textbox Name="Fecha">
+                          <Textbox Name="condicion">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>=Fields!Fecha.Value</Value>
+                                    <Value>=Fields!condicion.Value</Value>
                                     <Style>
                                       <FontFamily>Verdana</FontFamily>
                                       <FontSize>9pt</FontSize>
@@ -390,7 +390,7 @@
                                 <Style />
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>Fecha</rd:DefaultName>
+                            <rd:DefaultName>condicion</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>#f6be80</Color>
@@ -407,27 +407,27 @@
                       </TablixHeader>
                       <TablixMembers>
                         <TablixMember>
-                          <Group Name="abono">
+                          <Group Name="nombre">
                             <GroupExpressions>
-                              <GroupExpression>=Fields!abono.Value</GroupExpression>
+                              <GroupExpression>=Fields!nombre.Value</GroupExpression>
                             </GroupExpressions>
                           </Group>
                           <SortExpressions>
                             <SortExpression>
-                              <Value>=Fields!abono.Value</Value>
+                              <Value>=Fields!nombre.Value</Value>
                             </SortExpression>
                           </SortExpressions>
                           <TablixHeader>
                             <Size>2.5cm</Size>
                             <CellContents>
-                              <Textbox Name="abono">
+                              <Textbox Name="nombre">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>=Fields!abono.Value</Value>
+                                        <Value>=Fields!nombre.Value</Value>
                                         <Style>
                                           <FontFamily>Verdana</FontFamily>
                                           <FontSize>9pt</FontSize>
@@ -439,7 +439,7 @@
                                     <Style />
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>abono</rd:DefaultName>
+                                <rd:DefaultName>nombre</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Color>#f6be80</Color>
@@ -467,8 +467,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1.24354cm</Top>
-        <Left>1.64042cm</Left>
+        <Top>2.01083cm</Top>
+        <Left>1.77271cm</Left>
         <Height>1.2cm</Height>
         <Width>12.5cm</Width>
         <Style>
@@ -477,30 +477,56 @@
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox18">
+      <Textbox Name="FECHA1">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Reporte de Apartados</Value>
-                <Style>
-                  <FontSize>16pt</FontSize>
-                </Style>
+                <Value>=Parameters!FECHA1.Value</Value>
+                <Style />
               </TextRun>
             </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
+            <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox18</rd:DefaultName>
-        <Top>0.28786cm</Top>
-        <Left>5.2907cm</Left>
-        <Height>0.77929cm</Height>
-        <Width>5.92859cm</Width>
+        <rd:DefaultName>FECHA1</rd:DefaultName>
+        <Top>1.08162cm</Top>
+        <Left>3.11891cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
         <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="FECHA2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!FECHA2.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>FECHA2</rd:DefaultName>
+        <Top>1.08162cm</Top>
+        <Left>9.27271cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -533,7 +559,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>916e325f-5e6c-43bb-987c-f63745549811</rd:DataSourceID>
+      <rd:DataSourceID>1a084bfd-5f7e-41ad-96c2-d2f045bdda23</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -543,37 +569,47 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
+        <Field Name="idVenta">
+          <DataField>idVenta</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="fecha">
+          <DataField>fecha</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="condicion">
+          <DataField>condicion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="nombre">
           <DataField>nombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="idApartado">
-          <DataField>idApartado</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Fecha">
-          <DataField>Fecha</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="abono">
-          <DataField>abono</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="total">
-          <DataField>total</DataField>
+        <Field Name="Column1">
+          <DataField>Column1</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet1</rd:DataSetName>
         <rd:SchemaPath>C:\Users\elektramovil\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\Lo demas\DataSet1.xsd</rd:SchemaPath>
-        <rd:TableName>ReporteClientesApartados</rd:TableName>
+        <rd:TableName>VentasPorPeriodo</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>ReporteClientesApartadosTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>VentasPorPeriodoTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="FECHA1">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FECHA2">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>1520df01-a157-4ebe-9c6e-6bf0a63ab7b6</rd:ReportID>
+  <rd:ReportID>525ceac3-af85-40d5-9413-73c3bb98b1d2</rd:ReportID>
 </Report>

@@ -100,9 +100,9 @@ Public Class Form1
         Dim Data As New Data.DataSet
 
         Adaptador.Fill(Data)
-        Data.DataSetName = "DataSetSistema"
+        Data.DataSetName = "DataSet1"
 
-        Dim Reportes As New ReportDataSource("DataSetSistema", Data.Tables(0))
+        Dim Reportes As New ReportDataSource("DataSet1", Data.Tables(0))
 
         Reporte.Reportito.LocalReport.DataSources.Clear()
         Reporte.Reportito.LocalReport.DataSources.Add(Reportes)
@@ -121,7 +121,7 @@ Public Class Form1
 
         Conexion.Open()
 
-        Dim Cmd As New SqlCommand("ReporteClasificacionProductos", Conexion)
+        Dim Cmd As New SqlCommand("ReporteClasificacionDeProductos", Conexion)
 
         Cmd.CommandType = CommandType.StoredProcedure
 
@@ -129,15 +129,48 @@ Public Class Form1
         Dim Data As New Data.DataSet
 
         Adaptador.Fill(Data)
-        Data.DataSetName = "DataSetSistema"
+        Data.DataSetName = "DataSet1"
 
-        Dim Reportes As New ReportDataSource("DataSetSistema", Data.Tables(0))
+        Dim Reportes As New ReportDataSource("DataSet1", Data.Tables(0))
 
         Reporte.Reportito.LocalReport.DataSources.Clear()
         Reporte.Reportito.LocalReport.DataSources.Add(Reportes)
-        Reporte.Reportito.LocalReport.ReportPath = obtenerRutaReportes() & "\ReporteClaProductos.rdlc"
+        Reporte.Reportito.LocalReport.ReportPath = obtenerRutaReportes() & "\ReporteProductos.rdlc"
         Reporte.Reportito.RefreshReport()
         Reporte.Show()
         Conexion.Close()
+    End Sub
+
+    Private Sub ClientesDeudoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesDeudoresToolStripMenuItem.Click
+        Conexion = openConnection()
+
+        Conexion.Open()
+
+        Dim Cmd As New SqlCommand("ReporteClientesDeudores", Conexion)
+
+        Cmd.CommandType = CommandType.StoredProcedure
+
+        Dim Adaptador As New SqlDataAdapter(Cmd)
+        Dim Data As New Data.DataSet
+
+        Adaptador.Fill(Data)
+        Data.DataSetName = "DataSet1"
+
+        Dim Reportes As New ReportDataSource("DataSet1", Data.Tables(0))
+
+        Reporte.Reportito.LocalReport.DataSources.Clear()
+        Reporte.Reportito.LocalReport.DataSources.Add(Reportes)
+        Reporte.Reportito.LocalReport.ReportPath = obtenerRutaReportes() & "\ReporteClientesDeudores.rdlc"
+        Reporte.Reportito.RefreshReport()
+        Reporte.Show()
+        Conexion.Close()
+    End Sub
+
+    Private Sub VentasPorPeriodoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VentasPorPeriodoToolStripMenuItem.Click
+        VentasPorPeriodo.ShowDialog()
+    End Sub
+
+    Private Sub ComprasPorPeriodoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComprasPorPeriodoToolStripMenuItem.Click
+        ComprasPorPeriodo.ShowDialog()
     End Sub
 End Class

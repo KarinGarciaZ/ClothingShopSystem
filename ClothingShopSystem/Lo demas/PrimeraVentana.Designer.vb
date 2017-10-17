@@ -35,7 +35,7 @@ Partial Class PrimeraVentana
         Me.txtNombre.Location = New System.Drawing.Point(57, 24)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(214, 20)
-        Me.txtNombre.TabIndex = 17
+        Me.txtNombre.TabIndex = 1
         '
         'Label2
         '
@@ -62,7 +62,7 @@ Partial Class PrimeraVentana
         Me.btnCancelar.Location = New System.Drawing.Point(80, 116)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(74, 48)
-        Me.btnCancelar.TabIndex = 85
+        Me.btnCancelar.TabIndex = 3
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
@@ -73,7 +73,7 @@ Partial Class PrimeraVentana
         Me.btnAceptar.Location = New System.Drawing.Point(165, 116)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(74, 48)
-        Me.btnAceptar.TabIndex = 84
+        Me.btnAceptar.TabIndex = 4
         Me.btnAceptar.Text = "Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
@@ -83,7 +83,7 @@ Partial Class PrimeraVentana
         Me.txtConfirmar.Name = "txtConfirmar"
         Me.txtConfirmar.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtConfirmar.Size = New System.Drawing.Size(131, 20)
-        Me.txtConfirmar.TabIndex = 86
+        Me.txtConfirmar.TabIndex = 2
         '
         'PrimeraVentana
         '

@@ -51,6 +51,9 @@ Partial Class Form1
         Me.ApartadosPorClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosVendidosPorPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClientesDeudoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VentasPorPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ComprasPorPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -220,7 +223,7 @@ Partial Class Form1
         '
         'ReportesToolStripMenuItem
         '
-        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ApartadosPorClienteToolStripMenuItem, Me.ProductosVendidosPorPeriodoToolStripMenuItem, Me.ProductosToolStripMenuItem2})
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ApartadosPorClienteToolStripMenuItem, Me.ProductosVendidosPorPeriodoToolStripMenuItem, Me.ProductosToolStripMenuItem2, Me.ClientesDeudoresToolStripMenuItem, Me.VentasPorPeriodoToolStripMenuItem, Me.ComprasPorPeriodoToolStripMenuItem})
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(138, 34)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
@@ -242,6 +245,24 @@ Partial Class Form1
         Me.ProductosToolStripMenuItem2.Name = "ProductosToolStripMenuItem2"
         Me.ProductosToolStripMenuItem2.Size = New System.Drawing.Size(385, 34)
         Me.ProductosToolStripMenuItem2.Text = "Productos"
+        '
+        'ClientesDeudoresToolStripMenuItem
+        '
+        Me.ClientesDeudoresToolStripMenuItem.Name = "ClientesDeudoresToolStripMenuItem"
+        Me.ClientesDeudoresToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.ClientesDeudoresToolStripMenuItem.Text = "Clientes Deudores"
+        '
+        'VentasPorPeriodoToolStripMenuItem
+        '
+        Me.VentasPorPeriodoToolStripMenuItem.Name = "VentasPorPeriodoToolStripMenuItem"
+        Me.VentasPorPeriodoToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.VentasPorPeriodoToolStripMenuItem.Text = "Ventas por Periodo"
+        '
+        'ComprasPorPeriodoToolStripMenuItem
+        '
+        Me.ComprasPorPeriodoToolStripMenuItem.Name = "ComprasPorPeriodoToolStripMenuItem"
+        Me.ComprasPorPeriodoToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.ComprasPorPeriodoToolStripMenuItem.Text = "Compras por Periodo"
         '
         'Form1
         '
@@ -291,4 +312,7 @@ Partial Class Form1
     Friend WithEvents ApartadosPorClienteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ProductosVendidosPorPeriodoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ProductosToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents ClientesDeudoresToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VentasPorPeriodoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ComprasPorPeriodoToolStripMenuItem As ToolStripMenuItem
 End Class
