@@ -194,3 +194,9 @@ C:\Users\elektramovil\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj
 C:\Users\elektramovil\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.vbproj.GenerateResource.Cache
 C:\Users\elektramovil\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\RdlCompile.cache
 C:\Users\elektramovil\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\RdlCompile.compiled
+C:\Users\elektramovil\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.VentasPorPeriodo.resources
+C:\Users\elektramovil\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.ComprasPorPeriodo.resources
+C:\RespaldosClothing\21\ClothingShopSystem\ClothingShopSystem\bin\Debug\ClothingShopSystem.exe.config
+C:\RespaldosClothing\21\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.exe
+C:\RespaldosClothing\21\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.xml
+C:\RespaldosClothing\21\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.pdb

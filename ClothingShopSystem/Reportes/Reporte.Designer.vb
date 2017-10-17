@@ -29,14 +29,14 @@ Partial Class Reporte
         '
         Me.Reportito.Location = New System.Drawing.Point(12, 12)
         Me.Reportito.Name = "Reportito"
-        Me.Reportito.Size = New System.Drawing.Size(771, 246)
+        Me.Reportito.Size = New System.Drawing.Size(771, 395)
         Me.Reportito.TabIndex = 0
         '
         'Reporte
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(795, 275)
+        Me.ClientSize = New System.Drawing.Size(795, 419)
         Me.Controls.Add(Me.Reportito)
         Me.Name = "Reporte"
         Me.Text = "Reporte"
