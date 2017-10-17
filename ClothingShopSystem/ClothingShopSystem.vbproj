@@ -148,10 +148,22 @@
     <Compile Include="Lo demas\PrincipaUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\frmReportes\ComprasPorPeriodo.Designer.vb">
+      <DependentUpon>ComprasPorPeriodo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReportes\ComprasPorPeriodo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\frmReportes\ProductosVendidosPorPeriodo.Designer.vb">
       <DependentUpon>ProductosVendidosPorPeriodo.vb</DependentUpon>
     </Compile>
     <Compile Include="Reportes\frmReportes\ProductosVendidosPorPeriodo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReportes\VentasPorPeriodo.Designer.vb">
+      <DependentUpon>VentasPorPeriodo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReportes\VentasPorPeriodo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\Reporte.Designer.vb">
@@ -303,7 +315,15 @@
     <EmbeddedResource Include="Lo demas\PrincipaUsuarios.resx">
       <DependentUpon>PrincipaUsuarios.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteClaProductos.rdlc" />
+    <EmbeddedResource Include="Reportes\frmReportes\ComprasPorPeriodo.resx">
+      <DependentUpon>ComprasPorPeriodo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReportes\VentasPorPeriodo.resx">
+      <DependentUpon>VentasPorPeriodo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteClientesApartados.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteComprasPeriodo.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteProductos.rdlc" />
     <EmbeddedResource Include="Reportes\frmReportes\ProductosVendidosPorPeriodo.resx">
       <DependentUpon>ProductosVendidosPorPeriodo.vb</DependentUpon>
     </EmbeddedResource>
@@ -349,8 +369,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteClientesApartados.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteClientesDeudores.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteProductosPeriodo.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteVentasPeriodo.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Lo demas\DataSet1.xsc">

@@ -9,7 +9,7 @@ Public Class PrimeraVentana
         conexionsql.Open()
     End Sub
 
-    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+    Private Sub confirmarCuenta()
         comando.CommandText = "select contrasena, puesto from Usuarios where nombre = '" & txtNombre.Text & "'"
         lector = comando.ExecuteReader
         If lector.Read Then
@@ -32,7 +32,17 @@ Public Class PrimeraVentana
         lector.Close()
     End Sub
 
+    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+        confirmarCuenta()
+    End Sub
+
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Me.Dispose()
+    End Sub
+
+    Private Sub txtConfirmar_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtConfirmar.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            confirmarCuenta()
+        End If
     End Sub
 End Class
