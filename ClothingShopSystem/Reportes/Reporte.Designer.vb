@@ -38,7 +38,11 @@ Partial Class Reporte
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(795, 419)
         Me.Controls.Add(Me.Reportito)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Reporte"
+        Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reporte"
         Me.ResumeLayout(False)
 

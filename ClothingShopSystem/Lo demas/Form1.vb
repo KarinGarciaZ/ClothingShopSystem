@@ -108,6 +108,7 @@ Public Class Form1
         Reporte.Reportito.LocalReport.DataSources.Add(Reportes)
         Reporte.Reportito.LocalReport.ReportPath = obtenerRutaReportes() & "\ReporteClientesApartados.rdlc"
         Reporte.Reportito.RefreshReport()
+        Reporte.Text = "Reporte de Devoluciones"
         Reporte.Show()
         Conexion.Close()
     End Sub
@@ -172,5 +173,35 @@ Public Class Form1
 
     Private Sub ComprasPorPeriodoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComprasPorPeriodoToolStripMenuItem.Click
         ComprasPorPeriodo.ShowDialog()
+    End Sub
+
+    Private Sub ApartadosNoPagadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ApartadosNoPagadosToolStripMenuItem.Click
+        Conexion = openConnection()
+
+        Conexion.Open()
+
+        Dim Cmd As New SqlCommand("ReporteNoApartados", Conexion)
+
+        Cmd.CommandType = CommandType.StoredProcedure
+
+        Dim Adaptador As New SqlDataAdapter(Cmd)
+        Dim Data As New Data.DataSet
+
+        Adaptador.Fill(Data)
+        Data.DataSetName = "DataSet1"
+
+        Dim Reportes As New ReportDataSource("DataSet1", Data.Tables(0))
+
+        Reporte.Reportito.LocalReport.DataSources.Clear()
+        Reporte.Reportito.LocalReport.DataSources.Add(Reportes)
+        Reporte.Reportito.LocalReport.ReportPath = obtenerRutaReportes() & "\ReporteNoApartados.rdlc"
+        Reporte.Reportito.RefreshReport()
+        Reporte.Show()
+        Conexion.Close()
+    End Sub
+
+    Private Sub DevolucionesPorPeriodoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DevolucionesPorPeriodoToolStripMenuItem.Click
+        Fechas.Text = "Reporte de Devoluciones"
+        Fechas.ShowDialog()
     End Sub
 End Class

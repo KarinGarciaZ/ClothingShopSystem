@@ -28,6 +28,10 @@ Partial Class VentasPorPeriodo
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.rbEfectivo = New System.Windows.Forms.RadioButton()
+        Me.rbCredito = New System.Windows.Forms.RadioButton()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label2
@@ -83,11 +87,45 @@ Partial Class VentasPorPeriodo
         Me.Label1.TabIndex = 22
         Me.Label1.Text = "De:"
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.rbCredito)
+        Me.GroupBox1.Controls.Add(Me.rbEfectivo)
+        Me.GroupBox1.Location = New System.Drawing.Point(153, 106)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(169, 57)
+        Me.GroupBox1.TabIndex = 29
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Elegir"
+        '
+        'rbEfectivo
+        '
+        Me.rbEfectivo.AutoSize = True
+        Me.rbEfectivo.Location = New System.Drawing.Point(44, 11)
+        Me.rbEfectivo.Name = "rbEfectivo"
+        Me.rbEfectivo.Size = New System.Drawing.Size(115, 17)
+        Me.rbEfectivo.TabIndex = 0
+        Me.rbEfectivo.TabStop = True
+        Me.rbEfectivo.Text = "Ventas en Efectivo"
+        Me.rbEfectivo.UseVisualStyleBackColor = True
+        '
+        'rbCredito
+        '
+        Me.rbCredito.AutoSize = True
+        Me.rbCredito.Location = New System.Drawing.Point(44, 34)
+        Me.rbCredito.Name = "rbCredito"
+        Me.rbCredito.Size = New System.Drawing.Size(102, 17)
+        Me.rbCredito.TabIndex = 1
+        Me.rbCredito.TabStop = True
+        Me.rbCredito.Text = "Ventas a crédito"
+        Me.rbCredito.UseVisualStyleBackColor = True
+        '
         'VentasPorPeriodo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(457, 223)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.DateTimePicker2)
         Me.Controls.Add(Me.DateTimePicker1)
@@ -96,6 +134,8 @@ Partial Class VentasPorPeriodo
         Me.Controls.Add(Me.Label1)
         Me.Name = "VentasPorPeriodo"
         Me.Text = "VentasPorPeriodo"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -107,4 +147,7 @@ Partial Class VentasPorPeriodo
     Friend WithEvents Label3 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents rbCredito As RadioButton
+    Friend WithEvents rbEfectivo As RadioButton
 End Class

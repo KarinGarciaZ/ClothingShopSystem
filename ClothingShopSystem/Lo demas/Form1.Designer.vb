@@ -55,6 +55,8 @@ Partial Class Form1
         Me.ClientesDeudoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentasPorPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComprasPorPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ApartadosNoPagadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DevolucionesPorPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -226,7 +228,7 @@ Partial Class Form1
         '
         'ReportesToolStripMenuItem
         '
-        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ApartadosPorClienteToolStripMenuItem, Me.ProductosVendidosPorPeriodoToolStripMenuItem, Me.ProductosToolStripMenuItem2, Me.ClientesDeudoresToolStripMenuItem, Me.VentasPorPeriodoToolStripMenuItem, Me.ComprasPorPeriodoToolStripMenuItem})
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ApartadosPorClienteToolStripMenuItem, Me.ProductosVendidosPorPeriodoToolStripMenuItem, Me.ProductosToolStripMenuItem2, Me.ClientesDeudoresToolStripMenuItem, Me.VentasPorPeriodoToolStripMenuItem, Me.ComprasPorPeriodoToolStripMenuItem, Me.ApartadosNoPagadosToolStripMenuItem, Me.DevolucionesPorPeriodoToolStripMenuItem})
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(138, 34)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
@@ -266,6 +268,18 @@ Partial Class Form1
         Me.ComprasPorPeriodoToolStripMenuItem.Name = "ComprasPorPeriodoToolStripMenuItem"
         Me.ComprasPorPeriodoToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
         Me.ComprasPorPeriodoToolStripMenuItem.Text = "Compras por Periodo"
+        '
+        'ApartadosNoPagadosToolStripMenuItem
+        '
+        Me.ApartadosNoPagadosToolStripMenuItem.Name = "ApartadosNoPagadosToolStripMenuItem"
+        Me.ApartadosNoPagadosToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.ApartadosNoPagadosToolStripMenuItem.Text = "Apartados no pagados"
+        '
+        'DevolucionesPorPeriodoToolStripMenuItem
+        '
+        Me.DevolucionesPorPeriodoToolStripMenuItem.Name = "DevolucionesPorPeriodoToolStripMenuItem"
+        Me.DevolucionesPorPeriodoToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.DevolucionesPorPeriodoToolStripMenuItem.Text = "Devoluciones por Periodo"
         '
         'Form1
         '
@@ -318,4 +332,6 @@ Partial Class Form1
     Friend WithEvents ClientesDeudoresToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VentasPorPeriodoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ComprasPorPeriodoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ApartadosNoPagadosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DevolucionesPorPeriodoToolStripMenuItem As ToolStripMenuItem
 End Class

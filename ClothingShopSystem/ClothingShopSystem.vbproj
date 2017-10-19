@@ -142,6 +142,9 @@
     <Compile Include="Consultas\ConsultaVentaAbono.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Lo demas\DataSet1.vb">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Lo demas\PrincipaUsuarios.Designer.vb">
       <DependentUpon>PrincipaUsuarios.vb</DependentUpon>
     </Compile>
@@ -152,6 +155,12 @@
       <DependentUpon>ComprasPorPeriodo.vb</DependentUpon>
     </Compile>
     <Compile Include="Reportes\frmReportes\ComprasPorPeriodo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReportes\Fechas.Designer.vb">
+      <DependentUpon>Fechas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReportes\Fechas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\frmReportes\ProductosVendidosPorPeriodo.Designer.vb">
@@ -318,11 +327,17 @@
     <EmbeddedResource Include="Reportes\frmReportes\ComprasPorPeriodo.resx">
       <DependentUpon>ComprasPorPeriodo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReportes\Fechas.resx">
+      <DependentUpon>Fechas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmReportes\VentasPorPeriodo.resx">
       <DependentUpon>VentasPorPeriodo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteClientesApartados.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteClientesDeudores.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteComprasPeriodo.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteDevolucion.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteNoApartados.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteProductos.rdlc" />
     <EmbeddedResource Include="Reportes\frmReportes\ProductosVendidosPorPeriodo.resx">
       <DependentUpon>ProductosVendidosPorPeriodo.vb</DependentUpon>
@@ -369,9 +384,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteClientesDeudores.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteProductosPeriodo.rdlc" />
-    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteVentasPeriodo.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteVentasCreditoPeriodo.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteVentasEfectivoPeriodo.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Lo demas\DataSet1.xsc">
@@ -413,6 +428,7 @@
   <ItemGroup>
     <Content Include="Resources\if_BT_printer_905556.png" />
     <Content Include="Resources\if_meanicons_59_197222.png" />
+    <Content Include="Resources\logo.png" />
     <Content Include="Resources\tienda-ropa.jpg" />
   </ItemGroup>
   <ItemGroup />

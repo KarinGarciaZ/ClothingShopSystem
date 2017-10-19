@@ -200,3 +200,4 @@ C:\RespaldosClothing\21\ClothingShopSystem\ClothingShopSystem\bin\Debug\Clothing
 C:\RespaldosClothing\21\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.exe
 C:\RespaldosClothing\21\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.xml
 C:\RespaldosClothing\21\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.pdb
+C:\Users\elektramovil\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.Fechas.resources
