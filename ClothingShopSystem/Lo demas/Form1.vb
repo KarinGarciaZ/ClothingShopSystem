@@ -204,4 +204,8 @@ Public Class Form1
         Fechas.Text = "Reporte de Devoluciones"
         Fechas.ShowDialog()
     End Sub
+
+    Private Sub EstadoDeCuentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EstadoDeCuentaToolStripMenuItem.Click
+        frmClientes.ShowDialog()
+    End Sub
 End Class

@@ -163,6 +163,12 @@
     <Compile Include="Reportes\frmReportes\Fechas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\frmReportes\frmClientes.Designer.vb">
+      <DependentUpon>frmClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReportes\frmClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\frmReportes\ProductosVendidosPorPeriodo.Designer.vb">
       <DependentUpon>ProductosVendidosPorPeriodo.vb</DependentUpon>
     </Compile>
@@ -337,6 +343,8 @@
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteClientesDeudores.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteComprasPeriodo.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteDevolucion.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteEstadoCuenta.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteEstadoCuentaDeudor.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteNoApartados.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteProductos.rdlc" />
     <EmbeddedResource Include="Reportes\frmReportes\ProductosVendidosPorPeriodo.resx">
@@ -385,8 +393,8 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteProductosPeriodo.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteVentasContadoPeriodo.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteVentasCreditoPeriodo.rdlc" />
-    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteVentasEfectivoPeriodo.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Lo demas\DataSet1.xsc">
