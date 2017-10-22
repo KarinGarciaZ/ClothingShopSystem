@@ -172,7 +172,7 @@ Public Class Ventas
     End Sub
 
     Private Sub rbEfectivo_CheckedChanged(sender As Object, e As EventArgs) Handles rbEfectivo.CheckedChanged
-        cbCliente.Enabled = False
+        cbCliente.Enabled = True
         lblVen.Visible = False
         dtpFechaVen.Visible = False
     End Sub
@@ -254,7 +254,11 @@ Public Class Ventas
                         Next
                     End If
                 Else
-                    command.CommandText = "INSERT INTO Ventas VALUES (" & txtIdVenta.Text & ",1,'" & dtpFecha.Value.Date & "','31-12-9999','Efectivo'," & lblSubtotal.Text & "," & lblIVA.Text & "," & txtDescuento.Text & ",0,0)"
+                    Dim idCliente As Integer = 1
+                    If Not txtIdCliente.Text = "" Then
+                        idCliente = txtIdCliente.Text
+                    End If
+                    command.CommandText = "INSERT INTO Ventas VALUES (" & txtIdVenta.Text & "," & idCliente & ",'" & dtpFecha.Value.Date & "','31-12-9999','Efectivo'," & lblSubtotal.Text & "," & lblIVA.Text & "," & txtDescuento.Text & ",0,0)"
                     command.ExecuteNonQuery()
                     For x = 0 To dgAgregar.RowCount - 1
                         command.CommandText = "INSERT INTO DetalleVentas VALUES (" & txtIdVenta.Text & "," & dgAgregar.Item(0, x).Value & "," & dgAgregar.Item(3, x).Value & "," & dgAgregar.Item(4, x).Value & ")"

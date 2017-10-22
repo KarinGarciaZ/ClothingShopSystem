@@ -36,22 +36,38 @@ Public Class ConsultaVenta
     End Sub
 
     Private Sub buscarEfectivo(parameter As Integer)
-        gbCliente.Visible = False
-        lblPublico.Visible = True
         lblAbonado.Visible = False
         lblDeuda.Visible = False
         dtpFechaVen.Visible = False
         lblVen.Visible = False
         lblAbo.Visible = False
         lblDeu.Visible = False
-        command.CommandText = "SELECT fecha, subtotal, iva, descuento FROM Ventas WHERE idVenta = " & parameter & ""
+        Dim publico As Integer = 1
+        command.CommandText = "SELECT fecha, subtotal, iva, descuento, idCliente FROM Ventas WHERE idVenta = " & parameter & ""
         lector = command.ExecuteReader
         If lector.Read() Then
             dtpFecha.Value = lector(0)
             lblSubtotal.Text = lector(1)
             lblIVA.Text = lector(2)
             lblDescuento.Text = lector(3)
+            publico = lector(4)
             lblTotal.Text = CDbl(lblSubtotal.Text) + CDbl(lblIVA.Text)
+            If Not publico = 1 Then
+                gbCliente.Visible = True
+                lblPublico.Visible = False
+                lector.Close()
+                command.CommandText = "SELECT nombre, telefono, domicilio, saldo FROM Clientes WHERE idCliente = " & publico & ""
+                lector = command.ExecuteReader
+                lector.Read()
+                txtIdCliente.Text = publico
+                txtCliente.Text = lector(0)
+                txtTelefono.Text = lector(1)
+                txtDomicilio.Text = lector(2)
+                txtSaldo.Text = lector(3)
+            Else
+                gbCliente.Visible = False
+                lblPublico.Visible = True
+            End If
         Else
             MsgBox("No existe la venta.")
         End If
