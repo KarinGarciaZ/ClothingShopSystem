@@ -172,7 +172,7 @@ Public Class Ventas
     End Sub
 
     Private Sub rbEfectivo_CheckedChanged(sender As Object, e As EventArgs) Handles rbEfectivo.CheckedChanged
-        cbCliente.Enabled = True
+        cbCliente.Enabled = False
         lblVen.Visible = False
         dtpFechaVen.Visible = False
     End Sub

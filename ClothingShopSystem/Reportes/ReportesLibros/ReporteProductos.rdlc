@@ -75,7 +75,6 @@
                       <rd:DefaultName>Column1</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#e5e5e5</Color>
                           <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>White</BackgroundColor>
@@ -100,7 +99,7 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>2.87042cm</Size>
+                <Size>3.90229cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox13">
                     <CanGrow>true</CanGrow>
@@ -155,7 +154,9 @@
                                 </Style>
                               </TextRun>
                             </TextRuns>
-                            <Style />
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
                           </Paragraph>
                         </Paragraphs>
                         <rd:DefaultName>Textbox11</rd:DefaultName>
@@ -193,7 +194,9 @@
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
-                                <Style />
+                                <Style>
+                                  <TextAlign>Center</TextAlign>
+                                </Style>
                               </Paragraph>
                             </Paragraphs>
                             <rd:DefaultName>Textbox15</rd:DefaultName>
@@ -231,7 +234,9 @@
                                         </Style>
                                       </TextRun>
                                     </TextRuns>
-                                    <Style />
+                                    <Style>
+                                      <TextAlign>Center</TextAlign>
+                                    </Style>
                                   </Paragraph>
                                 </Paragraphs>
                                 <rd:DefaultName>Textbox17</rd:DefaultName>
@@ -261,7 +266,7 @@
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>existencia</Value>
+                                            <Value>Existencia</Value>
                                             <Style>
                                               <FontFamily>Verdana</FontFamily>
                                               <FontWeight>Bold</FontWeight>
@@ -269,7 +274,9 @@
                                             </Style>
                                           </TextRun>
                                         </TextRuns>
-                                        <Style />
+                                        <Style>
+                                          <TextAlign>Center</TextAlign>
+                                        </Style>
                                       </Paragraph>
                                     </Paragraphs>
                                     <rd:DefaultName>Textbox5</rd:DefaultName>
@@ -299,7 +306,7 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>apartados</Value>
+                                                <Value>Apartados</Value>
                                                 <Style>
                                                   <FontFamily>Verdana</FontFamily>
                                                   <FontWeight>Bold</FontWeight>
@@ -307,7 +314,9 @@
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox3</rd:DefaultName>
@@ -351,7 +360,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>2.87042cm</Size>
+                <Size>3.90229cm</Size>
                 <CellContents>
                   <Textbox Name="nombre">
                     <CanGrow>true</CanGrow>
@@ -374,7 +383,6 @@
                     <rd:DefaultName>nombre</rd:DefaultName>
                     <Style>
                       <Border>
-                        <Color>#de9646</Color>
                         <Style>Solid</Style>
                       </Border>
                       <BackgroundColor>White</BackgroundColor>
@@ -416,13 +424,14 @@
                                 </Style>
                               </TextRun>
                             </TextRuns>
-                            <Style />
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
                           </Paragraph>
                         </Paragraphs>
                         <rd:DefaultName>nombre1</rd:DefaultName>
                         <Style>
                           <Border>
-                            <Color>#e8a25a</Color>
                             <Style>Solid</Style>
                           </Border>
                           <BackgroundColor>White</BackgroundColor>
@@ -464,13 +473,14 @@
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
-                                <Style />
+                                <Style>
+                                  <TextAlign>Center</TextAlign>
+                                </Style>
                               </Paragraph>
                             </Paragraphs>
                             <rd:DefaultName>nombre2</rd:DefaultName>
                             <Style>
                               <Border>
-                                <Color>#f6be80</Color>
                                 <Style>Solid</Style>
                               </Border>
                               <BackgroundColor>White</BackgroundColor>
@@ -512,13 +522,14 @@
                                         </Style>
                                       </TextRun>
                                     </TextRuns>
-                                    <Style />
+                                    <Style>
+                                      <TextAlign>Center</TextAlign>
+                                    </Style>
                                   </Paragraph>
                                 </Paragraphs>
                                 <rd:DefaultName>nombre3</rd:DefaultName>
                                 <Style>
                                   <Border>
-                                    <Color>#f6be80</Color>
                                     <Style>Solid</Style>
                                   </Border>
                                   <BackgroundColor>White</BackgroundColor>
@@ -560,13 +571,14 @@
                                             </Style>
                                           </TextRun>
                                         </TextRuns>
-                                        <Style />
+                                        <Style>
+                                          <TextAlign>Center</TextAlign>
+                                        </Style>
                                       </Paragraph>
                                     </Paragraphs>
                                     <rd:DefaultName>existencia</rd:DefaultName>
                                     <Style>
                                       <Border>
-                                        <Color>#f6be80</Color>
                                         <Style>Solid</Style>
                                       </Border>
                                       <BackgroundColor>White</BackgroundColor>
@@ -608,13 +620,14 @@
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>apartados</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>#f6be80</Color>
                                             <Style>Solid</Style>
                                           </Border>
                                           <BackgroundColor>White</BackgroundColor>
@@ -643,10 +656,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.17639cm</Top>
-        <Left>1.03188cm</Left>
+        <Top>1.44639cm</Top>
         <Height>1.2cm</Height>
-        <Width>17.87042cm</Width>
+        <Width>18.90229cm</Width>
         <Style>
           <Border>
             <Style>None</Style>

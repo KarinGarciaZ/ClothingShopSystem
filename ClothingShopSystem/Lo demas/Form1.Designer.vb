@@ -58,6 +58,7 @@ Partial Class Form1
         Me.ApartadosNoPagadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DevolucionesPorPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstadoDeCuentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EstadoDeCuentaDeudorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -229,7 +230,7 @@ Partial Class Form1
         '
         'ReportesToolStripMenuItem
         '
-        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ApartadosPorClienteToolStripMenuItem, Me.ProductosVendidosPorPeriodoToolStripMenuItem, Me.ProductosToolStripMenuItem2, Me.ClientesDeudoresToolStripMenuItem, Me.VentasPorPeriodoToolStripMenuItem, Me.ComprasPorPeriodoToolStripMenuItem, Me.ApartadosNoPagadosToolStripMenuItem, Me.DevolucionesPorPeriodoToolStripMenuItem, Me.EstadoDeCuentaToolStripMenuItem})
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ApartadosPorClienteToolStripMenuItem, Me.ProductosVendidosPorPeriodoToolStripMenuItem, Me.ProductosToolStripMenuItem2, Me.ClientesDeudoresToolStripMenuItem, Me.VentasPorPeriodoToolStripMenuItem, Me.ComprasPorPeriodoToolStripMenuItem, Me.ApartadosNoPagadosToolStripMenuItem, Me.DevolucionesPorPeriodoToolStripMenuItem, Me.EstadoDeCuentaToolStripMenuItem, Me.EstadoDeCuentaDeudorToolStripMenuItem})
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(138, 34)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
@@ -237,56 +238,62 @@ Partial Class Form1
         'ApartadosPorClienteToolStripMenuItem
         '
         Me.ApartadosPorClienteToolStripMenuItem.Name = "ApartadosPorClienteToolStripMenuItem"
-        Me.ApartadosPorClienteToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.ApartadosPorClienteToolStripMenuItem.Size = New System.Drawing.Size(383, 34)
         Me.ApartadosPorClienteToolStripMenuItem.Text = "Apartados por Cliente"
         '
         'ProductosVendidosPorPeriodoToolStripMenuItem
         '
         Me.ProductosVendidosPorPeriodoToolStripMenuItem.Name = "ProductosVendidosPorPeriodoToolStripMenuItem"
-        Me.ProductosVendidosPorPeriodoToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.ProductosVendidosPorPeriodoToolStripMenuItem.Size = New System.Drawing.Size(383, 34)
         Me.ProductosVendidosPorPeriodoToolStripMenuItem.Text = "Productos Vendidos por Periodo"
         '
         'ProductosToolStripMenuItem2
         '
         Me.ProductosToolStripMenuItem2.Name = "ProductosToolStripMenuItem2"
-        Me.ProductosToolStripMenuItem2.Size = New System.Drawing.Size(385, 34)
+        Me.ProductosToolStripMenuItem2.Size = New System.Drawing.Size(383, 34)
         Me.ProductosToolStripMenuItem2.Text = "Productos"
         '
         'ClientesDeudoresToolStripMenuItem
         '
         Me.ClientesDeudoresToolStripMenuItem.Name = "ClientesDeudoresToolStripMenuItem"
-        Me.ClientesDeudoresToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.ClientesDeudoresToolStripMenuItem.Size = New System.Drawing.Size(383, 34)
         Me.ClientesDeudoresToolStripMenuItem.Text = "Clientes Deudores"
         '
         'VentasPorPeriodoToolStripMenuItem
         '
         Me.VentasPorPeriodoToolStripMenuItem.Name = "VentasPorPeriodoToolStripMenuItem"
-        Me.VentasPorPeriodoToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.VentasPorPeriodoToolStripMenuItem.Size = New System.Drawing.Size(383, 34)
         Me.VentasPorPeriodoToolStripMenuItem.Text = "Ventas por Periodo"
         '
         'ComprasPorPeriodoToolStripMenuItem
         '
         Me.ComprasPorPeriodoToolStripMenuItem.Name = "ComprasPorPeriodoToolStripMenuItem"
-        Me.ComprasPorPeriodoToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.ComprasPorPeriodoToolStripMenuItem.Size = New System.Drawing.Size(383, 34)
         Me.ComprasPorPeriodoToolStripMenuItem.Text = "Compras por Periodo"
         '
         'ApartadosNoPagadosToolStripMenuItem
         '
         Me.ApartadosNoPagadosToolStripMenuItem.Name = "ApartadosNoPagadosToolStripMenuItem"
-        Me.ApartadosNoPagadosToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.ApartadosNoPagadosToolStripMenuItem.Size = New System.Drawing.Size(383, 34)
         Me.ApartadosNoPagadosToolStripMenuItem.Text = "Apartados no pagados"
         '
         'DevolucionesPorPeriodoToolStripMenuItem
         '
         Me.DevolucionesPorPeriodoToolStripMenuItem.Name = "DevolucionesPorPeriodoToolStripMenuItem"
-        Me.DevolucionesPorPeriodoToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.DevolucionesPorPeriodoToolStripMenuItem.Size = New System.Drawing.Size(383, 34)
         Me.DevolucionesPorPeriodoToolStripMenuItem.Text = "Devoluciones por Periodo"
         '
         'EstadoDeCuentaToolStripMenuItem
         '
         Me.EstadoDeCuentaToolStripMenuItem.Name = "EstadoDeCuentaToolStripMenuItem"
-        Me.EstadoDeCuentaToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.EstadoDeCuentaToolStripMenuItem.Size = New System.Drawing.Size(383, 34)
         Me.EstadoDeCuentaToolStripMenuItem.Text = "Estado de cuenta"
+        '
+        'EstadoDeCuentaDeudorToolStripMenuItem
+        '
+        Me.EstadoDeCuentaDeudorToolStripMenuItem.Name = "EstadoDeCuentaDeudorToolStripMenuItem"
+        Me.EstadoDeCuentaDeudorToolStripMenuItem.Size = New System.Drawing.Size(383, 34)
+        Me.EstadoDeCuentaDeudorToolStripMenuItem.Text = "Estado de Cuenta (Deudor)"
         '
         'Form1
         '
@@ -342,4 +349,5 @@ Partial Class Form1
     Friend WithEvents ApartadosNoPagadosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DevolucionesPorPeriodoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EstadoDeCuentaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EstadoDeCuentaDeudorToolStripMenuItem As ToolStripMenuItem
 End Class

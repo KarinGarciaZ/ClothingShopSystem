@@ -8,6 +8,12 @@ Public Class frmClientes
     Dim lector As SqlDataReader
 
     Private Sub frmClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cbCliente.Items.Clear()
+        txtDomicilio.Text = String.Empty
+        txtIdCliente.Text = String.Empty
+        txtTelefono.Text = String.Empty
+        txtSaldo.Text = String.Empty
+
         conexion.open()
         comando.CommandText = "SELECT nombre FROM Clientes WHERE idCliente <> 1"
         lector = comando.ExecuteReader()
@@ -63,7 +69,6 @@ Public Class frmClientes
 
         Reporte.Reportito.RefreshReport()
         Reporte.Show()
-        Close()
     End Sub
 
     Private Sub btnConsultaD_Click(sender As Object, e As EventArgs) Handles btnConsultaD.Click
@@ -92,7 +97,6 @@ Public Class frmClientes
 
         Reporte.Reportito.RefreshReport()
         Reporte.Show()
-        Close()
     End Sub
 
     Private Sub Tabla1()

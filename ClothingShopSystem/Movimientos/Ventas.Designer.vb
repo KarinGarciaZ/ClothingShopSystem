@@ -623,7 +623,7 @@ Partial Class Ventas
         'txtIdVenta
         '
         Me.txtIdVenta.Enabled = False
-        Me.txtIdVenta.Location = New System.Drawing.Point(83, 10)
+        Me.txtIdVenta.Location = New System.Drawing.Point(635, 6)
         Me.txtIdVenta.Name = "txtIdVenta"
         Me.txtIdVenta.Size = New System.Drawing.Size(145, 20)
         Me.txtIdVenta.TabIndex = 54
@@ -631,7 +631,7 @@ Partial Class Ventas
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(5, 37)
+        Me.Label7.Location = New System.Drawing.Point(5, 31)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(40, 13)
         Me.Label7.TabIndex = 53
@@ -650,7 +650,7 @@ Partial Class Ventas
         'dtpFecha
         '
         Me.dtpFecha.Enabled = False
-        Me.dtpFecha.Location = New System.Drawing.Point(83, 33)
+        Me.dtpFecha.Location = New System.Drawing.Point(83, 30)
         Me.dtpFecha.Name = "dtpFecha"
         Me.dtpFecha.Size = New System.Drawing.Size(148, 20)
         Me.dtpFecha.TabIndex = 52
@@ -669,7 +669,6 @@ Partial Class Ventas
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.dtpFecha)
-        Me.GroupBox1.Controls.Add(Me.txtIdVenta)
         Me.GroupBox1.Controls.Add(Me.dtpFechaVen)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label7)
@@ -687,6 +686,7 @@ Partial Class Ventas
         Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(811, 564)
         Me.Controls.Add(Me.lblImporte)
+        Me.Controls.Add(Me.txtIdVenta)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.txtDescuento)
         Me.Controls.Add(Me.btnGrabar)
