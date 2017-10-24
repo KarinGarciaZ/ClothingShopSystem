@@ -243,3 +243,4 @@ C:\Users\Andrea\Documents\TECNOLOGICO\7TO SEMESTRE\SISTEMAS INTEGRALES DE INFORM
 C:\Users\Andrea\Documents\TECNOLOGICO\7TO SEMESTRE\SISTEMAS INTEGRALES DE INFORMACION\25\ClothingShopSystem\obj\Debug\ClothingShopSystem.vbproj.GenerateResource.Cache
 C:\Users\Andrea\Documents\TECNOLOGICO\7TO SEMESTRE\SISTEMAS INTEGRALES DE INFORMACION\25\ClothingShopSystem\obj\Debug\RdlCompile.cache
 C:\Users\Andrea\Documents\TECNOLOGICO\7TO SEMESTRE\SISTEMAS INTEGRALES DE INFORMACION\25\ClothingShopSystem\obj\Debug\RdlCompile.compiled
+C:\Users\elektramovil\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.IngresosDiarios.resources

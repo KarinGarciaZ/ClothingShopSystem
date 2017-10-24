@@ -216,4 +216,8 @@ Public Class Form1
         frmClientes.btnConsultaD.Visible = True
         frmClientes.ShowDialog()
     End Sub
+
+    Private Sub IngresosDieriosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IngresosDieriosToolStripMenuItem.Click
+        IngresosDiarios.ShowDialog()
+    End Sub
 End Class

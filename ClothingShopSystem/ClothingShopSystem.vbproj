@@ -169,6 +169,12 @@
     <Compile Include="Reportes\frmReportes\frmClientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\frmReportes\IngresosDiarios.Designer.vb">
+      <DependentUpon>IngresosDiarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReportes\IngresosDiarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\frmReportes\ProductosVendidosPorPeriodo.Designer.vb">
       <DependentUpon>ProductosVendidosPorPeriodo.vb</DependentUpon>
     </Compile>
@@ -336,6 +342,10 @@
     <EmbeddedResource Include="Reportes\frmReportes\Fechas.resx">
       <DependentUpon>Fechas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReportes\IngresosDiarios.resx">
+      <DependentUpon>IngresosDiarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteIngresosDiarios.rdlc" />
     <EmbeddedResource Include="Reportes\frmReportes\VentasPorPeriodo.resx">
       <DependentUpon>VentasPorPeriodo.vb</DependentUpon>
     </EmbeddedResource>
