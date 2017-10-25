@@ -9,9 +9,9 @@ Public Class IngresosDiarios
         command.CommandText = "DELETE from auxIngresosDiarios"
         command.ExecuteNonQuery()
 
-        If DateTimePicker1.Value < DateTimePicker2.Value Then
+        If DateTimePicker1.Value <= DateTimePicker2.Value Then
             Dim x As Double = 0
-            While DateTimePicker1.Value.AddDays(x) < DateTimePicker2.Value
+            While DateTimePicker1.Value.AddDays(x) <= DateTimePicker2.Value
                 dg.Rows.Add(DateTimePicker1.Value.AddDays(x).ToString, 0, 0, 0, 0)
                 x += 1
             End While
