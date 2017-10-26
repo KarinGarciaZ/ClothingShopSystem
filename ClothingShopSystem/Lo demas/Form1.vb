@@ -217,7 +217,7 @@ Public Class Form1
         frmClientes.ShowDialog()
     End Sub
 
-    Private Sub IngresosDieriosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IngresosDieriosToolStripMenuItem.Click
+    Private Sub IngresosDiariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IngresosDiariosToolStripMenuItem.Click
         IngresosDiarios.ShowDialog()
     End Sub
 End Class

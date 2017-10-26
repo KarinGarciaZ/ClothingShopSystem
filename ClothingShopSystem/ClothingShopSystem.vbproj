@@ -336,6 +336,9 @@
     <EmbeddedResource Include="Lo demas\PrincipaUsuarios.resx">
       <DependentUpon>PrincipaUsuarios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReportes\frmClientes.resx">
+      <DependentUpon>frmClientes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmReportes\ComprasPorPeriodo.resx">
       <DependentUpon>ComprasPorPeriodo.vb</DependentUpon>
     </EmbeddedResource>
@@ -345,6 +348,8 @@
     <EmbeddedResource Include="Reportes\frmReportes\IngresosDiarios.resx">
       <DependentUpon>IngresosDiarios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteEstadoCuenta.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteEstadoCuentaDeudor.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteIngresosDiarios.rdlc" />
     <EmbeddedResource Include="Reportes\frmReportes\VentasPorPeriodo.resx">
       <DependentUpon>VentasPorPeriodo.vb</DependentUpon>
@@ -353,8 +358,6 @@
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteClientesDeudores.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteComprasPeriodo.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteDevolucion.rdlc" />
-    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteEstadoCuenta.rdlc" />
-    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteEstadoCuentaDeudor.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteNoApartados.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteProductos.rdlc" />
     <EmbeddedResource Include="Reportes\frmReportes\ProductosVendidosPorPeriodo.resx">

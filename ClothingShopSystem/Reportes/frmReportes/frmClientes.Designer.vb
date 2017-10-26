@@ -25,6 +25,7 @@ Partial Class frmClientes
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.cbCliente = New System.Windows.Forms.ComboBox()
         Me.txtSaldo = New System.Windows.Forms.TextBox()
+        Me.btnConsulta = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtDomicilio = New System.Windows.Forms.TextBox()
         Me.txtTelefono = New System.Windows.Forms.TextBox()
@@ -33,16 +34,12 @@ Partial Class frmClientes
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.btnConsulta = New System.Windows.Forms.Button()
         Me.btnConsultaD = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Condicion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2.SuspendLayout()
@@ -88,6 +85,16 @@ Partial Class frmClientes
         Me.txtSaldo.Name = "txtSaldo"
         Me.txtSaldo.Size = New System.Drawing.Size(81, 20)
         Me.txtSaldo.TabIndex = 25
+        '
+        'btnConsulta
+        '
+        Me.btnConsulta.Location = New System.Drawing.Point(180, 116)
+        Me.btnConsulta.Name = "btnConsulta"
+        Me.btnConsulta.Size = New System.Drawing.Size(75, 23)
+        Me.btnConsulta.TabIndex = 27
+        Me.btnConsulta.Text = "Consultar"
+        Me.btnConsulta.UseVisualStyleBackColor = True
+        Me.btnConsulta.Visible = False
         '
         'Label6
         '
@@ -158,26 +165,6 @@ Partial Class frmClientes
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Cliente:"
         '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(184, 27)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(84, 24)
-        Me.Label5.TabIndex = 26
-        Me.Label5.Text = "Reporte"
-        '
-        'btnConsulta
-        '
-        Me.btnConsulta.Location = New System.Drawing.Point(180, 116)
-        Me.btnConsulta.Name = "btnConsulta"
-        Me.btnConsulta.Size = New System.Drawing.Size(75, 23)
-        Me.btnConsulta.TabIndex = 27
-        Me.btnConsulta.Text = "Consultar"
-        Me.btnConsulta.UseVisualStyleBackColor = True
-        Me.btnConsulta.Visible = False
-        '
         'btnConsultaD
         '
         Me.btnConsultaD.Location = New System.Drawing.Point(180, 116)
@@ -188,11 +175,21 @@ Partial Class frmClientes
         Me.btnConsultaD.UseVisualStyleBackColor = True
         Me.btnConsultaD.Visible = False
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(184, 27)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(84, 24)
+        Me.Label5.TabIndex = 26
+        Me.Label5.Text = "Reporte"
+        '
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Condicion, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column6, Me.Column7})
         Me.DataGridView1.Location = New System.Drawing.Point(17, 73)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(420, 150)
@@ -202,11 +199,6 @@ Partial Class frmClientes
         '
         Me.Column1.HeaderText = "Tipo"
         Me.Column1.Name = "Column1"
-        '
-        'Condicion
-        '
-        Me.Condicion.HeaderText = "Condicion"
-        Me.Condicion.Name = "Condicion"
         '
         'Column2
         '
@@ -218,24 +210,14 @@ Partial Class frmClientes
         Me.Column3.HeaderText = "fechaTipo"
         Me.Column3.Name = "Column3"
         '
-        'Column4
-        '
-        Me.Column4.HeaderText = "idAbonos"
-        Me.Column4.Name = "Column4"
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "FechaAbono"
-        Me.Column5.Name = "Column5"
-        '
         'Column6
         '
-        Me.Column6.HeaderText = "ImporteAbono"
+        Me.Column6.HeaderText = "Cargos"
         Me.Column6.Name = "Column6"
         '
         'Column7
         '
-        Me.Column7.HeaderText = "TotalTipo"
+        Me.Column7.HeaderText = "Abono"
         Me.Column7.Name = "Column7"
         '
         'frmClientes
@@ -276,11 +258,8 @@ Partial Class frmClientes
     Friend WithEvents btnConsultaD As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Condicion As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
 End Class

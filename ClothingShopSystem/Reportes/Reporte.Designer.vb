@@ -27,6 +27,7 @@ Partial Class Reporte
         '
         'Reportito
         '
+        Me.Reportito.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Reportito.Location = New System.Drawing.Point(12, 12)
         Me.Reportito.Name = "Reportito"
         Me.Reportito.Size = New System.Drawing.Size(771, 395)

@@ -297,7 +297,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>1.21335cm</Top>
-        <Left>2.86632cm</Left>
+        <Left>1.71979cm</Left>
         <Height>1.2cm</Height>
         <Width>13.07042cm</Width>
         <Style>
@@ -310,28 +310,62 @@
         <ChartCategoryHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Group Name="ChartGroup" />
-              <Label />
+              <Group Name="Chart1_CategoryGroup">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!nombre.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!nombre.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <Label>=Fields!nombre.Value</Label>
             </ChartMember>
           </ChartMembers>
         </ChartCategoryHierarchy>
         <ChartSeriesHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Label />
+              <Label>cantidad</Label>
             </ChartMember>
           </ChartMembers>
         </ChartSeriesHierarchy>
         <ChartData>
           <ChartSeriesCollection>
-            <ChartSeries Name="EmptySeriesName">
+            <ChartSeries Name="cantidad">
               <ChartDataPoints>
                 <ChartDataPoint>
-                  <ChartDataPointValues />
+                  <ChartDataPointValues>
+                    <Y>=Sum(Fields!cantidad.Value)</Y>
+                  </ChartDataPointValues>
+                  <ChartDataLabel>
+                    <Style />
+                  </ChartDataLabel>
+                  <Style />
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <DataElementOutput>Output</DataElementOutput>
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
               <Style />
+              <ChartEmptyPoints>
+                <Style />
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+              </ChartEmptyPoints>
+              <ValueAxisName>Primary</ValueAxisName>
+              <CategoryAxisName>Primary</CategoryAxisName>
+              <ChartSmartLabel>
+                <CalloutLineColor>Black</CalloutLineColor>
+                <MinMovingDistance>0pt</MinMovingDistance>
+              </ChartSmartLabel>
             </ChartSeries>
           </ChartSeriesCollection>
         </ChartData>
@@ -535,8 +569,9 @@
             <VerticalAlign>Top</VerticalAlign>
           </Style>
         </ChartNoDataMessage>
+        <DataSetName>DataSet1</DataSetName>
         <Top>3.59516cm</Top>
-        <Left>0.65828cm</Left>
+        <Left>0.77437cm</Left>
         <Height>5cm</Height>
         <Width>14.96125cm</Width>
         <ZIndex>1</ZIndex>
@@ -565,7 +600,7 @@
         </Paragraphs>
         <rd:DefaultName>p1</rd:DefaultName>
         <Top>0.17639cm</Top>
-        <Left>5.5427cm</Left>
+        <Left>5.01353cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>2</ZIndex>
@@ -595,7 +630,7 @@
         </Paragraphs>
         <rd:DefaultName>p2</rd:DefaultName>
         <Top>0.17639cm</Top>
-        <Left>12.40106cm</Left>
+        <Left>11.87189cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>3</ZIndex>
@@ -625,7 +660,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
         <Top>0.17639cm</Top>
-        <Left>2.86632cm</Left>
+        <Left>2.33715cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>4</ZIndex>
@@ -655,7 +690,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
         <Top>0.17639cm</Top>
-        <Left>9.79523cm</Left>
+        <Left>9.26606cm</Left>
         <Height>0.6cm</Height>
         <Width>2.12958cm</Width>
         <ZIndex>5</ZIndex>
