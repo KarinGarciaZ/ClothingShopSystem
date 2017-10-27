@@ -736,7 +736,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Título del eje</Caption>
+                  <Caption>Productos</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -811,7 +811,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Título del eje</Caption>
+                  <Caption>Disponibles</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>

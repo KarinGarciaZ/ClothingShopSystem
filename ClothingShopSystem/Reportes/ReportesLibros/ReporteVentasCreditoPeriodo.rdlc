@@ -1084,7 +1084,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Título del eje</Caption>
+                  <Caption>Días</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -1159,7 +1159,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Título del eje</Caption>
+                  <Caption>Abonado</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>

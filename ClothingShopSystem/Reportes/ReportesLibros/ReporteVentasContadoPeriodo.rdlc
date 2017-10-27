@@ -612,7 +612,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Título del eje</Caption>
+                  <Caption>Días</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -687,7 +687,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Título del eje</Caption>
+                  <Caption>Venta</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -808,7 +808,7 @@
         <Top>3.5687cm</Top>
         <Left>0.99711cm</Left>
         <Height>5cm</Height>
-        <Width>17.68646cm</Width>
+        <Width>18.95646cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
