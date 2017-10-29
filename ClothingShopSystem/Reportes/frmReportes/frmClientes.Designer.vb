@@ -37,7 +37,9 @@ Partial Class frmClientes
         Me.btnConsultaD = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -60,7 +62,7 @@ Partial Class frmClientes
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.btnConsultaD)
-        Me.GroupBox2.Location = New System.Drawing.Point(8, 73)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 73)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(432, 157)
         Me.GroupBox2.TabIndex = 25
@@ -189,16 +191,26 @@ Partial Class frmClientes
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column6, Me.Column7})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column4, Me.Column1, Me.Column5, Me.Column2, Me.Column3, Me.Column6, Me.Column7})
         Me.DataGridView1.Location = New System.Drawing.Point(17, 73)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(420, 150)
         Me.DataGridView1.TabIndex = 29
         '
+        'Column4
+        '
+        Me.Column4.HeaderText = "id"
+        Me.Column4.Name = "Column4"
+        '
         'Column1
         '
         Me.Column1.HeaderText = "Tipo"
         Me.Column1.Name = "Column1"
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Tipo2"
+        Me.Column5.Name = "Column5"
         '
         'Column2
         '
@@ -257,7 +269,9 @@ Partial Class frmClientes
     Friend WithEvents btnConsulta As Button
     Friend WithEvents btnConsultaD As Button
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn

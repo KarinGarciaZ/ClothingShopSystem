@@ -77,7 +77,7 @@ Public Class frmClientes
 
         Adaptador.SelectCommand = New SqlCommand
         Adaptador.SelectCommand.Connection = conexion
-        Adaptador.SelectCommand.CommandText = "ReporteEstadoCuentaDeudor"
+        Adaptador.SelectCommand.CommandText = "ReporteEstadoCuentaDeudor2"
         Adaptador.SelectCommand.CommandType = CommandType.StoredProcedure
 
         Dim Data As New DataSet
@@ -154,52 +154,87 @@ Public Class frmClientes
     End Sub
 
     Private Sub Tabla2()
-        'apartados
-        comando.CommandText = "SELECT Apartados.idApartado, Apartados.fecha, Apartados.total FROM Clientes join Apartados on Apartados.idCliente = Clientes.idCliente WHERE Apartados.abono <> Apartados.total and clientes.idCliente = " & txtIdCliente.Text
-        lector = comando.ExecuteReader()
+        Dim ah As Integer = 0
+        comando.CommandText = "SELECT COUNT(*) FROM Apartados WHERE abono < total and idCliente = " & txtIdCliente.Text
+        ah = comando.ExecuteScalar() - 1
 
-        While lector.Read()
-            DataGridView1.Rows.Add("Apartados", lector(0), lector(1), lector(2), 0)
+        Dim arrLargo(ah) As Integer
+        Dim cont As Integer = 0
+        Dim id As Integer = 1
+
+        comando.CommandText = "SELECT idApartado FROM Apartados WHERE abono < total and idCliente = " & txtIdCliente.Text
+        lector = comando.ExecuteReader()
+        While lector.Read
+            arrLargo(cont) = lector(0)
+            cont = +1
         End While
         lector.Close()
 
-        'abonosApartados
-        comando.CommandText = "SELECT AbonosApartados.idAbonoA, AbonosApartados.fecha, AbonosApartados.pago FROM Clientes join Apartados on Apartados.idCliente = Clientes.idCliente join AbonosApartados on Apartados.idApartado = AbonosApartados.idApartado WHERE clientes.idCliente = " & txtIdCliente.Text & " and Apartados.total <> Apartados.abono"
-        lector = comando.ExecuteReader()
+        For x = 0 To ah
+            'primero 
+            comando.CommandText = "SELECT idApartado, fecha, total FROM Apartados WHERE idApartado = " & arrLargo(x)
+            lector = comando.ExecuteReader()
+            lector.Read()
+            DataGridView1.Rows.Add(id, "Apartado", "", lector(0), lector(1), lector(2), 0)
+            id += 1
+            lector.Close()
 
-        While lector.Read()
-            DataGridView1.Rows.Add("Apartados Abonos", lector(0), lector(1), 0, lector(2))
+            'abonosApartados
+            comando.CommandText = "SELECT idAbonoA, fecha, pago FROM AbonosApartados WHERE idApartado = " & arrLargo(x)
+            lector = comando.ExecuteReader()
+            While lector.Read()
+                DataGridView1.Rows.Add(id, "", "Abono Apartado", lector(0), lector(1), 0, lector(2))
+                id += 1
+            End While
+            lector.Close()
+        Next
+
+        ah = 0
+        comando.CommandText = "SELECT COUNT(*) FROM Ventas WHERE condicion = 'Credito' and abonado < subtotal + iva and idCliente = " & txtIdCliente.Text
+        ah = comando.ExecuteScalar() - 1
+
+        Dim arrLargo2(ah) As Integer
+        cont = 0
+
+        comando.CommandText = "SELECT idVenta FROM Ventas WHERE condicion = 'Credito' and abonado < subtotal + iva and idCliente = " & txtIdCliente.Text
+        lector = comando.ExecuteReader()
+        While lector.Read
+            arrLargo2(cont) = lector(0)
+            cont = +1
         End While
         lector.Close()
 
-        'ventas
-        comando.CommandText = "SELECT idVenta, fecha, (subtotal + iva) - descuento as TotalVenta FROM Ventas WHERE estado <> 1 and abonado <> (subtotal + iva) - descuento  and idCliente = " & txtIdCliente.Text
+        For x = 0 To ah
+            'primero 
+            comando.CommandText = "SELECT idVenta, fecha, subtotal + iva FROM Ventas WHERE idVenta = " & arrLargo2(x)
+            lector = comando.ExecuteReader()
+            lector.Read()
+            DataGridView1.Rows.Add(id, "Venta", "", lector(0), lector(1), lector(2), 0)
+            id += 1
+            lector.Close()
 
-        lector = comando.ExecuteReader()
+            'abonosApartados
+            comando.CommandText = "SELECT idAbonoC, fecha, importe FROM AbonosCreditos WHERE idVenta = " & arrLargo2(x)
+            lector = comando.ExecuteReader()
+            While lector.Read()
+                DataGridView1.Rows.Add(id, "", "Abono Venta", lector(0), lector(1), 0, lector(2))
+                id += 1
+            End While
+            lector.Close()
+        Next
 
-        While lector.Read()
-            DataGridView1.Rows.Add("Ventas", lector(0), lector(1), lector(2), 0)
-        End While
-        lector.Close()
 
-        'ventas
-        comando.CommandText = "SELECT AbonosCreditos.idAbonoC, AbonosCreditos.fecha, AbonosCreditos.importe FROM AbonosCreditos join Ventas on Ventas.idVenta = AbonosCreditos.idVenta join Clientes on Clientes.idCliente = Ventas.idCliente WHERE Ventas.estado <> 1 and Ventas.abonado <> (ventas.subtotal + ventas.iva) - ventas.descuento  and ventas.idCliente = " & txtIdCliente.Text
-
-        lector = comando.ExecuteReader()
-
-        While lector.Read()
-            DataGridView1.Rows.Add("Ventas Abono", lector(0), lector(1), 0, lector(2))
-        End While
-        lector.Close()
 
         For x = 0 To DataGridView1.RowCount - 1
-            Dim tipo As String = DataGridView1.Item(0, x).Value
-            Dim idTipo As Integer = DataGridView1.Item(1, x).Value
-            Dim fecha As Date = DataGridView1.Item(2, x).Value
-            Dim cargo As Double = DataGridView1.Item(3, x).Value
-            Dim abono As Double = DataGridView1.Item(4, x).Value
+            Dim id2 As Integer = DataGridView1.Item(0, x).Value
+            Dim tipo As String = DataGridView1.Item(1, x).Value
+            Dim tipo2 As String = DataGridView1.Item(2, x).Value
+            Dim idTipo As Integer = DataGridView1.Item(3, x).Value
+            Dim fecha As Date = DataGridView1.Item(4, x).Value
+            Dim cargo As Double = DataGridView1.Item(5, x).Value
+            Dim abono As Double = DataGridView1.Item(6, x).Value
 
-            comando.CommandText = "INSERT INTO auxEstadoCuenta VALUES ('" & tipo & "'," & idTipo & ", '" & fecha &
+            comando.CommandText = "INSERT INTO auxEstadoCuenta VALUES (" & id2 & ",'" & tipo & "','" & tipo2 & "'," & idTipo & ", '" & fecha &
                 "'," & cargo & "," & abono & ")"
             comando.ExecuteNonQuery()
 

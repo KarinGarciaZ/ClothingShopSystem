@@ -595,6 +595,9 @@
                   <Style />
                 </ChartDataLabel>
               </ChartEmptyPoints>
+              <ChartItemInLegend>
+                <LegendText>Total de Venta</LegendText>
+              </ChartItemInLegend>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
               <ChartSmartLabel>
@@ -687,7 +690,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Venta</Caption>
+                  <Caption>Venta $</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>

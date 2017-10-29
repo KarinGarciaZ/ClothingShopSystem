@@ -243,6 +243,7 @@ Public Class Ventas
                     If ban Then
                         command.CommandText = "INSERT INTO Ventas VALUES (" & txtIdVenta.Text & "," & txtIdCliente.Text & ",'" & dtpFecha.Value.Date & "','" & dtpFechaVen.Value.Date & "','Credito'," & lblSubtotal.Text & "," & lblIVA.Text & "," & txtDescuento.Text & ",0,0)"
                         command.ExecuteNonQuery()
+
                         command.CommandText = "UPDATE Clientes SET Saldo += " & lblTotal.Text & " WHERE idCliente = " & txtIdCliente.Text
                         command.ExecuteNonQuery()
 

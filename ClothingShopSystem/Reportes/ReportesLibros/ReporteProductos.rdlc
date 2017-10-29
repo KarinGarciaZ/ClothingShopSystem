@@ -719,6 +719,9 @@
                   <Style />
                 </ChartDataLabel>
               </ChartEmptyPoints>
+              <ChartItemInLegend>
+                <LegendText>Disponibles</LegendText>
+              </ChartItemInLegend>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
               <ChartSmartLabel>
