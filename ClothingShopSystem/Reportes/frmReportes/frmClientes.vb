@@ -61,11 +61,12 @@ Public Class frmClientes
         Datasource.Name = "DataSet1"
         Datasource.Value = Data.Tables(0)
         Dim p1 As New ReportParameter("nombre", cbCliente.Text)
+        Dim p2 As New ReportParameter("tipo", "Reporte Estado de Cuenta.")
 
         Reporte.Reportito.LocalReport.DataSources.Clear()
         Reporte.Reportito.LocalReport.DataSources.Add(Datasource)
         Reporte.Reportito.LocalReport.ReportPath = obtenerRutaReportes() & "\ReporteEstadoCuentaDeudor.rdlc"
-        Reporte.Reportito.LocalReport.SetParameters(New ReportParameter() {p1})
+        Reporte.Reportito.LocalReport.SetParameters(New ReportParameter() {p1, p2})
 
         Reporte.Reportito.RefreshReport()
         Reporte.Show()
@@ -89,11 +90,12 @@ Public Class frmClientes
         Datasource.Name = "DataSet1"
         Datasource.Value = Data.Tables(0)
         Dim p1 As New ReportParameter("nombre", cbCliente.Text)
+        Dim p2 As New ReportParameter("tipo", "Reporte Estado de Cuenta Deudor.")
 
         Reporte.Reportito.LocalReport.DataSources.Clear()
         Reporte.Reportito.LocalReport.DataSources.Add(Datasource)
         Reporte.Reportito.LocalReport.ReportPath = obtenerRutaReportes() & "\ReporteEstadoCuentaDeudor.rdlc"
-        Reporte.Reportito.LocalReport.SetParameters(New ReportParameter() {p1})
+        Reporte.Reportito.LocalReport.SetParameters(New ReportParameter() {p1, p2})
 
         Reporte.Reportito.RefreshReport()
         Reporte.Show()
