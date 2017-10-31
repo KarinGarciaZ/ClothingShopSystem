@@ -14,7 +14,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>1.04979cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -104,6 +104,7 @@
                               <Style>
                                 <FontFamily>Verdana</FontFamily>
                                 <FontSize>9pt</FontSize>
+                                <Format>'$'#,0.00;('$'#,0.00)</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -121,6 +122,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-MX</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -138,6 +140,7 @@
                               <Style>
                                 <FontFamily>Verdana</FontFamily>
                                 <FontSize>9pt</FontSize>
+                                <Format>'$'#,0.00;('$'#,0.00)</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -155,6 +158,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-MX</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -178,6 +182,7 @@
                                 <FontFamily>Verdana</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>'$'#,0.00;('$'#,0.00)</Format>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -196,6 +201,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-MX</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -214,6 +220,7 @@
                                 <FontFamily>Verdana</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>'$'#,0.00;('$'#,0.00)</Format>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -232,6 +239,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-MX</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -288,7 +296,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>2.76458cm</Size>
+                    <Size>2.36771cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox11">
                         <CanGrow>true</CanGrow>
@@ -364,7 +372,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>3.08208cm</Size>
+                            <Size>1.79374cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox7">
                                 <CanGrow>true</CanGrow>
@@ -373,7 +381,7 @@
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>ID Movimiento</Value>
+                                        <Value>IdMovi-miento</Value>
                                         <Style>
                                           <FontFamily>Verdana</FontFamily>
                                           <FontWeight>Bold</FontWeight>
@@ -402,7 +410,7 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>2.5cm</Size>
+                                <Size>2.89687cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox5">
                                     <CanGrow>true</CanGrow>
@@ -510,7 +518,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>2.76458cm</Size>
+                    <Size>2.36771cm</Size>
                     <CellContents>
                       <Textbox Name="tipo1">
                         <CanGrow>true</CanGrow>
@@ -608,7 +616,7 @@
                             </SortExpression>
                           </SortExpressions>
                           <TablixHeader>
-                            <Size>3.08208cm</Size>
+                            <Size>1.79374cm</Size>
                             <CellContents>
                               <Textbox Name="idTipo">
                                 <CanGrow>true</CanGrow>
@@ -626,7 +634,9 @@
                                         </Style>
                                       </TextRun>
                                     </TextRuns>
-                                    <Style />
+                                    <Style>
+                                      <TextAlign>Center</TextAlign>
+                                    </Style>
                                   </Paragraph>
                                 </Paragraphs>
                                 <rd:DefaultName>idTipo</rd:DefaultName>
@@ -657,7 +667,7 @@
                                 </SortExpression>
                               </SortExpressions>
                               <TablixHeader>
-                                <Size>2.5cm</Size>
+                                <Size>2.89687cm</Size>
                                 <CellContents>
                                   <Textbox Name="fecha">
                                     <CanGrow>true</CanGrow>
@@ -671,6 +681,7 @@
                                               <FontFamily>Verdana</FontFamily>
                                               <FontSize>9pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
+                                              <Format>dd/MMM/yyyy</Format>
                                               <Color>#4e0000</Color>
                                             </Style>
                                           </TextRun>
@@ -746,7 +757,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>2.76458cm</Size>
+                    <Size>2.36771cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox16">
                         <CanGrow>true</CanGrow>
@@ -755,7 +766,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value />
+                                <Value>Total</Value>
                                 <Style>
                                   <FontFamily>Verdana</FontFamily>
                                   <FontSize>9pt</FontSize>
@@ -824,7 +835,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>3.08208cm</Size>
+                            <Size>1.79374cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox18">
                                 <CanGrow>true</CanGrow>
@@ -863,7 +874,7 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>2.5cm</Size>
+                                <Size>2.89687cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox19">
                                     <CanGrow>true</CanGrow>
@@ -913,9 +924,9 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>0.55562cm</Top>
-        <Left>0.7236cm</Left>
-        <Height>1.8cm</Height>
-        <Width>15.92604cm</Width>
+        <Left>1.98006cm</Left>
+        <Height>2.24979cm</Height>
+        <Width>14.6377cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -926,7 +937,7 @@
     <Height>1.51813in</Height>
     <Style />
   </Body>
-  <Width>6.83428in</Width>
+  <Width>7.04965in</Width>
   <Page>
     <PageHeader>
       <Height>2.83366cm</Height>
@@ -948,8 +959,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>nombre</rd:DefaultName>
-          <Top>2.05727cm</Top>
-          <Left>8.04333cm</Left>
+          <Top>2.09255cm</Top>
+          <Left>8.91646cm</Left>
           <Height>0.6cm</Height>
           <Width>5.2013cm</Width>
           <Style>
@@ -977,8 +988,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox46</rd:DefaultName>
-          <Top>2.05727cm</Top>
-          <Left>4.32052cm</Left>
+          <Top>2.09255cm</Top>
+          <Left>5.19365cm</Left>
           <Height>0.6cm</Height>
           <Width>3.10854cm</Width>
           <ZIndex>1</ZIndex>
@@ -997,7 +1008,7 @@
           <Value>logo</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.07056cm</Top>
-          <Left>0.45292cm</Left>
+          <Left>1.37896cm</Left>
           <Height>2.72783cm</Height>
           <Width>3.50291cm</Width>
           <ZIndex>2</ZIndex>
@@ -1022,8 +1033,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox4</rd:DefaultName>
-          <Top>0.73436cm</Top>
-          <Left>12.9061cm</Left>
+          <Top>0.76964cm</Top>
+          <Left>13.77923cm</Left>
           <Height>0.6cm</Height>
           <Width>3.74354cm</Width>
           <ZIndex>3</ZIndex>
@@ -1052,8 +1063,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>tipo</rd:DefaultName>
-          <Top>0.73436cm</Top>
-          <Left>5.19365cm</Left>
+          <Top>0.76964cm</Top>
+          <Left>6.06678cm</Left>
           <Height>0.6cm</Height>
           <Width>7.32912cm</Width>
           <ZIndex>4</ZIndex>
