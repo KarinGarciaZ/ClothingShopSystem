@@ -34,12 +34,17 @@ Public Class Ventas
         command.CommandText = "SELECT COUNT(*) FROM Ventas"
         txtIdVenta.Text = command.ExecuteScalar + 1
 
+        txtBuscarCodigoBarras.Enabled = True
+        txtBuscarIdProducto.Enabled = True
+        txtPrecio.Enabled = True
+
         btnGrabar.Enabled = True
         btnNuevo.Enabled = False
         dtpFecha.Text = Now.Date
         rbCredito.Enabled = True
         rbEfectivo.Enabled = True
         cbProducto.Enabled = True
+        cbCliente.Enabled = True
         dtpFecha.Enabled = True
         'txtCodigoBarras.Enabled = True
         llenarClientes()
@@ -49,7 +54,6 @@ Public Class Ventas
     End Sub
 
     Private Sub rbCredito_CheckedChanged(sender As Object, e As EventArgs) Handles rbCredito.CheckedChanged
-        cbCliente.Enabled = True
         dtpFechaVen.Visible = True
         lblVen.Visible = True
     End Sub
@@ -74,9 +78,10 @@ Public Class Ventas
         lector.Read()
 
         txtIdProducto.Text = lector(0)
-        txtCodigoBarras.Text = lector(1).ToString
+        txtCB.Text = lector(1).ToString
         txtExistencia.Text = (lector(2) - lector(3)).ToString
         txtPrecio.Text = lector(4)
+        txtNombreProducto.Text = cbProducto.Text
         lector.Close()
         cbTipoPrecio.Text = "Precio1"
         cbTipoPrecio.Enabled = True
@@ -112,7 +117,7 @@ Public Class Ventas
                 Next
 
                 If ban = False Then
-                    dgAgregar.Rows.Add(id, cbProducto.Text, txtCodigoBarras.Text, cantidad, precio, cantidad * precio)
+                    dgAgregar.Rows.Add(id, cbProducto.Text, txtCB.Text, cantidad, precio, cantidad * precio)
                 Else
                     Dim suma As Integer = dgAgregar.Item(3, y).Value + cantidad
                     If suma > existencia Then
@@ -142,14 +147,13 @@ Public Class Ventas
 
             cbProducto.Items.Clear()
             cbProducto.Text = ""
-            txtIdProducto.Text = ""
-            txtCodigoBarras.Text = ""
+            txtBuscarIdProducto.Text = ""
+            txtCB.Text = ""
             txtPrecio.Text = ""
             txtExistencia.Text = ""
             txtCantidad.Text = ""
             cbTipoPrecio.Enabled = False
             txtExistencia.Enabled = False
-            txtPrecio.Enabled = False
             txtCantidad.Enabled = False
             llenarProductos()
         End If
@@ -172,7 +176,6 @@ Public Class Ventas
     End Sub
 
     Private Sub rbEfectivo_CheckedChanged(sender As Object, e As EventArgs) Handles rbEfectivo.CheckedChanged
-        cbCliente.Enabled = True
         lblVen.Visible = False
         dtpFechaVen.Visible = False
     End Sub
@@ -302,6 +305,10 @@ Public Class Ventas
             lblTotal.Text = "0.0"
             cbCliente.Text = ""
             txtSaldo.Text = ""
+            txtPrecio.Enabled = False
+            txtBuscarIdProducto.Enabled = False
+            txtBuscarCodigoBarras.Enabled = False
+            cbCliente.Enabled = False
             rbEfectivo.Enabled = False
             rbCredito.Enabled = False
             rbEfectivo.Checked = True
@@ -326,8 +333,8 @@ Public Class Ventas
         txtTelefono.Text = ""
         txtIdCliente.Text = ""
         txtSaldo.Text = ""
-        txtIdProducto.Text = ""
-        txtCodigoBarras.Text = ""
+        txtBuscarIdProducto.Text = ""
+        txtCB.Text = ""
         txtPrecio.Text = ""
         txtExistencia.Text = ""
         txtCantidad.Text = ""
@@ -379,4 +386,59 @@ Public Class Ventas
         dtpFechaVen.Value = Now.AddDays(30)
     End Sub
 
+    Private Sub txtBuscarCodigoBarras_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBuscarCodigoBarras.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            command.CommandText = "SELECT idProducto, nombre, existencia, apartados, precio1 FROM Productos WHERE codigoBarras = " & txtBuscarCodigoBarras.Text
+            lector = command.ExecuteReader
+            If lector.Read() Then
+                txtIdProducto.Text = lector(0)
+                txtNombreProducto.Text = lector(1).ToString
+                txtExistencia.Text = (lector(2) - lector(3)).ToString
+                txtPrecio.Text = lector(4)
+                txtCB.Text = txtBuscarCodigoBarras.Text
+                lector.Close()
+                cbTipoPrecio.Text = "Precio1"
+                cbTipoPrecio.Enabled = True
+                txtCantidad.Enabled = True
+                txtBuscarCodigoBarras.Text = ""
+            End If
+            lector.Close()
+        End If
+    End Sub
+
+    Private Sub txtBuscarIdProducto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBuscarIdProducto.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            command.CommandText = "SELECT codigoBarras, nombre, existencia, apartados, precio1 FROM Productos WHERE idProducto = " & txtBuscarIdProducto.Text
+            lector = command.ExecuteReader
+            If lector.Read() Then
+                txtCB.Text = lector(0)
+                txtNombreProducto.Text = lector(1).ToString
+                txtExistencia.Text = (lector(2) - lector(3)).ToString
+                txtPrecio.Text = lector(4)
+                txtIdProducto.Text = txtBuscarIdProducto.Text
+                lector.Close()
+                cbTipoPrecio.Text = "Precio1"
+                cbTipoPrecio.Enabled = True
+                txtCantidad.Enabled = True
+                txtBuscarIdProducto.Text = ""
+            End If
+            lector.Close()
+        End If
+    End Sub
 End Class

@@ -140,4 +140,5 @@ Public Class ConsultaProductos
         End While
         lector.Close()
     End Sub
+
 End Class

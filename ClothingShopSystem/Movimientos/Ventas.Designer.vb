@@ -22,8 +22,8 @@ Partial Class Ventas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.gbCondicion = New System.Windows.Forms.GroupBox()
         Me.rbCredito = New System.Windows.Forms.RadioButton()
         Me.rbEfectivo = New System.Windows.Forms.RadioButton()
@@ -42,6 +42,12 @@ Partial Class Ventas
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.txtNombreProducto = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.txtIdProducto = New System.Windows.Forms.TextBox()
+        Me.txtCB = New System.Windows.Forms.TextBox()
+        Me.Label23 = New System.Windows.Forms.Label()
         Me.txtCantidad = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
@@ -54,8 +60,8 @@ Partial Class Ventas
         Me.cbProducto = New System.Windows.Forms.ComboBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.txtIdProducto = New System.Windows.Forms.TextBox()
-        Me.txtCodigoBarras = New System.Windows.Forms.TextBox()
+        Me.txtBuscarIdProducto = New System.Windows.Forms.TextBox()
+        Me.txtBuscarCodigoBarras = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.dgAgregar = New System.Windows.Forms.DataGridView()
@@ -259,18 +265,24 @@ Partial Class Ventas
         Me.GroupBox3.Controls.Add(Me.cbProducto)
         Me.GroupBox3.Controls.Add(Me.Label18)
         Me.GroupBox3.Controls.Add(Me.Label17)
-        Me.GroupBox3.Controls.Add(Me.txtIdProducto)
-        Me.GroupBox3.Controls.Add(Me.txtCodigoBarras)
+        Me.GroupBox3.Controls.Add(Me.txtBuscarIdProducto)
+        Me.GroupBox3.Controls.Add(Me.txtBuscarCodigoBarras)
         Me.GroupBox3.Controls.Add(Me.Label16)
         Me.GroupBox3.Controls.Add(Me.Label8)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 98)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 97)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(787, 144)
+        Me.GroupBox3.Size = New System.Drawing.Size(794, 150)
         Me.GroupBox3.TabIndex = 38
         Me.GroupBox3.TabStop = False
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.txtNombreProducto)
+        Me.GroupBox4.Controls.Add(Me.Label20)
+        Me.GroupBox4.Controls.Add(Me.Label22)
+        Me.GroupBox4.Controls.Add(Me.txtIdProducto)
+        Me.GroupBox4.Controls.Add(Me.txtCB)
+        Me.GroupBox4.Controls.Add(Me.Label23)
         Me.GroupBox4.Controls.Add(Me.txtCantidad)
         Me.GroupBox4.Controls.Add(Me.Label9)
         Me.GroupBox4.Controls.Add(Me.txtPrecio)
@@ -280,16 +292,70 @@ Partial Class Ventas
         Me.GroupBox4.Controls.Add(Me.txtExistencia)
         Me.GroupBox4.Controls.Add(Me.Label21)
         Me.GroupBox4.Controls.Add(Me.btnAgregar)
-        Me.GroupBox4.Location = New System.Drawing.Point(4, 78)
+        Me.GroupBox4.Location = New System.Drawing.Point(5, 42)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(783, 62)
+        Me.GroupBox4.Size = New System.Drawing.Size(783, 102)
         Me.GroupBox4.TabIndex = 40
         Me.GroupBox4.TabStop = False
+        '
+        'txtNombreProducto
+        '
+        Me.txtNombreProducto.Enabled = False
+        Me.txtNombreProducto.Location = New System.Drawing.Point(245, 16)
+        Me.txtNombreProducto.Name = "txtNombreProducto"
+        Me.txtNombreProducto.Size = New System.Drawing.Size(234, 20)
+        Me.txtNombreProducto.TabIndex = 47
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(491, 19)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(103, 13)
+        Me.Label20.TabIndex = 46
+        Me.Label20.Text = "Código de barras"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(30, 19)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(20, 13)
+        Me.Label22.TabIndex = 45
+        Me.Label22.Text = "ID"
+        '
+        'txtIdProducto
+        '
+        Me.txtIdProducto.Enabled = False
+        Me.txtIdProducto.Location = New System.Drawing.Point(60, 16)
+        Me.txtIdProducto.Name = "txtIdProducto"
+        Me.txtIdProducto.Size = New System.Drawing.Size(90, 20)
+        Me.txtIdProducto.TabIndex = 44
+        '
+        'txtCB
+        '
+        Me.txtCB.Enabled = False
+        Me.txtCB.Location = New System.Drawing.Point(600, 16)
+        Me.txtCB.Name = "txtCB"
+        Me.txtCB.Size = New System.Drawing.Size(153, 20)
+        Me.txtCB.TabIndex = 43
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.Location = New System.Drawing.Point(193, 19)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(50, 13)
+        Me.Label23.TabIndex = 42
+        Me.Label23.Text = "Nombre"
         '
         'txtCantidad
         '
         Me.txtCantidad.Enabled = False
-        Me.txtCantidad.Location = New System.Drawing.Point(417, 32)
+        Me.txtCantidad.Location = New System.Drawing.Point(418, 72)
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(100, 20)
         Me.txtCantidad.TabIndex = 40
@@ -298,7 +364,7 @@ Partial Class Ventas
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(440, 16)
+        Me.Label9.Location = New System.Drawing.Point(441, 56)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(61, 13)
         Me.Label9.TabIndex = 41
@@ -307,7 +373,7 @@ Partial Class Ventas
         'txtPrecio
         '
         Me.txtPrecio.Enabled = False
-        Me.txtPrecio.Location = New System.Drawing.Point(178, 32)
+        Me.txtPrecio.Location = New System.Drawing.Point(179, 72)
         Me.txtPrecio.Name = "txtPrecio"
         Me.txtPrecio.Size = New System.Drawing.Size(100, 20)
         Me.txtPrecio.TabIndex = 38
@@ -316,7 +382,7 @@ Partial Class Ventas
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(206, 16)
+        Me.Label14.Location = New System.Drawing.Point(207, 56)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(47, 13)
         Me.Label14.TabIndex = 39
@@ -326,7 +392,7 @@ Partial Class Ventas
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(48, 16)
+        Me.Label13.Location = New System.Drawing.Point(49, 56)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(76, 13)
         Me.Label13.TabIndex = 37
@@ -338,7 +404,7 @@ Partial Class Ventas
         Me.cbTipoPrecio.Enabled = False
         Me.cbTipoPrecio.FormattingEnabled = True
         Me.cbTipoPrecio.Items.AddRange(New Object() {"Precio1", "Precio2", "Precio3"})
-        Me.cbTipoPrecio.Location = New System.Drawing.Point(24, 32)
+        Me.cbTipoPrecio.Location = New System.Drawing.Point(25, 72)
         Me.cbTipoPrecio.Name = "cbTipoPrecio"
         Me.cbTipoPrecio.Size = New System.Drawing.Size(123, 21)
         Me.cbTipoPrecio.TabIndex = 26
@@ -346,7 +412,7 @@ Partial Class Ventas
         'txtExistencia
         '
         Me.txtExistencia.Enabled = False
-        Me.txtExistencia.Location = New System.Drawing.Point(296, 32)
+        Me.txtExistencia.Location = New System.Drawing.Point(297, 72)
         Me.txtExistencia.Name = "txtExistencia"
         Me.txtExistencia.Size = New System.Drawing.Size(104, 20)
         Me.txtExistencia.TabIndex = 36
@@ -355,7 +421,7 @@ Partial Class Ventas
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(319, 16)
+        Me.Label21.Location = New System.Drawing.Point(320, 56)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(69, 13)
         Me.Label21.TabIndex = 35
@@ -367,7 +433,7 @@ Partial Class Ventas
         Me.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnAgregar.Enabled = False
         Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregar.Location = New System.Drawing.Point(544, 13)
+        Me.btnAgregar.Location = New System.Drawing.Point(545, 53)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(193, 43)
         Me.btnAgregar.TabIndex = 5
@@ -380,7 +446,7 @@ Partial Class Ventas
         Me.cbProducto.DisplayMember = "idGrupo"
         Me.cbProducto.Enabled = False
         Me.cbProducto.FormattingEnabled = True
-        Me.cbProducto.Location = New System.Drawing.Point(246, 28)
+        Me.cbProducto.Location = New System.Drawing.Point(245, 12)
         Me.cbProducto.Name = "cbProducto"
         Me.cbProducto.Size = New System.Drawing.Size(234, 21)
         Me.cbProducto.TabIndex = 39
@@ -390,7 +456,7 @@ Partial Class Ventas
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(486, 31)
+        Me.Label18.Location = New System.Drawing.Point(502, 15)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(103, 13)
         Me.Label18.TabIndex = 31
@@ -400,33 +466,33 @@ Partial Class Ventas
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(25, 31)
+        Me.Label17.Location = New System.Drawing.Point(25, 15)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(20, 13)
         Me.Label17.TabIndex = 30
         Me.Label17.Text = "ID"
         '
-        'txtIdProducto
+        'txtBuscarIdProducto
         '
-        Me.txtIdProducto.Enabled = False
-        Me.txtIdProducto.Location = New System.Drawing.Point(55, 28)
-        Me.txtIdProducto.Name = "txtIdProducto"
-        Me.txtIdProducto.Size = New System.Drawing.Size(90, 20)
-        Me.txtIdProducto.TabIndex = 27
+        Me.txtBuscarIdProducto.Enabled = False
+        Me.txtBuscarIdProducto.Location = New System.Drawing.Point(55, 12)
+        Me.txtBuscarIdProducto.Name = "txtBuscarIdProducto"
+        Me.txtBuscarIdProducto.Size = New System.Drawing.Size(90, 20)
+        Me.txtBuscarIdProducto.TabIndex = 27
         '
-        'txtCodigoBarras
+        'txtBuscarCodigoBarras
         '
-        Me.txtCodigoBarras.Enabled = False
-        Me.txtCodigoBarras.Location = New System.Drawing.Point(595, 28)
-        Me.txtCodigoBarras.Name = "txtCodigoBarras"
-        Me.txtCodigoBarras.Size = New System.Drawing.Size(153, 20)
-        Me.txtCodigoBarras.TabIndex = 26
+        Me.txtBuscarCodigoBarras.Enabled = False
+        Me.txtBuscarCodigoBarras.Location = New System.Drawing.Point(611, 12)
+        Me.txtBuscarCodigoBarras.Name = "txtBuscarCodigoBarras"
+        Me.txtBuscarCodigoBarras.Size = New System.Drawing.Size(153, 20)
+        Me.txtBuscarCodigoBarras.TabIndex = 26
         '
         'Label16
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(188, 31)
+        Me.Label16.Location = New System.Drawing.Point(187, 15)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(50, 13)
         Me.Label16.TabIndex = 23
@@ -449,7 +515,7 @@ Partial Class Ventas
         Me.dgAgregar.BackgroundColor = System.Drawing.SystemColors.ButtonFace
         Me.dgAgregar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgAgregar.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.Codigo, Me.Column5, Me.DataGridViewTextBoxColumn4, Me.Column6})
-        Me.dgAgregar.Location = New System.Drawing.Point(27, 248)
+        Me.dgAgregar.Location = New System.Drawing.Point(22, 253)
         Me.dgAgregar.Name = "dgAgregar"
         Me.dgAgregar.ReadOnly = True
         Me.dgAgregar.Size = New System.Drawing.Size(757, 210)
@@ -484,9 +550,9 @@ Partial Class Ventas
         '
         'DataGridViewTextBoxColumn4
         '
-        DataGridViewCellStyle1.Format = "C2"
-        DataGridViewCellStyle1.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Format = "C2"
+        DataGridViewCellStyle5.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridViewTextBoxColumn4.HeaderText = "Precio"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         Me.DataGridViewTextBoxColumn4.ReadOnly = True
@@ -494,9 +560,9 @@ Partial Class Ventas
         '
         'Column6
         '
-        DataGridViewCellStyle2.Format = "C2"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.Column6.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Format = "C2"
+        DataGridViewCellStyle6.NullValue = Nothing
+        Me.Column6.DefaultCellStyle = DataGridViewCellStyle6
         Me.Column6.HeaderText = "Importe"
         Me.Column6.Name = "Column6"
         Me.Column6.ReadOnly = True
@@ -743,8 +809,8 @@ Partial Class Ventas
     Friend WithEvents cbProducto As ComboBox
     Friend WithEvents Label18 As Label
     Friend WithEvents Label17 As Label
-    Friend WithEvents txtIdProducto As TextBox
-    Friend WithEvents txtCodigoBarras As TextBox
+    Friend WithEvents txtBuscarIdProducto As TextBox
+    Friend WithEvents txtBuscarCodigoBarras As TextBox
     Friend WithEvents Label16 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents dgAgregar As DataGridView
@@ -781,4 +847,10 @@ Partial Class Ventas
     Friend WithEvents txtLimite As TextBox
     Friend WithEvents lblImporte As Label
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents txtNombreProducto As TextBox
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label22 As Label
+    Friend WithEvents txtIdProducto As TextBox
+    Friend WithEvents txtCB As TextBox
+    Friend WithEvents Label23 As Label
 End Class
