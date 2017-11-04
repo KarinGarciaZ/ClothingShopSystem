@@ -262,6 +262,7 @@ Public Class Form1
     End Sub
 
     Private Sub RestaurarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RestaurarToolStripMenuItem.Click
+        SqlConnection.ClearAllPools()
         Dim res As DialogResult
         res = OpenFileDialog1.ShowDialog()
         If res = DialogResult.OK Then
@@ -270,11 +271,14 @@ Public Class Form1
             Conexion.Open()
             Dim command As New SqlCommand
             command.Connection = Conexion
-            command.CommandText = ""
+            command.CommandText = "use master restore database dboClothingShopSystem FROM disk = '" & path & "' WITH REPLACE"
+            command.ExecuteNonQuery()
+            Conexion.Close()
         End If
     End Sub
 
     Private Sub RespaldarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RespaldarToolStripMenuItem.Click
+        SqlConnection.ClearAllPools()
         Dim res As DialogResult
         SaveFileDialog1.FileName = ".bak"
         res = SaveFileDialog1.ShowDialog()
@@ -284,8 +288,9 @@ Public Class Form1
             Conexion.Open()
             Dim command As New SqlCommand
             command.Connection = Conexion
-            command.CommandText = "backup Database dboClothingShopSystem to disk = ' " & path & " ' with format "
+            command.CommandText = "backup Database dboClothingShopSystem to disk = '" & path & "' with format "
             command.ExecuteNonQuery()
+            Conexion.Close()
         End If
     End Sub
 
