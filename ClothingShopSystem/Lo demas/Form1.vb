@@ -262,10 +262,31 @@ Public Class Form1
     End Sub
 
     Private Sub RestaurarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RestaurarToolStripMenuItem.Click
-        SaveFileDialog1.ShowDialog()
+        Dim res As DialogResult
+        res = OpenFileDialog1.ShowDialog()
+        If res = DialogResult.OK Then
+            Dim path As String = OpenFileDialog1.FileName
+            Conexion = openConnection()
+            Conexion.Open()
+            Dim command As New SqlCommand
+            command.Connection = Conexion
+            command.CommandText = ""
+        End If
     End Sub
 
     Private Sub RespaldarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RespaldarToolStripMenuItem.Click
-        OpenFileDialog1.ShowDialog()
+        Dim res As DialogResult
+        SaveFileDialog1.FileName = ".bak"
+        res = SaveFileDialog1.ShowDialog()
+        If res = DialogResult.OK Then
+            Dim path As String = SaveFileDialog1.FileName
+            Conexion = openConnection()
+            Conexion.Open()
+            Dim command As New SqlCommand
+            command.Connection = Conexion
+            command.CommandText = "backup Database dboClothingShopSystem to disk = ' " & path & " ' with format "
+            command.ExecuteNonQuery()
+        End If
     End Sub
+
 End Class

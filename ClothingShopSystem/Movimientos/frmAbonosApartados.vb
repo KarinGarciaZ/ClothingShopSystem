@@ -21,7 +21,8 @@ Public Class frmAbonosApartados
             lector.Close()
         Catch ex As Exception
             MsgBox("Error al iniciar la conexión")
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(9, '" & ex.Message & "', 'AbonosApartado.Load','" & Now.Date & "'," & Err.Number & ")"
+            Dim errMessage As String = quitarComillas(ex.Message)
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(9, '" & errMessage & "', 'AbonosApartado.Load','" & Now.Date & "'," & Err.Number & ")"
             BitacoraComando.ExecuteNonQuery()
         End Try
     End Sub
@@ -32,7 +33,8 @@ Public Class frmAbonosApartados
             conexionBitacora = cerrarBitacora()
         Catch ex As Exception
             MsgBox("Error al cerrar la conexión")
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(8, '" & ex.Message & "', 'AbonosApartado.FormClosing','" & Now.Date & "'," & Err.Number & ")"
+            Dim errMessage As String = quitarComillas(ex.Message)
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(8, '" & errMessage & "', 'AbonosApartado.FormClosing','" & Now.Date & "'," & Err.Number & ")"
             BitacoraComando.ExecuteNonQuery()
         End Try
         btnGrabar.Enabled = False
@@ -69,7 +71,8 @@ Public Class frmAbonosApartados
             btnNuevo.Enabled = False
         Catch ex As Exception
             MsgBox("Error en el botón Nuevo")
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(3, '" & ex.Message & "', 'AbonosApartados.Nuevo','" & Now.Date & "',63)"
+            Dim errMessage As String = quitarComillas(ex.Message)
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(3, '" & errMessage & "', 'AbonosApartados.Nuevo','" & Now.Date & "',63)"
             BitacoraComando.ExecuteNonQuery()
         End Try
     End Sub
@@ -107,7 +110,8 @@ Public Class frmAbonosApartados
             lblRestante.Text = restante
         Catch ex As Exception
             MsgBox("Error seleccionar apartado")
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(13, '" & ex.Message & "', 'AbonosApartados.ApartadosSelectedIndexChanged','" & Now.Date & "'," & Err.Number & ")"
+            Dim errMessage As String = quitarComillas(ex.Message)
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(13, '" & errMessage & "', 'AbonosApartados.ApartadosSelectedIndexChanged','" & Now.Date & "'," & Err.Number & ")"
             BitacoraComando.ExecuteNonQuery()
         End Try
     End Sub
@@ -124,7 +128,8 @@ Public Class frmAbonosApartados
             lector.Close()
         Catch ex As Exception
             MsgBox("Error seleccionar cliente")
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(4, '" & ex.Message & "', 'AbonosApartados.ClienteSelectedIndexChanged','" & Now.Date & "'," & Err.Number & ")"
+            Dim errMessage As String = quitarComillas(ex.Message)
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(4, '" & errMessage & "', 'AbonosApartados.ClienteSelectedIndexChanged','" & Now.Date & "'," & Err.Number & ")"
             BitacoraComando.ExecuteNonQuery()
         End Try
 
@@ -188,7 +193,8 @@ Public Class frmAbonosApartados
             End Try
         Catch ex As Exception
             MsgBox("Error Grabar")
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(7, '" & ex.Message & "', 'AbonosApartados.Grabar','" & Now.Date & "'," & Err.Number & ")"
+            Dim errMessage As String = quitarComillas(ex.Message)
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(7, '" & errMessage & "', 'AbonosApartados.Grabar','" & Now.Date & "'," & Err.Number & ")"
             BitacoraComando.ExecuteNonQuery()
         End Try
 

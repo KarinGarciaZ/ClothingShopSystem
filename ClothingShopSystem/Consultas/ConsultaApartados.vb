@@ -12,16 +12,17 @@ Public Class ConsultaApartados
             conexionBitacora.open()
 
             comando.CommandText = "SELECT nombre FROM Clientes"
-        lector = comando.ExecuteReader
+            lector = comando.ExecuteReader
 
-        While lector.Read
-            cbClientes.Items.Add(lector(0))
-        End While
+            While lector.Read
+                cbClientes.Items.Add(lector(0))
+            End While
             lector.Close()
 
         Catch ex As Exception
             MsgBox("Error al iniciar la conexión")
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(9, '" & ex.Message & "', 'ConsultaApartados.Load','" & Now.Date & "'," & Err.Number & ")"
+            Dim errMessage As String = quitarComillas(ex.Message)
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(9, '" & errMessage & "', 'ConsultaApartados.Load','" & Now.Date & "'," & Err.Number & ")"
             BitacoraComando.ExecuteNonQuery()
         End Try
     End Sub
@@ -52,7 +53,8 @@ Public Class ConsultaApartados
             lector.Close()
         Catch ex As Exception
             MsgBox("Error seleccionar cliente")
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(21, '" & ex.Message & "', 'ConsultaApartados.cbClientes_SelectedIndexChanged','" & Now.Date & "'," & Err.Number & ")"
+            Dim errMessage As String = quitarComillas(ex.Message)
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(21, '" & errMessage & "', 'ConsultaApartados.cbClientes_SelectedIndexChanged','" & Now.Date & "'," & Err.Number & ")"
             BitacoraComando.ExecuteNonQuery()
         End Try
 
@@ -64,7 +66,8 @@ Public Class ConsultaApartados
             conexionBitacora = cerrarBitacora()
         Catch ex As Exception
             MsgBox("Error al cerrar la conexión")
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(8, '" & ex.Message & "', 'ConsultaApartados.FormClosing','" & Now.Date & "'," & Err.Number & ")"
+            Dim errMessage As String = quitarComillas(ex.Message)
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(8, '" & errMessage & "', 'ConsultaApartados.FormClosing','" & Now.Date & "'," & Err.Number & ")"
             BitacoraComando.ExecuteNonQuery()
         End Try
 
@@ -126,7 +129,8 @@ Public Class ConsultaApartados
             lector.Close()
         Catch ex As Exception
             MsgBox("Error seleccionar idApartado")
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(13, '" & ex.Message & "', 'ConsultaApartados.cbFecha_SelectedIndexChanged','" & Now.Date & "'," & Err.Number & ")"
+            Dim errMessage As String = quitarComillas(ex.Message)
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(13, '" & errMessage & "', 'ConsultaApartados.cbFecha_SelectedIndexChanged','" & Now.Date & "'," & Err.Number & ")"
             BitacoraComando.ExecuteNonQuery()
         End Try
     End Sub

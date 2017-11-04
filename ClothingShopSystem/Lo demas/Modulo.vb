@@ -34,5 +34,13 @@ Module Modulo
 
         Return conexionBitacora
     End Function
+
+    Public Function quitarComillas(message As String)
+        While message.Contains("'")
+            Dim x As Integer = message.IndexOf("'")
+            message = message.Remove(x, 1)
+        End While
+        Return message
+    End Function
 End Module
 

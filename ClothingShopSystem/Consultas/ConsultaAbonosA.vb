@@ -14,16 +14,17 @@ Public Class ConsultaAbonosA
             conexion.Open()
             conexionBitacora.open()
             comando.CommandText = "SELECT nombre FROM Clientes WHERE idCliente > 1"
-        lector = comando.ExecuteReader
+            lector = comando.ExecuteReader
 
-        While lector.Read
-            cbClientes.Items.Add(lector(0))
-        End While
+            While lector.Read
+                cbClientes.Items.Add(lector(0))
+            End While
             lector.Close()
 
         Catch ex As Exception
             MsgBox("Error al iniciar la conexión")
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(9, '" & ex.Message & "', 'ConsultaAbonosA.Load','" & Now.Date & "'," & Err.Number & ")"
+            Dim errMessage As String = quitarComillas(ex.Message)
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(9, '" & errMessage & "', 'ConsultaAbonosA.Load','" & Now.Date & "'," & Err.Number & ")"
             BitacoraComando.ExecuteNonQuery()
         End Try
     End Sub
@@ -40,7 +41,8 @@ Public Class ConsultaAbonosA
             lector.Close()
         Catch ex As Exception
             MsgBox("Error seleccionar clientes")
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(21, '" & ex.Message & "', 'ConsultaAbonosA.Load','" & Now.Date & "'," & Err.Number & ")"
+            Dim errMessage As String = quitarComillas(ex.Message)
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(21, '" & errMessage & "', 'ConsultaAbonosA.Load','" & Now.Date & "'," & Err.Number & ")"
             BitacoraComando.ExecuteNonQuery()
         End Try
     End Sub
@@ -51,7 +53,8 @@ Public Class ConsultaAbonosA
             conexionBitacora = cerrarBitacora()
         Catch ex As Exception
             MsgBox("Error al cerrar la conexión")
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(8, '" & ex.Message & "', 'ConsultaAbonosA.FormClosing','" & Now.Date & "',51)"
+            Dim errMessage As String = quitarComillas(ex.Message)
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(8, '" & errMessage & "', 'ConsultaAbonosA.FormClosing','" & Now.Date & "',51)"
             BitacoraComando.ExecuteNonQuery()
         End Try
         dgAgregar.Rows.Clear()

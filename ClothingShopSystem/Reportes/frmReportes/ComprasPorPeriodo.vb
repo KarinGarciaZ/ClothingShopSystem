@@ -36,4 +36,5 @@ Public Class ComprasPorPeriodo
         Reporte.ShowDialog()
         CONEXION.Close()
     End Sub
+
 End Class

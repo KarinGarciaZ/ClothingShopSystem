@@ -28,10 +28,14 @@ Public Class PrimeraVentana
                     If Not lector(1).ToString.Equals("Empleado") Then
                         Me.Hide()
                         Form1.ShowDialog()
+                        conexionsql = cerrarConexion()
+                        conexionBitacora = cerrarBitacora()
                         Me.Dispose()
                     Else
                         Me.Hide()
                         PrincipaUsuarios.ShowDialog()
+                        conexionsql = cerrarConexion()
+                        conexionBitacora = cerrarBitacora()
                         Me.Dispose()
                     End If
                 Else
@@ -41,8 +45,6 @@ Public Class PrimeraVentana
                 MsgBox("Usuario no existente")
             End If
             lector.Close()
-            conexionsql = cerrarConexion()
-            conexionBitacora = cerrarBitacora()
         Catch ex As Exception
             MsgBox("Error corfirmarCuenta")
             BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(19, '" & ex.Message & "', 'PrimeraVentana.Load','" & Now.Date & "'," & Err.Number & ")"
@@ -64,4 +66,5 @@ Public Class PrimeraVentana
             confirmarCuenta()
         End If
     End Sub
+
 End Class
