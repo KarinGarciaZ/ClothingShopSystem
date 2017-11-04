@@ -3,47 +3,70 @@ Public Class ConsultaApartados
     Dim conexion = openConnection()
     Dim lector As SqlDataReader
     Dim comando As SqlCommand = conexion.CreateCommand()
-    Dim transaccion As SqlTransaction
-    Private Sub ConsultaApartados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conexion.Open()
 
-        comando.CommandText = "SELECT nombre FROM Clientes"
+    Dim conexionBitacora = OpenBitacora()
+    Dim BitacoraComando As SqlCommand = conexionBitacora.CreateCommand()
+    Private Sub ConsultaApartados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            conexion.Open()
+            conexionBitacora.open()
+
+            comando.CommandText = "SELECT nombre FROM Clientes"
         lector = comando.ExecuteReader
 
         While lector.Read
             cbClientes.Items.Add(lector(0))
         End While
-        lector.Close()
+            lector.Close()
+
+        Catch ex As Exception
+            MsgBox("Error al iniciar la conexión")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(9, '" & ex.Message & "', 'ConsultaApartados.Load','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
     End Sub
 
     Private Sub cbClientes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbClientes.SelectedIndexChanged
         cbFecha.Items.Clear()
 
-        comando.CommandText = "SELECT * FROM Clientes WHERE nombre = '" & cbClientes.Text & "'"
-        lector = comando.ExecuteReader
-        lector.Read()
+        Try
+            comando.CommandText = "SELECT * FROM Clientes WHERE nombre = '" & cbClientes.Text & "'"
+            lector = comando.ExecuteReader
+            lector.Read()
 
-        txtColonia.Text = lector(3).ToString
-        txtDomicilio.Text = lector(2).ToString
-        txtIdCliente.Text = lector(0).ToString
-        txtTelefono.Text = lector(6).ToString
-        lector.Close()
+            txtColonia.Text = lector(3).ToString
+            txtDomicilio.Text = lector(2).ToString
+            txtIdCliente.Text = lector(0).ToString
+            txtTelefono.Text = lector(6).ToString
+            lector.Close()
 
-        GroupBox1.Visible = True
-        cbFecha.Enabled = True
+            GroupBox1.Visible = True
+            cbFecha.Enabled = True
 
-        comando.CommandText = "SELECT idApartado FROM Apartados WHERE idCliente = " & txtIdCliente.Text
-        lector = comando.ExecuteReader
+            comando.CommandText = "SELECT idApartado FROM Apartados WHERE idCliente = " & txtIdCliente.Text
+            lector = comando.ExecuteReader
 
-        While lector.Read()
-            cbFecha.Items.Add(lector(0))
-        End While
-        lector.Close()
+            While lector.Read()
+                cbFecha.Items.Add(lector(0))
+            End While
+            lector.Close()
+        Catch ex As Exception
+            MsgBox("Error seleccionar cliente")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(21, '" & ex.Message & "', 'ConsultaApartados.cbClientes_SelectedIndexChanged','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
 
     End Sub
 
     Private Sub ConsultaApartados_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        conexion = cerrarConexion()
+        Try
+            conexion = cerrarConexion()
+            conexionBitacora = cerrarBitacora()
+        Catch ex As Exception
+            MsgBox("Error al cerrar la conexión")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(8, '" & ex.Message & "', 'ConsultaApartados.FormClosing','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
 
         dgAgregar.Rows.Clear()
         GroupBox1.Visible = False
@@ -82,23 +105,29 @@ Public Class ConsultaApartados
         dgAgregar.Rows.Clear()
 
         Dim importe As Double = 0
-        comando.CommandText = "SELECT * FROM Apartados WHERE  idApartado = " & cbFecha.Text
-        lector = comando.ExecuteReader
+        Try
+            comando.CommandText = "SELECT * FROM Apartados WHERE  idApartado = " & cbFecha.Text
+            lector = comando.ExecuteReader
 
-        lector.Read()
-        txtFechaV.Text = lector(5)
-        txtidApartado.Text = lector(4)
-        lblTotal.Text = lector(2)
-        txtAbonos.Text = lector(3)
-        lector.Close()
+            lector.Read()
+            txtFechaV.Text = lector(5)
+            txtidApartado.Text = lector(4)
+            lblTotal.Text = lector(2)
+            txtAbonos.Text = lector(3)
+            lector.Close()
 
-        comando.CommandText = "SELECT DetalleApartados.idProducto, Productos.nombre, Productos.codigoBarras, DetalleApartados.cantidad, DetalleApartados.precio FROM DetalleApartados inner join Productos on Productos.idProducto = DetalleApartados.idProducto WHERE DetalleApartados.idApartado = " & cbFecha.Text
-        lector = comando.ExecuteReader
+            comando.CommandText = "SELECT DetalleApartados.idProducto, Productos.nombre, Productos.codigoBarras, DetalleApartados.cantidad, DetalleApartados.precio FROM DetalleApartados inner join Productos on Productos.idProducto = DetalleApartados.idProducto WHERE DetalleApartados.idApartado = " & cbFecha.Text
+            lector = comando.ExecuteReader
 
-        While lector.Read
-            importe = lector(3) * lector(4)
-            dgAgregar.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4), importe)
-        End While
-        lector.Close()
+            While lector.Read
+                importe = lector(3) * lector(4)
+                dgAgregar.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4), importe)
+            End While
+            lector.Close()
+        Catch ex As Exception
+            MsgBox("Error seleccionar idApartado")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(13, '" & ex.Message & "', 'ConsultaApartados.cbFecha_SelectedIndexChanged','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
     End Sub
 End Class

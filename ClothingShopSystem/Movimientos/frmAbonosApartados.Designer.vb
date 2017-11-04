@@ -22,8 +22,8 @@ Partial Class frmAbonosApartados
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dgAgregar = New System.Windows.Forms.DataGridView()
@@ -131,9 +131,9 @@ Partial Class frmAbonosApartados
         '
         'DataGridViewTextBoxColumn4
         '
-        DataGridViewCellStyle3.Format = "C2"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Format = "C2"
+        DataGridViewCellStyle1.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewTextBoxColumn4.HeaderText = "Costo"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         Me.DataGridViewTextBoxColumn4.ReadOnly = True
@@ -141,9 +141,9 @@ Partial Class frmAbonosApartados
         '
         'Column6
         '
-        DataGridViewCellStyle4.Format = "C2"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.Column6.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Format = "C2"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.Column6.DefaultCellStyle = DataGridViewCellStyle2
         Me.Column6.HeaderText = "Importe"
         Me.Column6.Name = "Column6"
         Me.Column6.ReadOnly = True
@@ -389,7 +389,6 @@ Partial Class frmAbonosApartados
         '
         'txtIdAbonoApartado
         '
-        Me.txtIdAbonoApartado.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtIdAbonoApartado.Enabled = False
         Me.txtIdAbonoApartado.Location = New System.Drawing.Point(79, 24)
         Me.txtIdAbonoApartado.Name = "txtIdAbonoApartado"

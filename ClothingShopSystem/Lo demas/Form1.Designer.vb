@@ -60,6 +60,15 @@ Partial Class Form1
         Me.EstadoDeCuentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstadoDeCuentaDeudorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IngresosDiariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UtileriasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RespaldarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RestaurarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BitacoraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TraspasoHistoricoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DiscoDeDistrubuciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -67,7 +76,7 @@ Partial Class Form1
         '
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatálogosToolStripMenuItem, Me.MovimientosToolStripMenuItem, Me.ConsultasToolStripMenuItem, Me.ReportesToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatálogosToolStripMenuItem, Me.MovimientosToolStripMenuItem, Me.ConsultasToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.UtileriasToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(151, 383)
@@ -302,6 +311,53 @@ Partial Class Form1
         Me.IngresosDiariosToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
         Me.IngresosDiariosToolStripMenuItem.Text = "Ingresos Diarios"
         '
+        'UtileriasToolStripMenuItem
+        '
+        Me.UtileriasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AyudaToolStripMenuItem, Me.RespaldarToolStripMenuItem, Me.RestaurarToolStripMenuItem, Me.BitacoraToolStripMenuItem, Me.TraspasoHistoricoToolStripMenuItem, Me.DiscoDeDistrubuciónToolStripMenuItem})
+        Me.UtileriasToolStripMenuItem.Name = "UtileriasToolStripMenuItem"
+        Me.UtileriasToolStripMenuItem.Size = New System.Drawing.Size(138, 34)
+        Me.UtileriasToolStripMenuItem.Text = "Utilerias"
+        '
+        'AyudaToolStripMenuItem
+        '
+        Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
+        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(290, 34)
+        Me.AyudaToolStripMenuItem.Text = "Ayuda"
+        '
+        'RespaldarToolStripMenuItem
+        '
+        Me.RespaldarToolStripMenuItem.Name = "RespaldarToolStripMenuItem"
+        Me.RespaldarToolStripMenuItem.Size = New System.Drawing.Size(290, 34)
+        Me.RespaldarToolStripMenuItem.Text = "Respaldar"
+        '
+        'RestaurarToolStripMenuItem
+        '
+        Me.RestaurarToolStripMenuItem.Name = "RestaurarToolStripMenuItem"
+        Me.RestaurarToolStripMenuItem.Size = New System.Drawing.Size(290, 34)
+        Me.RestaurarToolStripMenuItem.Text = "Restaurar"
+        '
+        'BitacoraToolStripMenuItem
+        '
+        Me.BitacoraToolStripMenuItem.Name = "BitacoraToolStripMenuItem"
+        Me.BitacoraToolStripMenuItem.Size = New System.Drawing.Size(290, 34)
+        Me.BitacoraToolStripMenuItem.Text = "Bitacora"
+        '
+        'TraspasoHistoricoToolStripMenuItem
+        '
+        Me.TraspasoHistoricoToolStripMenuItem.Name = "TraspasoHistoricoToolStripMenuItem"
+        Me.TraspasoHistoricoToolStripMenuItem.Size = New System.Drawing.Size(290, 34)
+        Me.TraspasoHistoricoToolStripMenuItem.Text = "Traspaso Historico"
+        '
+        'DiscoDeDistrubuciónToolStripMenuItem
+        '
+        Me.DiscoDeDistrubuciónToolStripMenuItem.Name = "DiscoDeDistrubuciónToolStripMenuItem"
+        Me.DiscoDeDistrubuciónToolStripMenuItem.Size = New System.Drawing.Size(290, 34)
+        Me.DiscoDeDistrubuciónToolStripMenuItem.Text = "Disco de Distrubución"
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -358,4 +414,13 @@ Partial Class Form1
     Friend WithEvents EstadoDeCuentaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EstadoDeCuentaDeudorToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents IngresosDiariosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UtileriasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AyudaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RespaldarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RestaurarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BitacoraToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TraspasoHistoricoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DiscoDeDistrubuciónToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
 End Class

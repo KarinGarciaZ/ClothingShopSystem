@@ -4,22 +4,32 @@ Public Class frmApartados
     Dim comando As SqlCommand = conexion.CreateCommand()
     Dim lector As SqlDataReader
     Dim transaction As SqlTransaction
+
+    Dim conexionBitacora = OpenBitacora()
+    Dim BitacoraComando As SqlCommand = conexionBitacora.CreateCommand()
     Private Sub frmApartados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conexion.open()
+        Try
+            conexionBitacora.open()
+            conexion.open()
 
-        comando.CommandText = "SELECT nombre FROM Clientes where idCliente > 1"
-        lector = comando.ExecuteReader
-        While lector.Read
-            cbClientes.Items.Add(lector(0))
-        End While
-        lector.Close()
+            comando.CommandText = "SELECT nombre FROM Clientes where idCliente > 1"
+            lector = comando.ExecuteReader
+            While lector.Read
+                cbClientes.Items.Add(lector(0))
+            End While
+            lector.Close()
 
-        comando.CommandText = "SELECT nombre FROM Productos"
-        lector = comando.ExecuteReader
-        While lector.Read
-            cbProducto.Items.Add(lector(0))
-        End While
-        lector.Close()
+            comando.CommandText = "SELECT nombre FROM Productos"
+            lector = comando.ExecuteReader
+            While lector.Read
+                cbProducto.Items.Add(lector(0))
+            End While
+            lector.Close()
+        Catch ex As Exception
+            MsgBox("Error al iniciar la conexión")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(9, '" & ex.Message & "', 'Apartados.Load','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
 
         dtpFecha.Value = Now.Date
     End Sub
@@ -30,8 +40,14 @@ Public Class frmApartados
         cbClientes.Enabled = True
         cbProducto.Enabled = True
 
-        comando.CommandText = "SELECT COUNT(*) FROM Apartados"
-        txtIdApartado.Text = comando.ExecuteScalar() + 1
+        Try
+            comando.CommandText = "SELECT COUNT(*) FROM Apartados"
+            txtIdApartado.Text = comando.ExecuteScalar() + 1
+        Catch ex As Exception
+            MsgBox("Error en el botón Nuevo")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(3, '" & ex.Message & "', 'Apartados.Nuevo','" & Now.Date & "', 44)"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
 
         txtCantidad.Enabled = True
         btnGrabar.Enabled = True
@@ -40,19 +56,25 @@ Public Class frmApartados
     End Sub
 
     Private Sub cbProducto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProducto.SelectedIndexChanged
-        comando.CommandText = "SELECT Productos.idProducto, Productos.codigoBarras, Tipos.nombre, Categorias.nombre, Marcas.nombre, Productos.costo, Productos.existencia FROM Productos inner join Tipos on Tipos.idTipo = Productos.idTipo inner join Categorias on Categorias.idCategoria = Productos.idCategoria inner join Marcas on Marcas.idMarca = Productos.idMarca WHERE Productos.nombre = '" & cbProducto.Text & "'"
-        lector = comando.ExecuteReader
-        lector.Read()
+        Try
+            comando.CommandText = "SELECT Productos.idProducto, Productos.codigoBarras, Tipos.nombre, Categorias.nombre, Marcas.nombre, Productos.costo, Productos.existencia FROM Productos inner join Tipos on Tipos.idTipo = Productos.idTipo inner join Categorias on Categorias.idCategoria = Productos.idCategoria inner join Marcas on Marcas.idMarca = Productos.idMarca WHERE Productos.nombre = '" & cbProducto.Text & "'"
+            lector = comando.ExecuteReader
+            lector.Read()
 
-        txtIdProducto.Text = lector(0)
-        txtCodigoBarras.Text = lector(1).ToString
-        txtTipo.Text = lector(2).ToString
-        txtCategoria.Text = lector(3).ToString
-        txtMarca.Text = lector(4).ToString
-        txtCosto.Text = lector(5).ToString
-        txtExistencia.Text = lector(6).ToString
+            txtIdProducto.Text = lector(0)
+            txtCodigoBarras.Text = lector(1).ToString
+            txtTipo.Text = lector(2).ToString
+            txtCategoria.Text = lector(3).ToString
+            txtMarca.Text = lector(4).ToString
+            txtCosto.Text = lector(5).ToString
+            txtExistencia.Text = lector(6).ToString
 
-        lector.Close()
+            lector.Close()
+        Catch ex As Exception
+            MsgBox("Error seleccionar producto")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(11, '" & ex.Message & "', 'Apartados.ProductoSelectedIndexChanged','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
     End Sub
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
@@ -97,7 +119,14 @@ Public Class frmApartados
     End Sub
 
     Private Sub frmApartados_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        conexion = cerrarConexion()
+        Try
+            conexion = cerrarConexion()
+            conexionBitacora = cerrarBitacora()
+        Catch ex As Exception
+            MsgBox("Error al cerrar la conexión")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(8, '" & ex.Message & "', 'Apartado.FormClosing','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
 
         btnAgregar.Enabled = False
         btnGrabar.Enabled = False
@@ -129,37 +158,43 @@ Public Class frmApartados
     End Sub
 
     Private Sub btnGrabar_Click(sender As Object, e As EventArgs) Handles btnGrabar.Click
-        transaction = conexion.BeginTransaction("SampleTransaction")
-
-        comando.Connection = conexion
-        comando.Transaction = transaction
         Try
-            comando.CommandText = "INSERT INTO Apartados VALUES (" & txtIdApartado.Text & "," & txtIdCliente.Text & "," & CDbl(lblTotal.Text) & ", 0.0 ,'" & dtpFecha.Value & "','" & dtpFechaVencimiento.Value.Date & "')"
-            comando.ExecuteNonQuery()
+            transaction = conexion.BeginTransaction("SampleTransaction")
 
-            For x = 0 To dgAgregar.RowCount - 1
-                comando.CommandText = "INSERT INTO DetalleApartados VALUES (" & txtIdApartado.Text & "," & dgAgregar.Item(0, x).Value & "," & dgAgregar.Item(3, x).Value & "," & dgAgregar.Item(4, x).Value & ")"
-                comando.ExecuteNonQuery()
-
-                comando.CommandText = "UPDATE Productos SET apartados = apartados + " & dgAgregar.Item(3, x).Value & " WHERE idProducto = " & dgAgregar.Item(0, x).Value
-                comando.ExecuteNonQuery()
-            Next
-
-            If MsgBox("¿Desea ejecutar transacción?", MsgBoxStyle.YesNo, "ejecutar") = MsgBoxResult.Yes Then
-                transaction.Commit()
-                MsgBox("¡Listo!")
-            Else
-                transaction.Rollback()
-                MsgBox("Transacción cancelada")
-                dgAgregar.Rows.Clear()
-            End If
-        Catch ex As Exception
-            MsgBox("Commit Exception Type: {0}no se pudo insertar por error")
+            comando.Connection = conexion
+            comando.Transaction = transaction
             Try
-                transaction.Rollback()
-            Catch ex2 As Exception
-                MsgBox("Error Rollback")
+                comando.CommandText = "INSERT INTO Apartados VALUES (" & txtIdApartado.Text & "," & txtIdCliente.Text & "," & CDbl(lblTotal.Text) & ", 0.0 ,'" & dtpFecha.Value & "','" & dtpFechaVencimiento.Value.Date & "')"
+                comando.ExecuteNonQuery()
+
+                For x = 0 To dgAgregar.RowCount - 1
+                    comando.CommandText = "INSERT INTO DetalleApartados VALUES (" & txtIdApartado.Text & "," & dgAgregar.Item(0, x).Value & "," & dgAgregar.Item(3, x).Value & "," & dgAgregar.Item(4, x).Value & ")"
+                    comando.ExecuteNonQuery()
+
+                    comando.CommandText = "UPDATE Productos SET apartados = apartados + " & dgAgregar.Item(3, x).Value & " WHERE idProducto = " & dgAgregar.Item(0, x).Value
+                    comando.ExecuteNonQuery()
+                Next
+
+                If MsgBox("¿Desea ejecutar transacción?", MsgBoxStyle.YesNo, "ejecutar") = MsgBoxResult.Yes Then
+                    transaction.Commit()
+                    MsgBox("¡Listo!")
+                Else
+                    transaction.Rollback()
+                    MsgBox("Transacción cancelada")
+                    dgAgregar.Rows.Clear()
+                End If
+            Catch ex As Exception
+                MsgBox("Commit Exception Type: {0}no se pudo insertar por error")
+                Try
+                    transaction.Rollback()
+                Catch ex2 As Exception
+                    MsgBox("Error Rollback")
+                End Try
             End Try
+        Catch ex As Exception
+            MsgBox("Error Grabar")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(7, '" & ex.Message & "', 'Apartados.Grabar','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
         End Try
 
         btnAgregar.Enabled = False
@@ -190,15 +225,21 @@ Public Class frmApartados
     End Sub
 
     Private Sub cbClientes_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cbClientes.SelectedIndexChanged
-        comando.CommandText = "SELECT * FROM Clientes WHERE nombre = '" & cbClientes.Text & "'"
-        lector = comando.ExecuteReader
-        lector.Read()
+        Try
+            comando.CommandText = "SELECT * FROM Clientes WHERE nombre = '" & cbClientes.Text & "'"
+            lector = comando.ExecuteReader
+            lector.Read()
 
-        txtIdCliente.Text = lector(0)
-        txtDomicilio.Text = lector(2)
-        txtColonia.Text = lector(3)
-        txtTelefono.Text = lector(6)
+            txtIdCliente.Text = lector(0)
+            txtDomicilio.Text = lector(2)
+            txtColonia.Text = lector(3)
+            txtTelefono.Text = lector(6)
 
-        lector.Close()
+            lector.Close()
+        Catch ex As Exception
+            MsgBox("Error seleccionar cliente")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(4, '" & ex.Message & "', 'Apartados.ClienteSelectedIndexChanged','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
     End Sub
 End Class

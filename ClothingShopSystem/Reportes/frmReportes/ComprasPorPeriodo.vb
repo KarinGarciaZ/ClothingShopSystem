@@ -3,6 +3,7 @@ Imports Microsoft.Reporting.WinForms
 Public Class ComprasPorPeriodo
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim CONEXION = openConnection()
+
         CONEXION.Open()
         Dim cmd As New SqlCommand("ComprasPorPeriodo", CONEXION)
         cmd.CommandType = CommandType.StoredProcedure

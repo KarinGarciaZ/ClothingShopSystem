@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class PrincipaUsuarios
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class PrincipaUsuarios
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.CatálogosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -39,7 +39,6 @@ Partial Class PrincipaUsuarios
         Me.ConsultasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -47,7 +46,7 @@ Partial Class PrincipaUsuarios
         '
         Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatálogosToolStripMenuItem, Me.MovimientosToolStripMenuItem, Me.ConsultasToolStripMenuItem, Me.ReportesToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatálogosToolStripMenuItem, Me.MovimientosToolStripMenuItem, Me.ConsultasToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(156, 354)
@@ -161,13 +160,6 @@ Partial Class PrincipaUsuarios
         Me.ProductosToolStripMenuItem1.Size = New System.Drawing.Size(184, 34)
         Me.ProductosToolStripMenuItem1.Text = "Productos"
         '
-        'ReportesToolStripMenuItem
-        '
-        Me.ReportesToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(143, 34)
-        Me.ReportesToolStripMenuItem.Text = "Reportes"
-        '
         'PrincipaUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -203,5 +195,4 @@ Partial Class PrincipaUsuarios
     Friend WithEvents ConsultasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ClientesToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ProductosToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
 End Class

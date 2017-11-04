@@ -5,18 +5,34 @@ Public Class Devoluciones
     Dim lector As SqlDataReader
     Dim transaction As SqlTransaction
 
+    Dim conexionBitacora = OpenBitacora()
+    Dim BitacoraComando As SqlCommand = conexionBitacora.CreateCommand()
+
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        command.CommandText = "SELECT COUNT(*) FROM Devoluciones"
-        txtIdDevolucion.Text = command.ExecuteScalar() + 1
-        txtIdVenta.Enabled = True
-        txtConcepto.Enabled = True
-        btnNuevo.Enabled = False
-        btnGrabar.Enabled = True
+        Try
+            command.CommandText = "SELECT COUNT(*) FROM Devoluciones"
+            txtIdDevolucion.Text = command.ExecuteScalar() + 1
+            txtIdVenta.Enabled = True
+            txtConcepto.Enabled = True
+            btnNuevo.Enabled = False
+            btnGrabar.Enabled = True
+        Catch ex As Exception
+            MsgBox("Error en el botón Nuevo")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(3, '" & ex.Message & "', 'Devoluciones.Nuevo','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
 
     End Sub
 
     Private Sub Devoluciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        connection.open
+        Try
+            conexionBitacora.open()
+            connection.open
+        Catch ex As Exception
+            MsgBox("Error al iniciar la conexión")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(1, '" & ex.Message & "', 'Devoluciones.Load','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
     End Sub
 
     Private Sub txtIdVenta_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtIdVenta.KeyPress
@@ -31,60 +47,73 @@ Public Class Devoluciones
         Else
             e.Handled = True
         End If
-        If e.KeyChar = ChrW(Keys.Enter) Then
-            command.CommandText = "SELECT fecha, subtotal, descuento, iva FROM Ventas where estado = 0 and condicion = 'Efectivo' and idVenta = " & txtIdVenta.Text & ""
-            lector = command.ExecuteReader
-            If lector.Read() Then
-                dtpFecha.Value = lector(0).ToString
-                lblSubtotal.Text = lector(1).ToString
-                lblDescuento.Text = lector(2).ToString
-                lblIVA.Text = lector(3).ToString
-                lector.Close()
-                lblTotal.Text = CDbl(lblSubtotal.Text) + CDbl(lblIVA.Text)
-                dgAgregar.Rows.Clear()
-                command.CommandText = "SELECT DetalleVentas.idProducto, Productos.codigoBarras, Productos.nombre, DetalleVentas.cantidad, DetalleVentas.precio FROM DetalleVentas inner join Productos on DetalleVentas.idProducto = Productos.idProducto WHERE idVenta = " & txtIdVenta.Text & ""
+        Try
+            If e.KeyChar = ChrW(Keys.Enter) Then
+                command.CommandText = "SELECT fecha, subtotal, descuento, iva FROM Ventas where estado = 0 and condicion = 'Efectivo' and idVenta = " & txtIdVenta.Text & ""
                 lector = command.ExecuteReader
-                While lector.Read
-                    dgAgregar.Rows.Add(lector(0).ToString, lector(1).ToString, lector(2).ToString, lector(3).ToString, lector(4).ToString, (lector(3) * lector(4).ToString))
-                End While
-            Else
-                MsgBox("No existe esa venta")
+                If lector.Read() Then
+                    dtpFecha.Value = lector(0).ToString
+                    lblSubtotal.Text = lector(1).ToString
+                    lblDescuento.Text = lector(2).ToString
+                    lblIVA.Text = lector(3).ToString
+                    lector.Close()
+                    lblTotal.Text = CDbl(lblSubtotal.Text) + CDbl(lblIVA.Text)
+                    dgAgregar.Rows.Clear()
+                    command.CommandText = "SELECT DetalleVentas.idProducto, Productos.codigoBarras, Productos.nombre, DetalleVentas.cantidad, DetalleVentas.precio FROM DetalleVentas inner join Productos on DetalleVentas.idProducto = Productos.idProducto WHERE idVenta = " & txtIdVenta.Text & ""
+                    lector = command.ExecuteReader
+                    While lector.Read
+                        dgAgregar.Rows.Add(lector(0).ToString, lector(1).ToString, lector(2).ToString, lector(3).ToString, lector(4).ToString, (lector(3) * lector(4).ToString))
+                    End While
+                Else
+                    MsgBox("No existe esa venta")
+                End If
+                lector.Close()
             End If
-            lector.Close()
-        End If
+        Catch ex As Exception
+            MsgBox("Error al seleccionar venta")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(12, '" & ex.Message & "', 'Devoluciones.txtIdVentaKeyPress','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
+
     End Sub
 
     Private Sub btnGrabar_Click(sender As Object, e As EventArgs) Handles btnGrabar.Click
-        transaction = connection.BeginTransaction("SampleTransaction")
-
-        command.Connection = connection
-        command.Transaction = transaction
         Try
-            command.CommandText = "update Ventas set estado = 1 where idVenta = " & txtIdVenta.Text & ""
-            command.ExecuteNonQuery()
+            transaction = connection.BeginTransaction("SampleTransaction")
 
-            command.CommandText = "insert into Devoluciones values(" & txtIdDevolucion.Text & ", " & txtIdVenta.Text & ", '" & txtConcepto.Text & "', '" & dtpFechaD.Value.Date & "')"
-            command.ExecuteNonQuery()
-
-            For x = 0 To dgAgregar.RowCount - 1
-                command.CommandText = "UPDATE Productos SET existencia += " & dgAgregar.Item(3, x).Value & " WHERE idProducto = " & dgAgregar.Item(0, x).Value
-                command.ExecuteNonQuery()
-            Next
-
-            If MsgBox("¿Desea ejecutar la devolución?", MsgBoxStyle.YesNo, "ejecutar") = MsgBoxResult.Yes Then
-                transaction.Commit()
-            Else
-                transaction.Rollback()
-                MsgBox("Transacción cancelada")
-                dgAgregar.Rows.Clear()
-            End If
-        Catch ex As Exception
-            MsgBox("Commit Exception Type: {0}no se pudo insertar por error")
+            command.Connection = connection
+            command.Transaction = transaction
             Try
-                transaction.Rollback()
-            Catch ex2 As Exception
-                MsgBox("Error Rollback")
+                command.CommandText = "update Ventas set estado = 1 where idVenta = " & txtIdVenta.Text & ""
+                command.ExecuteNonQuery()
+
+                command.CommandText = "insert into Devoluciones values(" & txtIdDevolucion.Text & ", " & txtIdVenta.Text & ", '" & txtConcepto.Text & "', '" & dtpFechaD.Value.Date & "')"
+                command.ExecuteNonQuery()
+
+                For x = 0 To dgAgregar.RowCount - 1
+                    command.CommandText = "UPDATE Productos SET existencia += " & dgAgregar.Item(3, x).Value & " WHERE idProducto = " & dgAgregar.Item(0, x).Value
+                    command.ExecuteNonQuery()
+                Next
+
+                If MsgBox("¿Desea ejecutar la devolución?", MsgBoxStyle.YesNo, "ejecutar") = MsgBoxResult.Yes Then
+                    transaction.Commit()
+                Else
+                    transaction.Rollback()
+                    MsgBox("Transacción cancelada")
+                    dgAgregar.Rows.Clear()
+                End If
+            Catch ex As Exception
+                MsgBox("Commit Exception Type: {0}no se pudo insertar por error")
+                Try
+                    transaction.Rollback()
+                Catch ex2 As Exception
+                    MsgBox("Error Rollback")
+                End Try
             End Try
+        Catch ex As Exception
+            MsgBox("Error Grabar")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(7, '" & ex.Message & "', 'Devoluciones.Grabar','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
         End Try
         btnGrabar.Enabled = False
         btnNuevo.Enabled = True
@@ -103,7 +132,15 @@ Public Class Devoluciones
     End Sub
 
     Private Sub Devoluciones_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        connection = cerrarConexion()
+        Try
+            connection = cerrarConexion()
+            conexionBitacora = cerrarBitacora()
+        Catch ex As Exception
+            MsgBox("Error al cerrar la conexión")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(8, '" & ex.Message & "', 'Devoluciones.FormClosing','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
+
         btnGrabar.Enabled = False
         btnNuevo.Enabled = True
         dtpFechaD.Enabled = False

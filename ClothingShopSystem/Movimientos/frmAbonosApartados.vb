@@ -5,19 +5,36 @@ Public Class frmAbonosApartados
     Dim comando As SqlCommand = conexion.CreateCommand
     Dim lector As SqlDataReader
     Dim transaccion As SqlTransaction
-    Private Sub frmAbonosApartados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conexion.Open()
-        comando.CommandText = "SELECT nombre FROM Clientes where idCliente > 1"
-        lector = comando.ExecuteReader()
 
-        While lector.Read
-            cbClientes.Items.Add(lector(0))
-        End While
-        lector.Close()
+    Dim conexionBitacora = OpenBitacora()
+    Dim BitacoraComando As SqlCommand = conexionBitacora.CreateCommand()
+    Private Sub frmAbonosApartados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            conexionBitacora.open()
+            conexion.Open()
+            comando.CommandText = "SELECT nombre FROM Clientes where idCliente > 1"
+            lector = comando.ExecuteReader()
+
+            While lector.Read
+                cbClientes.Items.Add(lector(0))
+            End While
+            lector.Close()
+        Catch ex As Exception
+            MsgBox("Error al iniciar la conexión")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(9, '" & ex.Message & "', 'AbonosApartado.Load','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
     End Sub
 
     Private Sub frmAbonosApartados_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        conexion = cerrarConexion()
+        Try
+            conexion = cerrarConexion()
+            conexionBitacora = cerrarBitacora()
+        Catch ex As Exception
+            MsgBox("Error al cerrar la conexión")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(8, '" & ex.Message & "', 'AbonosApartado.FormClosing','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
         btnGrabar.Enabled = False
         btnNuevo.Enabled = True
 
@@ -41,14 +58,20 @@ Public Class frmAbonosApartados
     End Sub
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        comando.CommandText = "SELECT COUNT(*) FROM AbonosApartados"
-        txtIdAbonoApartado.Text = comando.ExecuteScalar + 1
+        Try
+            comando.CommandText = "SELECT COUNT(*) FROM AbonosApartados"
+            txtIdAbonoApartado.Text = comando.ExecuteScalar + 1
 
-        cbClientes.Enabled = True
-        dtpFecha.Value = Now.Date
-        txtAbono.Enabled = True
-        btnGrabar.Enabled = True
-        btnNuevo.Enabled = False
+            cbClientes.Enabled = True
+            dtpFecha.Value = Now.Date
+            txtAbono.Enabled = True
+            btnGrabar.Enabled = True
+            btnNuevo.Enabled = False
+        Catch ex As Exception
+            MsgBox("Error en el botón Nuevo")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(3, '" & ex.Message & "', 'AbonosApartados.Nuevo','" & Now.Date & "',63)"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
     End Sub
 
     Private Sub cbApartados_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbApartados.SelectedIndexChanged
@@ -56,41 +79,54 @@ Public Class frmAbonosApartados
 
         Dim importe As Double = 0
         Dim restante As Double
-        txtIdApartado.Text = cbApartados.Text
 
-        comando.CommandText = "SELECT fecha, fechaVencimiento, abono, total FROM Apartados WHERE idApartado = " & txtIdApartado.Text
-        lector = comando.ExecuteReader
+        Try
+            txtIdApartado.Text = cbApartados.Text
 
-        lector.Read()
-        txtFecha.Text = CDate(lector(0))
-        txtFechaVencimiento.Text = CDate(lector(1))
-        txtAbonos.Text = lector(2)
-        lblTotal.Text = lector(3)
+            comando.CommandText = "SELECT fecha, fechaVencimiento, abono, total FROM Apartados WHERE idApartado = " & txtIdApartado.Text
+            lector = comando.ExecuteReader
 
-        restante = CDbl(lector(3)) - CDbl(lector(2))
-        lector.Close()
+            lector.Read()
+            txtFecha.Text = CDate(lector(0))
+            txtFechaVencimiento.Text = CDate(lector(1))
+            txtAbonos.Text = lector(2)
+            lblTotal.Text = lector(3)
 
-        comando.CommandText = "SELECT DetalleApartados.idProducto, Productos.nombre, Productos.codigoBarras, DetalleApartados.cantidad, DetalleApartados.precio FROM DetalleApartados inner join Productos on Productos.idProducto = DetalleApartados.idProducto WHERE DetalleApartados.idApartado = " & txtIdApartado.Text
-        lector = comando.ExecuteReader
+            restante = CDbl(lector(3)) - CDbl(lector(2))
+            lector.Close()
 
-        While lector.Read
-            importe = CDbl(lector(3)) * CDbl(lector(4))
-            dgAgregar.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4), importe)
-        End While
-        lector.Close()
+            comando.CommandText = "SELECT DetalleApartados.idProducto, Productos.nombre, Productos.codigoBarras, DetalleApartados.cantidad, DetalleApartados.precio FROM DetalleApartados inner join Productos on Productos.idProducto = DetalleApartados.idProducto WHERE DetalleApartados.idApartado = " & txtIdApartado.Text
+            lector = comando.ExecuteReader
 
-        lblRestante.Text = restante
+            While lector.Read
+                importe = CDbl(lector(3)) * CDbl(lector(4))
+                dgAgregar.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4), importe)
+            End While
+            lector.Close()
+
+            lblRestante.Text = restante
+        Catch ex As Exception
+            MsgBox("Error seleccionar apartado")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(13, '" & ex.Message & "', 'AbonosApartados.ApartadosSelectedIndexChanged','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
     End Sub
 
     Private Sub cbClientes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbClientes.SelectedIndexChanged
         cbApartados.Items.Clear()
-        comando.CommandText = "SELECT idApartado FROM Apartados inner join Clientes on Clientes.idCliente = Apartados.idCliente WHERE Clientes.nombre = '" & cbClientes.Text & "'"
-        lector = comando.ExecuteReader
+        Try
+            comando.CommandText = "SELECT idApartado FROM Apartados inner join Clientes on Clientes.idCliente = Apartados.idCliente WHERE Clientes.nombre = '" & cbClientes.Text & "'"
+            lector = comando.ExecuteReader
 
-        While lector.Read
-            cbApartados.Items.Add(lector(0))
-        End While
-        lector.Close()
+            While lector.Read
+                cbApartados.Items.Add(lector(0))
+            End While
+            lector.Close()
+        Catch ex As Exception
+            MsgBox("Error seleccionar cliente")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(4, '" & ex.Message & "', 'AbonosApartados.ClienteSelectedIndexChanged','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
 
         cbApartados.Visible = True
         Label2.Visible = True
@@ -112,46 +148,48 @@ Public Class frmAbonosApartados
     End Sub
 
     Private Sub btnGrabar_Click(sender As Object, e As EventArgs) Handles btnGrabar.Click
-        ' Iniciar una transacción local
-        transaccion = conexion.BeginTransaction("SampleTransaction")
-        'Debe asignar el objeto de la transacción y la conexión
-        'A un objeto comando para una transación local pendiente.
-        comando.Connection = conexion
-        comando.Transaction = transaccion
         Try
-            comando.CommandText = "INSERT INTO AbonosApartados VALUES (" & txtIdAbonoApartado.Text & "," & txtIdApartado.Text & ",'" & dtpFecha.Value.Date & "'," & txtAbono.Text & ")"
-            comando.ExecuteNonQuery()
+            ' Iniciar una transacción local
+            transaccion = conexion.BeginTransaction("SampleTransaction")
 
-            comando.CommandText = "UPDATE Apartados SET abono = abono + " & txtAbono.Text & "WHERE idApartado = " & txtIdApartado.Text
-            comando.ExecuteNonQuery()
-
-            If Date.Compare(dtpFecha.Value, CDate(txtFechaVencimiento.Text)) = 1 Then
-                MessageBox.Show("¡Se ha pasado de la fecha de limite! Se le aumentará un 7%", "Fecha de Vencimiento", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-
-                Dim total As Double
-
-                total = CDbl(lblTotal.Text) * 0.17
-                comando.CommandText = "UPDATE Apartados SET total = total + " & total
-            End If
-
-            If MsgBox("¿Desea ejecutar abonar $" & txtAbono.Text & "?", MsgBoxStyle.YesNo, "ejecutar") = MsgBoxResult.Yes Then
-                transaccion.Commit()
-                MsgBox("¡Abonado!")
-            Else
-                transaccion.Rollback()
-                MsgBox("Transacción cancelada")
-                dgAgregar.Rows.Clear()
-            End If
-        Catch ex As Exception
-            MsgBox("Commit Exception Type: {0}no se pudo insertar por error")
+            comando.Connection = conexion
+            comando.Transaction = transaccion
             Try
-                transaccion.Rollback()
-            Catch ex2 As Exception
-                ' Este bloque de catch manejará los errores
-                ' que pueden ser ocurridos en el servidor y que
-                'podrían causar el rollback tal como una conexión cerrada.
-                MsgBox("Error Rollback")
+                comando.CommandText = "INSERT INTO AbonosApartados VALUES (" & txtIdAbonoApartado.Text & "," & txtIdApartado.Text & ",'" & dtpFecha.Value.Date & "'," & txtAbono.Text & ")"
+                comando.ExecuteNonQuery()
+
+                comando.CommandText = "UPDATE Apartados SET abono = abono + " & txtAbono.Text & "WHERE idApartado = " & txtIdApartado.Text
+                comando.ExecuteNonQuery()
+
+                If Date.Compare(dtpFecha.Value, CDate(txtFechaVencimiento.Text)) = 1 Then
+                    MessageBox.Show("¡Se ha pasado de la fecha de limite! Se le aumentará un 7%", "Fecha de Vencimiento", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+                    Dim total As Double
+
+                    total = CDbl(lblTotal.Text) * 0.17
+                    comando.CommandText = "UPDATE Apartados SET total = total + " & total
+                End If
+
+                If MsgBox("¿Desea ejecutar abonar $" & txtAbono.Text & "?", MsgBoxStyle.YesNo, "ejecutar") = MsgBoxResult.Yes Then
+                    transaccion.Commit()
+                    MsgBox("¡Abonado!")
+                Else
+                    transaccion.Rollback()
+                    MsgBox("Transacción cancelada")
+                    dgAgregar.Rows.Clear()
+                End If
+            Catch ex As Exception
+                MsgBox("Commit Exception Type: {0}no se pudo insertar por error")
+                Try
+                    transaccion.Rollback()
+                Catch ex2 As Exception
+                    MsgBox("Error Rollback")
+                End Try
             End Try
+        Catch ex As Exception
+            MsgBox("Error Grabar")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(7, '" & ex.Message & "', 'AbonosApartados.Grabar','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
         End Try
 
         btnGrabar.Enabled = False

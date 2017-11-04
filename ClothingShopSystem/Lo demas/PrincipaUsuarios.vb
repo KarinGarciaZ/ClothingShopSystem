@@ -49,4 +49,5 @@
     Private Sub ProductosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ProductosToolStripMenuItem1.Click
         ConsultaProductos.ShowDialog()
     End Sub
+
 End Class

@@ -21,5 +21,18 @@ Module Modulo
         Return "C:\Users\elektramovil\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\Reportes\ReportesLibros"
     End Function
 
+    Public Function OpenBitacora()
+        Dim conexionBitacora As New SqlConnection("Data Source = KARINSPC; initial catalog='Bitacora'; Integrated Security = True")
+
+        Return conexionBitacora
+    End Function
+
+    Public Function cerrarBitacora()
+        Dim conexionBitacora As New SqlConnection("Data Source = KARINSPC; initial catalog='Bitacora'; Integrated Security = True")
+
+        conexionBitacora.Close()
+
+        Return conexionBitacora
+    End Function
 End Module
 

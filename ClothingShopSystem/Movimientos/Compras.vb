@@ -5,135 +5,166 @@ Public Class Compras
     Dim transaction As SqlTransaction
     Dim lector As SqlDataReader
 
+    Dim conexionBitacora = OpenBitacora()
+    Dim BitacoraComando As SqlCommand = conexionBitacora.CreateCommand()
+
     Private Sub cmdNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        command.CommandText = "SELECT COUNT(*) FROM Compras"
-        txtIdCompra.Text = command.ExecuteScalar + 1
+        Try
+            command.CommandText = "SELECT COUNT(*) FROM Compras"
+            txtIdCompra.Text = command.ExecuteScalar + 1
 
-        btnGrabar.Enabled = True
-        btnNuevo.Enabled = False
-        dtpFecha.Text = Now.Date
-        txtFactura.Enabled = True
-        cbProveedores.Enabled = True
-        dtpFecha.Enabled = True
-        'txtCodigoBarras.Enabled = True
+            btnGrabar.Enabled = True
+            btnNuevo.Enabled = False
+            dtpFecha.Text = Now.Date
+            txtFactura.Enabled = True
+            cbProveedores.Enabled = True
+            dtpFecha.Enabled = True
 
-        cbProducto.Enabled = True
-        txtCostoNuevo.Enabled = True
-        txtCantidad.Enabled = True
-        btnAgregar.Enabled = True
+            cbProducto.Enabled = True
+            txtCostoNuevo.Enabled = True
+            txtCantidad.Enabled = True
+            btnAgregar.Enabled = True
+        Catch ex As Exception
+            MsgBox("Error en el botón Nuevo")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(3, '" & ex.Message & "', 'Compras.Nuevo','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
     End Sub
 
     Private Sub Compras_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        connection.Open()
+        Try
+            connection.Open()
+            conexionBitacora.open()
 
-        command.CommandText = "SELECT nombre FROM Proveedores"
-        lector = command.ExecuteReader
+            command.CommandText = "SELECT nombre FROM Proveedores"
+            lector = command.ExecuteReader
 
-        While lector.Read
-            cbProveedores.Items.Add(lector(0))
-        End While
-        lector.Close()
+            While lector.Read
+                cbProveedores.Items.Add(lector(0))
+            End While
+            lector.Close()
 
-        command.CommandText = "SELECT nombre FROM Productos"
-        lector = command.ExecuteReader
+            command.CommandText = "SELECT nombre FROM Productos"
+            lector = command.ExecuteReader
 
-        While lector.Read
-            cbProducto.Items.Add(lector(0))
-        End While
-        lector.Close()
+            While lector.Read
+                cbProducto.Items.Add(lector(0))
+            End While
+            lector.Close()
+
+        Catch ex As Exception
+            MsgBox("Error al iniciar la conexión")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(9, '" & ex.Message & "', 'Compras.Load','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
 
     End Sub
 
     Private Sub cmdGrabar_Click(sender As Object, e As EventArgs) Handles btnGrabar.Click
-        If dgAgregar.RowCount <> 0 Then
-            ' Iniciar una transacción local
-            transaction = connection.BeginTransaction("SampleTransaction")
-            'Debe asignar el objeto de la transacción y la conexión
-            'A un objeto comando para una transación local pendiente.
-            command.Connection = connection
-            command.Transaction = transaction
-            Try
-                command.CommandText = "INSERT INTO Compras VALUES (" & txtIdCompra.Text & "," & txtIdProveedor.Text & ",'" & dtpFecha.Value.Date & "','" & txtFactura.Text & "'," & lblTotal.Text & ")"
-                command.ExecuteNonQuery()
+        Try
+            If dgAgregar.RowCount <> 0 Then
+                ' Iniciar una transacción local
+                transaction = connection.BeginTransaction("SampleTransaction")
 
-                For x = 0 To dgAgregar.RowCount - 1
-                    command.CommandText = "INSERT INTO DetalleCompras VALUES (" & txtIdCompra.Text & "," & dgAgregar.Item(0, x).Value & "," & dgAgregar.Item(3, x).Value & "," & dgAgregar.Item(4, x).Value & ")"
-                    command.ExecuteNonQuery()
-
-                    command.CommandText = "UPDATE Productos SET costo = " & dgAgregar.Item(4, x).Value & ", existencia = existencia + " & dgAgregar.Item(3, x).Value & ", ultimaFechaCompra = '" & dtpFecha.Value & "' WHERE idProducto = " & dgAgregar.Item(0, x).Value
-                    command.ExecuteNonQuery()
-                Next
-
-                ' Aquí pueden ir n comandos ExecuteNonQuery….
-                ' Intenta ejecutar la transacción.
-                If MsgBox("¿Desea ejecutar esta compra?", MsgBoxStyle.YesNo, "ejecutar") = MsgBoxResult.Yes Then
-                    transaction.Commit()
-                    MsgBox("¡Listo!")
-                Else
-                    transaction.Rollback()
-                    MsgBox("Transacción cancelada")
-                    dgAgregar.Rows.Clear()
-                End If
-            Catch ex As Exception
-                MsgBox("Commit Exception Type: {0}no se pudo insertar por error")
+                command.Connection = connection
+                command.Transaction = transaction
                 Try
-                    transaction.Rollback()
-                Catch ex2 As Exception
-                    MsgBox("Error Rollback")
-                End Try
-            End Try
+                    command.CommandText = "INSERT INTO Compras VALUES (" & txtIdCompra.Text & "," & txtIdProveedor.Text & ",'" & dtpFecha.Value.Date & "','" & txtFactura.Text & "'," & lblTotal.Text & ")"
+                    command.ExecuteNonQuery()
 
-            btnAgregar.Enabled = False
-            btnGrabar.Enabled = False
-            btnNuevo.Enabled = True
-            txtFactura.Enabled = False
-            txtCantidad.Enabled = False
-            txtCosto.Enabled = False
-            txtCantidad.Text = ""
-            txtCodigoBarras.Text = ""
-            txtCosto.Text = ""
-            txtCostoNuevo.Text = ""
-            txtDomicilio.Text = ""
-            txtExistencia.Text = ""
-            txtFactura.Text = ""
-            txtIdCompra.Text = ""
-            txtIdProducto.Text = ""
-            txtIdProveedor.Text = ""
-            txtTelefono.Text = ""
-            lblIVA.Text = "0.0"
-            lblSubtotal.Text = "0.0"
-            lblTotal.Text = "0.0"
-            dgAgregar.Rows.Clear()
-            cbProducto.Enabled = False
-            cbProveedores.Enabled = False
-        Else
-            MessageBox.Show("Sin datos en rejilla, revise sus datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End If
+                    For x = 0 To dgAgregar.RowCount - 1
+                        command.CommandText = "INSERT INTO DetalleCompras VALUES (" & txtIdCompra.Text & "," & dgAgregar.Item(0, x).Value & "," & dgAgregar.Item(3, x).Value & "," & dgAgregar.Item(4, x).Value & ")"
+                        command.ExecuteNonQuery()
+
+                        command.CommandText = "UPDATE Productos SET costo = " & dgAgregar.Item(4, x).Value & ", existencia = existencia + " & dgAgregar.Item(3, x).Value & ", ultimaFechaCompra = '" & dtpFecha.Value & "' WHERE idProducto = " & dgAgregar.Item(0, x).Value
+                        command.ExecuteNonQuery()
+                    Next
+
+                    If MsgBox("¿Desea ejecutar esta compra?", MsgBoxStyle.YesNo, "ejecutar") = MsgBoxResult.Yes Then
+                        transaction.Commit()
+                        MsgBox("¡Listo!")
+                    Else
+                        transaction.Rollback()
+                        MsgBox("Transacción cancelada")
+                        dgAgregar.Rows.Clear()
+                    End If
+                Catch ex As Exception
+                    MsgBox("Commit Exception Type: {0}no se pudo insertar por error")
+                    Try
+                        transaction.Rollback()
+                    Catch ex2 As Exception
+                        MsgBox("Error Rollback")
+                    End Try
+                End Try
+            Else
+                MessageBox.Show("Sin datos en rejilla, revise sus datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+            MsgBox("Error Grabar")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(7, '" & ex.Message & "', 'Compras.Grabar','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
+
+        btnAgregar.Enabled = False
+        btnGrabar.Enabled = False
+        btnNuevo.Enabled = True
+        txtFactura.Enabled = False
+        txtCantidad.Enabled = False
+        txtCosto.Enabled = False
+        txtCantidad.Text = ""
+        txtCodigoBarras.Text = ""
+        txtCosto.Text = ""
+        txtCostoNuevo.Text = ""
+        txtDomicilio.Text = ""
+        txtExistencia.Text = ""
+        txtFactura.Text = ""
+        txtIdCompra.Text = ""
+        txtIdProducto.Text = ""
+        txtIdProveedor.Text = ""
+        txtTelefono.Text = ""
+        lblIVA.Text = "0.0"
+        lblSubtotal.Text = "0.0"
+        lblTotal.Text = "0.0"
+        dgAgregar.Rows.Clear()
+        cbProducto.Enabled = False
+        cbProveedores.Enabled = False
     End Sub
 
     Private Sub cbProveedores_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProveedores.SelectedIndexChanged
-        command.CommandText = "SELECT idProveedor, telefono, domicilio FROM Proveedores WHERE nombre = '" & cbProveedores.Text & "'"
-        lector = command.ExecuteReader
-        lector.Read()
+        Try
+            command.CommandText = "SELECT idProveedor, telefono, domicilio FROM Proveedores WHERE nombre = '" & cbProveedores.Text & "'"
+            lector = command.ExecuteReader
+            lector.Read()
 
-        txtIdProveedor.Text = lector(0)
-        txtTelefono.Text = lector(1).ToString
-        txtDomicilio.Text = lector(2).ToString
+            txtIdProveedor.Text = lector(0)
+            txtTelefono.Text = lector(1).ToString
+            txtDomicilio.Text = lector(2).ToString
 
-        lector.Close()
+            lector.Close()
+        Catch ex As Exception
+            MsgBox("Error cargar proveedor")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(10, '" & ex.Message & "', 'Compras.ProveedorSelectChanged','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
     End Sub
 
     Private Sub cbProducto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProducto.SelectedIndexChanged
-        command.CommandText = "SELECT idProducto, codigoBarras, costo, existencia, ultimaFechaCompra FROM Productos WHERE nombre = '" & cbProducto.Text & "'"
-        lector = command.ExecuteReader
-        lector.Read()
+        Try
+            command.CommandText = "SELECT idProducto, codigoBarras, costo, existencia, ultimaFechaCompra FROM Productos WHERE nombre = '" & cbProducto.Text & "'"
+            lector = command.ExecuteReader
+            lector.Read()
 
-        txtIdProducto.Text = lector(0)
-        txtCodigoBarras.Text = lector(1).ToString
-        txtCosto.Text = lector(2).ToString
-        txtExistencia.Text = lector(3).ToString
-        dtpUltimaCompra.Text = lector(4).ToString
-        lector.Close()
+            txtIdProducto.Text = lector(0)
+            txtCodigoBarras.Text = lector(1).ToString
+            txtCosto.Text = lector(2).ToString
+            txtExistencia.Text = lector(3).ToString
+            dtpUltimaCompra.Text = lector(4).ToString
+            lector.Close()
+        Catch ex As Exception
+            MsgBox("Error cargar Producto")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(11, '" & ex.Message & "', 'Compras.ProductoSelectChanged','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
     End Sub
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
@@ -177,7 +208,15 @@ Public Class Compras
     End Sub
 
     Private Sub Compras_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        connection = cerrarConexion()
+        Try
+            connection = cerrarConexion()
+            conexionBitacora = cerrarBitacora()
+        Catch ex As Exception
+            MsgBox("Error al cerrar la conexión")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(8, '" & ex.Message & "', 'Compras.FormClosing','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
+
         btnAgregar.Enabled = False
         btnGrabar.Enabled = False
         btnNuevo.Enabled = True

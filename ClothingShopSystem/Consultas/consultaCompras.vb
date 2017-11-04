@@ -3,43 +3,57 @@
 Public Class consultaCompras
     Dim connection = openConnection()
     Dim command As SqlCommand = connection.CreateCommand()
-    Dim transaction As SqlTransaction
     Dim lector As SqlDataReader
+
+    Dim conexionBitacora = OpenBitacora()
+    Dim BitacoraComando As SqlCommand = conexionBitacora.CreateCommand()
     Private Sub consultaCompras_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        connection.Open()
+        Try
+            connection.Open()
+            conexionBitacora.open
+            command.CommandText = "SELECT * FROM Proveedores"
+            lector = command.ExecuteReader()
 
-        command.CommandText = "SELECT * FROM Proveedores"
-        lector = command.ExecuteReader()
+            While lector.Read
+                cbProveedores.Items.Add(lector(1))
+            End While
 
-        While lector.Read
-            cbProveedores.Items.Add(lector(1))
-        End While
-
-        lector.Close()
+            lector.Close()
+        Catch ex As Exception
+            MsgBox("Error al iniciar la conexión")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(9, '" & ex.Message & "', 'consultaCompras.Load','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
     End Sub
 
     Private Sub cbProveedores_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProveedores.SelectedIndexChanged
         cbFecha.Items.Clear()
 
-        command.CommandText = "SELECT * FROM Proveedores WHERE nombre = '" & cbProveedores.Text & "'"
-        lector = command.ExecuteReader
-        lector.Read()
+        Try
+            command.CommandText = "SELECT * FROM Proveedores WHERE nombre = '" & cbProveedores.Text & "'"
+            lector = command.ExecuteReader
+            lector.Read()
 
-        txtIdProveedor.Text = lector(0)
-        txtTelefono.Text = lector(2).ToString
-        txtDomicilio.Text = lector(3).ToString
-        lector.Close()
+            txtIdProveedor.Text = lector(0)
+            txtTelefono.Text = lector(2).ToString
+            txtDomicilio.Text = lector(3).ToString
+            lector.Close()
 
-        GroupBox1.Visible = True
-        cbFecha.Visible = True
-        cbFecha.Enabled = True
+            GroupBox1.Visible = True
+            cbFecha.Visible = True
+            cbFecha.Enabled = True
 
-        command.CommandText = "SELECT idCompra FROM Compras WHERE idProveedor = " & txtIdProveedor.Text
-        lector = command.ExecuteReader
-        While lector.Read()
-            cbFecha.Items.Add(lector(0))
-        End While
-        lector.Close()
+            command.CommandText = "SELECT idCompra FROM Compras WHERE idProveedor = " & txtIdProveedor.Text
+            lector = command.ExecuteReader
+            While lector.Read()
+                cbFecha.Items.Add(lector(0))
+            End While
+            lector.Close()
+        Catch ex As Exception
+            MsgBox("Error buscar proveedor")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(10, '" & ex.Message & "', 'consultaCompras.cbProveedores_SelectedIndexChanged','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
 
         'If cbFecha.Items.Count <> 0 Then
         '    MsgBox("No hay datos almacenados")
@@ -68,24 +82,30 @@ Public Class consultaCompras
         Dim importe As Double
         Dim subtotal As Double = 0
 
-        command.CommandText = "SELECT * FROM Compras WHERE idCompra = " & cbFecha.Text & ""
-        lector = command.ExecuteReader
-        lector.Read()
+        Try
+            command.CommandText = "SELECT * FROM Compras WHERE idCompra = " & cbFecha.Text & ""
+            lector = command.ExecuteReader
+            lector.Read()
 
-        txtidCompra.Text = lector(2).ToString
-        txtFactura.Text = lector(3).ToString
-        lector.Close()
+            txtidCompra.Text = lector(2).ToString
+            txtFactura.Text = lector(3).ToString
+            lector.Close()
 
-        command.CommandText = "SELECT DetalleCompras.idCompra, Productos.nombre, Productos.codigoBarras, DetalleCompras.cantidad, DetalleCompras.percio FROM DetalleCompras inner join Productos On Productos.idProducto = DetalleCompras.idProducto WHERE DetalleCompras.idCompra = " & cbFecha.Text
-        lector = command.ExecuteReader
+            command.CommandText = "SELECT DetalleCompras.idCompra, Productos.nombre, Productos.codigoBarras, DetalleCompras.cantidad, DetalleCompras.percio FROM DetalleCompras inner join Productos On Productos.idProducto = DetalleCompras.idProducto WHERE DetalleCompras.idCompra = " & cbFecha.Text
+            lector = command.ExecuteReader
 
-        While lector.Read
-            importe = lector(3) * lector(4)
-            dgAgregar.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4), importe)
-            subtotal = subtotal + importe
-        End While
+            While lector.Read
+                importe = lector(3) * lector(4)
+                dgAgregar.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4), importe)
+                subtotal = subtotal + importe
+            End While
 
-        lector.Close()
+            lector.Close()
+        Catch ex As Exception
+            MsgBox("Error buscar idCompra")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(22, '" & ex.Message & "', 'consultaCompras.cbFecha_SelectedIndexChanged','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
 
         lblSubtotal.Text = subtotal
         lblIVA.Text = subtotal * 0.16
@@ -93,7 +113,14 @@ Public Class consultaCompras
     End Sub
 
     Private Sub consultaCompras_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        connection = cerrarConexion()
+        Try
+            connection = cerrarConexion()
+            conexionBitacora = cerrarBitacora()
+        Catch ex As Exception
+            MsgBox("Error al cerrar la conexión")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(8, '" & ex.Message & "', 'ConsultaCompras.FormClosing','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+        End Try
 
         cbFecha.Items.Clear()
         txtidCompra.Text = ""

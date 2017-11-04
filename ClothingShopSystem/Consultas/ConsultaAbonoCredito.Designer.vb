@@ -22,8 +22,8 @@ Partial Class ConsultaAbonoCredito
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.gbCliente = New System.Windows.Forms.GroupBox()
         Me.cbCliente = New System.Windows.Forms.ComboBox()
         Me.txtSaldo = New System.Windows.Forms.TextBox()
@@ -181,18 +181,18 @@ Partial Class ConsultaAbonoCredito
         '
         'Column3
         '
-        DataGridViewCellStyle3.Format = "d"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Format = "d"
+        DataGridViewCellStyle1.NullValue = Nothing
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle1
         Me.Column3.HeaderText = "Fecha"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
         '
         'Column6
         '
-        DataGridViewCellStyle4.Format = "C2"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.Column6.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Format = "C2"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.Column6.DefaultCellStyle = DataGridViewCellStyle2
         Me.Column6.HeaderText = "Importe"
         Me.Column6.Name = "Column6"
         Me.Column6.ReadOnly = True
@@ -224,7 +224,10 @@ Partial Class ConsultaAbonoCredito
         Me.Controls.Add(Me.cbVentas)
         Me.Controls.Add(Me.dgAgregar)
         Me.Controls.Add(Me.gbCliente)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "ConsultaAbonoCredito"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ConsultaAbonoCredito"
         Me.gbCliente.ResumeLayout(False)
