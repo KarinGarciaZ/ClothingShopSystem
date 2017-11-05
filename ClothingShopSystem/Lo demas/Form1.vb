@@ -262,36 +262,56 @@ Public Class Form1
     End Sub
 
     Private Sub RestaurarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RestaurarToolStripMenuItem.Click
-        SqlConnection.ClearAllPools()
-        Dim res As DialogResult
-        res = OpenFileDialog1.ShowDialog()
-        If res = DialogResult.OK Then
-            Dim path As String = OpenFileDialog1.FileName
-            Conexion = openConnection()
-            Conexion.Open()
-            Dim command As New SqlCommand
-            command.Connection = Conexion
-            command.CommandText = "use master restore database dboClothingShopSystem FROM disk = '" & path & "' WITH REPLACE"
-            command.ExecuteNonQuery()
-            Conexion.Close()
-        End If
+        Try
+            SqlConnection.ClearAllPools()
+            Dim res As DialogResult
+            res = OpenFileDialog1.ShowDialog()
+            If res = DialogResult.OK Then
+                Dim path As String = OpenFileDialog1.FileName
+                Conexion = openConnection()
+                Conexion.Open()
+                Dim command As New SqlCommand
+                command.Connection = Conexion
+                command.CommandText = "restore database dboClothingShopSystem FROM disk = '" & path & "' WITH REPLACE"
+                command.ExecuteNonQuery()
+                Conexion.Close()
+            End If
+        Catch ex As Exception
+            MsgBox("Error al restaurar")
+            Dim errMessage As String = quitarComillas(ex.Message)
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(27, '" & errMessage & "', 'Form1.Restaurar','" & Now.Date & "'," & Err.Number & ", '" & moduloUsuario & "')"
+            BitacoraComando.ExecuteNonQuery()
+
+        End Try
+
     End Sub
 
     Private Sub RespaldarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RespaldarToolStripMenuItem.Click
-        SqlConnection.ClearAllPools()
-        Dim res As DialogResult
-        SaveFileDialog1.FileName = ".bak"
-        res = SaveFileDialog1.ShowDialog()
-        If res = DialogResult.OK Then
-            Dim path As String = SaveFileDialog1.FileName
-            Conexion = openConnection()
-            Conexion.Open()
-            Dim command As New SqlCommand
-            command.Connection = Conexion
-            command.CommandText = "backup Database dboClothingShopSystem to disk = '" & path & "' with format "
-            command.ExecuteNonQuery()
-            Conexion.Close()
-        End If
+        Try
+            SqlConnection.ClearAllPools()
+            Dim res As DialogResult
+            SaveFileDialog1.FileName = ".bak"
+            res = SaveFileDialog1.ShowDialog()
+            If res = DialogResult.OK Then
+                Dim path As String = SaveFileDialog1.FileName
+                Conexion = openConnection()
+                Conexion.Open()
+                Dim command As New SqlCommand
+                command.Connection = Conexion
+                command.CommandText = "backup Database dboClothingShopSystem to disk = '" & path & "' with format "
+                command.ExecuteNonQuery()
+                MsgBox("jaló")
+                Conexion.Close()
+            End If
+        Catch ex As Exception
+            MsgBox("Error al respaldar")
+            Dim errMessage As String = quitarComillas(ex.Message)
+            conexionBitacora.open
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(27, '" & errMessage & "', 'Form1.Respaldar','" & Now.Date & "'," & Err.Number & ", '" & moduloUsuario & "')"
+            BitacoraComando.ExecuteNonQuery()
+            conexionBitacora = cerrarBitacora()
+        End Try
+
     End Sub
 
     Private Sub BitacoraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BitacoraToolStripMenuItem.Click

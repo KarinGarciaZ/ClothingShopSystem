@@ -15,7 +15,7 @@ Public Class PrimeraVentana
         Catch ex As Exception
             MsgBox("Error al iniciar la conexión")
             Dim errMessage As String = quitarComillas(ex.Message)
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(1, '" & errMessage & "', 'PrimeraVentana.Load','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(1, '" & errMessage & "', 'PrimeraVentana.Load','" & Now.Date & "'," & Err.Number & ", '" & moduloUsuario & "')"
             BitacoraComando.ExecuteNonQuery()
         End Try
     End Sub
@@ -50,7 +50,7 @@ Public Class PrimeraVentana
         Catch ex As Exception
             MsgBox("Error corfirmarCuenta")
             Dim errMessage As String = quitarComillas(ex.Message)
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(19, '" & errMessage & "', 'PrimeraVentana.Load','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(19, '" & errMessage & "', 'PrimeraVentana.Load','" & Now.Date & "'," & Err.Number & ", '" & moduloUsuario & "')"
             BitacoraComando.ExecuteNonQuery()
 
         End Try
