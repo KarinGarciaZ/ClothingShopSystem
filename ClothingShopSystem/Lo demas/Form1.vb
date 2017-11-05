@@ -295,6 +295,6 @@ Public Class Form1
     End Sub
 
     Private Sub BitacoraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BitacoraToolStripMenuItem.Click
-
+        Bitacora.ShowDialog()
     End Sub
 End Class

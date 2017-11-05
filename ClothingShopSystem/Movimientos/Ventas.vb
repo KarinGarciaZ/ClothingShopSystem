@@ -57,7 +57,7 @@ Public Class Ventas
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Try
-            command.CommandText = "SELECTc COUNT(*) FROM Ventas"
+            command.CommandText = "SELECT COUNT(*) FROM Ventas"
             txtIdVenta.Text = command.ExecuteScalar + 1
         Catch ex As Exception
             MsgBox("Error en el botón Nuevo")
