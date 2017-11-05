@@ -27,7 +27,7 @@ Public Class Compras
         Catch ex As Exception
             MsgBox("Error en el botón Nuevo")
             Dim errMessage As String = quitarComillas(ex.Message)
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(3, '" & errMessage & "', 'Compras.Nuevo','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(3, '" & errMessage & "', 'Compras.Nuevo','" & Now.Date & "'," & Err.Number & ", '" & moduloUsuario & "')"
             BitacoraComando.ExecuteNonQuery()
         End Try
     End Sub
@@ -56,7 +56,7 @@ Public Class Compras
         Catch ex As Exception
             MsgBox("Error al iniciar la conexión")
             Dim errMessage As String = quitarComillas(ex.Message)
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(9, '" & errMessage & "', 'Compras.Load','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(9, '" & errMessage & "', 'Compras.Load','" & Now.Date & "'," & Err.Number & ", '" & moduloUsuario & "')"
 
             BitacoraComando.ExecuteNonQuery()
         End Try
@@ -105,7 +105,7 @@ Public Class Compras
         Catch ex As Exception
             MsgBox("Error Grabar")
             Dim errMessage As String = quitarComillas(ex.Message)
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(7, '" & errMessage & "', 'Compras.Grabar','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(7, '" & errMessage & "', 'Compras.Grabar','" & Now.Date & "'," & Err.Number & ", '" & moduloUsuario & "')"
             BitacoraComando.ExecuteNonQuery()
         End Try
 
@@ -148,7 +148,7 @@ Public Class Compras
         Catch ex As Exception
             MsgBox("Error cargar proveedor")
             Dim errMessage As String = quitarComillas(ex.Message)
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(10, '" & errMessage & "', 'Compras.ProveedorSelectChanged','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(10, '" & errMessage & "', 'Compras.ProveedorSelectChanged','" & Now.Date & "'," & Err.Number & ", '" & moduloUsuario & "')"
             BitacoraComando.ExecuteNonQuery()
         End Try
     End Sub
@@ -168,7 +168,7 @@ Public Class Compras
         Catch ex As Exception
             MsgBox("Error cargar Producto")
             Dim errMessage As String = quitarComillas(ex.Message)
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(11, '" & errMessage & "', 'Compras.ProductoSelectChanged','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(11, '" & errMessage & "', 'Compras.ProductoSelectChanged','" & Now.Date & "'," & Err.Number & ", '" & moduloUsuario & "')"
             BitacoraComando.ExecuteNonQuery()
         End Try
     End Sub
@@ -220,7 +220,7 @@ Public Class Compras
         Catch ex As Exception
             MsgBox("Error al cerrar la conexión")
             Dim errMessage As String = quitarComillas(ex.Message)
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(8, '" & errMessage & "', 'Compras.FormClosing','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(8, '" & errMessage & "', 'Compras.FormClosing','" & Now.Date & "'," & Err.Number & ", '" & moduloUsuario & "')"
             BitacoraComando.ExecuteNonQuery()
         End Try
 

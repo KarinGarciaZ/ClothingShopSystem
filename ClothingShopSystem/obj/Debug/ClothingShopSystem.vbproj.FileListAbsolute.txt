@@ -291,3 +291,4 @@ C:\Users\Andrea\Documents\TECNOLOGICO\7TO SEMESTRE\SISTEMAS INTEGRALES DE INFORM
 C:\Users\Andrea\Documents\TECNOLOGICO\7TO SEMESTRE\SISTEMAS INTEGRALES DE INFORMACION\ClothingShopSystem-master\ClothingShopSystem\obj\Debug\RdlCompile.compiled
 C:\Users\Andrea\Documents\TECNOLOGICO\7TO SEMESTRE\SISTEMAS INTEGRALES DE INFORMACION\ClothingShopSystem-master\ClothingShopSystem\obj\Debug\ClothingShopSystem.frmAbonosApartados.resources
 C:\Users\elektramovil\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.frmAbonosApartados.resources
+C:\Users\elektramovil\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.Bitacora.resources

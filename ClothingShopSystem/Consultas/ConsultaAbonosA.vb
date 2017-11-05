@@ -24,7 +24,7 @@ Public Class ConsultaAbonosA
         Catch ex As Exception
             MsgBox("Error al iniciar la conexión")
             Dim errMessage As String = quitarComillas(ex.Message)
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(9, '" & errMessage & "', 'ConsultaAbonosA.Load','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(9, '" & errMessage & "', 'ConsultaAbonosA.Load','" & Now.Date & "'," & Err.Number & ", '" & moduloUsuario & "')"
             BitacoraComando.ExecuteNonQuery()
         End Try
     End Sub
@@ -42,7 +42,7 @@ Public Class ConsultaAbonosA
         Catch ex As Exception
             MsgBox("Error seleccionar clientes")
             Dim errMessage As String = quitarComillas(ex.Message)
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(21, '" & errMessage & "', 'ConsultaAbonosA.Load','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(21, '" & errMessage & "', 'ConsultaAbonosA.Load','" & Now.Date & "'," & Err.Number & ", '" & moduloUsuario & "')"
             BitacoraComando.ExecuteNonQuery()
         End Try
     End Sub
@@ -54,7 +54,7 @@ Public Class ConsultaAbonosA
         Catch ex As Exception
             MsgBox("Error al cerrar la conexión")
             Dim errMessage As String = quitarComillas(ex.Message)
-            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(8, '" & errMessage & "', 'ConsultaAbonosA.FormClosing','" & Now.Date & "',51)"
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(8, '" & errMessage & "', 'ConsultaAbonosA.FormClosing','" & Now.Date & "',51, '" & moduloUsuario & "')"
             BitacoraComando.ExecuteNonQuery()
         End Try
         dgAgregar.Rows.Clear()

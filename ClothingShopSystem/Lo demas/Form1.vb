@@ -294,4 +294,7 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub BitacoraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BitacoraToolStripMenuItem.Click
+
+    End Sub
 End Class

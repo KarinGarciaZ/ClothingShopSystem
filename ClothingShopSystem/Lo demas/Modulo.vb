@@ -1,6 +1,9 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Configuration
 Module Modulo
+
+    Public moduloUsuario As String
+
     Public Function openConnection()
         Dim conexionsql As SqlConnection
         conexionsql = New SqlConnection(ConfigurationManager.ConnectionStrings("Conexion").ConnectionString)

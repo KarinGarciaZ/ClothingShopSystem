@@ -26,6 +26,7 @@ Public Class PrimeraVentana
             lector = comando.ExecuteReader
             If lector.Read Then
                 If txtConfirmar.Text.Equals(lector(0)) Then
+                    moduloUsuario = txtNombre.Text
                     If Not lector(1).ToString.Equals("Empleado") Then
                         Me.Hide()
                         Form1.ShowDialog()
