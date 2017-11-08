@@ -91,8 +91,6 @@ Public Class Form1
     End Sub
 
     Private Sub ApartadosPorClienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ApartadosPorClienteToolStripMenuItem.Click
-        conexionBitacora.Open()
-
         Try
             Conexion = openConnection()
 
@@ -118,6 +116,8 @@ Public Class Form1
             Reporte.Show()
             Conexion.Close()
         Catch ex As Exception
+            conexionBitacora.Open()
+
             MsgBox("Error reporte")
             BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(18, '" & ex.Message & "', 'Prncipal.ApartadosPorCliente','" & Now.Date & "'," & Err.Number & ")"
             BitacoraComando.ExecuteNonQuery()
@@ -131,7 +131,6 @@ Public Class Form1
     End Sub
 
     Private Sub ProductosToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ProductosToolStripMenuItem2.Click
-        conexionBitacora.open()
         Try
             Conexion = openConnection()
 
@@ -156,6 +155,8 @@ Public Class Form1
             Reporte.Show()
             Conexion.Close()
         Catch ex As Exception
+            conexionBitacora.open()
+
             MsgBox("Error reporte")
             BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(18, '" & ex.Message & "', 'Prncipal.ApartadosPorCliente','" & Now.Date & "'," & Err.Number & ")"
             BitacoraComando.ExecuteNonQuery()
@@ -165,7 +166,6 @@ Public Class Form1
     End Sub
 
     Private Sub ClientesDeudoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesDeudoresToolStripMenuItem.Click
-        conexionBitacora.open()
         Try
             Conexion = openConnection()
 
@@ -190,6 +190,8 @@ Public Class Form1
             Reporte.Show()
             Conexion.Close()
         Catch ex As Exception
+            conexionBitacora.open()
+
             MsgBox("Error reporte")
             BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(18, '" & ex.Message & "', 'Prncipal.ApartadosPorCliente','" & Now.Date & "'," & Err.Number & ")"
             BitacoraComando.ExecuteNonQuery()
@@ -207,7 +209,6 @@ Public Class Form1
     End Sub
 
     Private Sub ApartadosNoPagadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ApartadosNoPagadosToolStripMenuItem.Click
-        conexionBitacora.open()
         Try
             Conexion = openConnection()
 
@@ -232,6 +233,8 @@ Public Class Form1
             Reporte.Show()
             Conexion.Close()
         Catch ex As Exception
+            conexionBitacora.open()
+
             MsgBox("Error reporte")
             BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(18, '" & ex.Message & "', 'Prncipal.ApartadosPorCliente','" & Now.Date & "'," & Err.Number & ")"
             BitacoraComando.ExecuteNonQuery()
@@ -263,25 +266,32 @@ Public Class Form1
 
     Private Sub RestaurarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RestaurarToolStripMenuItem.Click
         Try
-            SqlConnection.ClearAllPools()
             Dim res As DialogResult
             res = OpenFileDialog1.ShowDialog()
             If res = DialogResult.OK Then
                 Dim path As String = OpenFileDialog1.FileName
-                Conexion = openConnection()
+                Conexion = OpenMaster()
                 Conexion.Open()
                 Dim command As New SqlCommand
                 command.Connection = Conexion
+                command.CommandText = "ALTER DATABASE dboClothingShopSystem SET SINGLE_USER WITH ROLLBACK IMMEDIATE"
+                command.ExecuteNonQuery()
+                command.CommandText = "ALTER DATABASE dboClothingShopSystem SET MULTI_USER"
+                command.ExecuteNonQuery()
                 command.CommandText = "restore database dboClothingShopSystem FROM disk = '" & path & "' WITH REPLACE"
                 command.ExecuteNonQuery()
+                MsgBox("La restauración se hizo exitosamente.")
                 Conexion.Close()
             End If
         Catch ex As Exception
+            conexionBitacora.open()
+
             MsgBox("Error al restaurar")
             Dim errMessage As String = quitarComillas(ex.Message)
             BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(27, '" & errMessage & "', 'Form1.Restaurar','" & Now.Date & "'," & Err.Number & ", '" & moduloUsuario & "')"
             BitacoraComando.ExecuteNonQuery()
 
+            conexionBitacora = cerrarBitacora()
         End Try
 
     End Sub
@@ -300,7 +310,7 @@ Public Class Form1
                 command.Connection = Conexion
                 command.CommandText = "backup Database dboClothingShopSystem to disk = '" & path & "' with format "
                 command.ExecuteNonQuery()
-                MsgBox("jaló")
+                MsgBox("El respaldo se hizo exitosamente.")
                 Conexion.Close()
             End If
         Catch ex As Exception
@@ -316,5 +326,15 @@ Public Class Form1
 
     Private Sub BitacoraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BitacoraToolStripMenuItem.Click
         Bitacora.ShowDialog()
+    End Sub
+
+    Private Sub AyudaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AyudaToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Keys.F1 Then
+            System.Diagnostics.Process.Start("C:\Users\elektramovil\Documents\GitHub\ClothingShopSystem\Ayuda.chm")
+        End If
     End Sub
 End Class

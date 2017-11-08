@@ -38,6 +38,20 @@ Module Modulo
         Return conexionBitacora
     End Function
 
+    Public Function OpenMaster()
+        Dim conexionBitacora As New SqlConnection("Data Source = KARINSPC; initial catalog='master'; Integrated Security = True")
+
+        Return conexionBitacora
+    End Function
+
+    Public Function cerrarMaster()
+        Dim conexionBitacora As New SqlConnection("Data Source = KARINSPC; initial catalog='master'; Integrated Security = True")
+
+        conexionBitacora.Close()
+
+        Return conexionBitacora
+    End Function
+
     Public Function quitarComillas(message As String)
         While message.Contains("'")
             Dim x As Integer = message.IndexOf("'")

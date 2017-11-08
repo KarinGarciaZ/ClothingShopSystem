@@ -318,9 +318,11 @@ Public Class Ventas
                         End If
                         command.CommandText = "INSERT INTO Ventas VALUES (" & txtIdVenta.Text & "," & idCliente & ",'" & dtpFecha.Value.Date & "','31-12-9999','Efectivo'," & lblSubtotal.Text & "," & lblIVA.Text & "," & txtDescuento.Text & ",0,0)"
                         command.ExecuteNonQuery()
+
                         For x = 0 To dgAgregar.RowCount - 1
                             command.CommandText = "INSERT INTO DetalleVentas VALUES (" & txtIdVenta.Text & "," & dgAgregar.Item(0, x).Value & "," & dgAgregar.Item(3, x).Value & "," & dgAgregar.Item(4, x).Value & ")"
                             command.ExecuteNonQuery()
+
                             command.CommandText = "UPDATE Productos SET existencia -= " & dgAgregar.Item(3, x).Value & " WHERE idProducto = " & dgAgregar.Item(0, x).Value
                             command.ExecuteNonQuery()
                         Next
