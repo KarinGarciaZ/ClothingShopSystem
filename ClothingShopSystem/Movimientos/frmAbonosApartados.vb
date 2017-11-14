@@ -61,7 +61,7 @@ Public Class frmAbonosApartados
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Try
-            comando.CommandText = "SELECT COUNT(*) FROM AbonosApartados"
+            comando.CommandText = "select IDENT_CURRENT ('AbonosApartados')"
             txtIdAbonoApartado.Text = comando.ExecuteScalar + 1
 
             cbClientes.Enabled = True
@@ -160,7 +160,7 @@ Public Class frmAbonosApartados
             comando.Connection = conexion
             comando.Transaction = transaccion
             Try
-                comando.CommandText = "INSERT INTO AbonosApartados VALUES (" & txtIdAbonoApartado.Text & "," & txtIdApartado.Text & ",'" & dtpFecha.Value.Date & "'," & txtAbono.Text & ")"
+                comando.CommandText = "INSERT INTO AbonosApartados VALUES (" & txtIdApartado.Text & ",'" & dtpFecha.Value.Date & "'," & txtAbono.Text & ")"
                 comando.ExecuteNonQuery()
 
                 comando.CommandText = "UPDATE Apartados SET abono = abono + " & txtAbono.Text & "WHERE idApartado = " & txtIdApartado.Text

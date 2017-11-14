@@ -42,7 +42,7 @@ Public Class frmApartados
         cbProducto.Enabled = True
 
         Try
-            comando.CommandText = "SELECT COUNT(*) FROM Apartados"
+            comando.CommandText = "select IDENT_CURRENT ('Apartados')"
             txtIdApartado.Text = comando.ExecuteScalar() + 1
         Catch ex As Exception
             MsgBox("Error en el botón Nuevo")
@@ -168,7 +168,7 @@ Public Class frmApartados
             comando.Connection = conexion
             comando.Transaction = transaction
             Try
-                comando.CommandText = "INSERT INTO Apartados VALUES (" & txtIdApartado.Text & "," & txtIdCliente.Text & "," & CDbl(lblTotal.Text) & ", 0.0 ,'" & dtpFecha.Value & "','" & dtpFechaVencimiento.Value.Date & "')"
+                comando.CommandText = "INSERT INTO Apartados VALUES (" & txtIdCliente.Text & "," & CDbl(lblTotal.Text) & ", 0.0 ,'" & dtpFecha.Value & "','" & dtpFechaVencimiento.Value.Date & "')"
                 comando.ExecuteNonQuery()
 
                 For x = 0 To dgAgregar.RowCount - 1

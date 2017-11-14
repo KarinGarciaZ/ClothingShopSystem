@@ -87,7 +87,7 @@ Public Class AbonoCredito
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Try
-            command.CommandText = "SELECT COUNT(*) FROM AbonosCreditos"
+            command.CommandText = "select IDENT_CURRENT ('AbonosCreditos')"
             txtIdAbo.Text = command.ExecuteScalar + 1
 
             btnGrabar.Enabled = True
@@ -169,7 +169,7 @@ Public Class AbonoCredito
                 command.Connection = connection
                 command.Transaction = transaction
                 Try
-                    command.CommandText = "INSERT INTO AbonosCreditos VALUES (" & txtIdAbo.Text & "," & cbVentas.Text & ",'" & dtpFecha.Value.Date & "'," & txtImporte.Text & ")"
+                    command.CommandText = "INSERT INTO AbonosCreditos VALUES (" & cbVentas.Text & ",'" & dtpFecha.Value.Date & "'," & txtImporte.Text & ")"
                     command.ExecuteNonQuery()
 
                     command.CommandText = "UPDATE Ventas SET abonado += " & txtImporte.Text & " where idVenta = " & cbVentas.Text & ""

@@ -10,7 +10,7 @@ Public Class Compras
 
     Private Sub cmdNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Try
-            command.CommandText = "SELECT COUNT(*) FROM Compras"
+            command.CommandText = "select IDENT_CURRENT ('Compras')"
             txtIdCompra.Text = command.ExecuteScalar + 1
 
             btnGrabar.Enabled = True
@@ -72,7 +72,7 @@ Public Class Compras
                 command.Connection = connection
                 command.Transaction = transaction
                 Try
-                    command.CommandText = "INSERT INTO Compras VALUES (" & txtIdCompra.Text & "," & txtIdProveedor.Text & ",'" & dtpFecha.Value.Date & "','" & txtFactura.Text & "'," & lblTotal.Text & ")"
+                    command.CommandText = "INSERT INTO Compras VALUES (" & txtIdProveedor.Text & ",'" & dtpFecha.Value.Date & "','" & txtFactura.Text & "'," & lblTotal.Text & ")"
                     command.ExecuteNonQuery()
 
                     For x = 0 To dgAgregar.RowCount - 1

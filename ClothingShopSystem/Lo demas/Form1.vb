@@ -329,7 +329,7 @@ Public Class Form1
     End Sub
 
     Private Sub AyudaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AyudaToolStripMenuItem.Click
-
+        System.Diagnostics.Process.Start("C:\Users\elektramovil\Documents\GitHub\ClothingShopSystem\Ayuda.chm")
     End Sub
 
     Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown

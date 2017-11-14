@@ -10,7 +10,7 @@ Public Class Devoluciones
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Try
-            command.CommandText = "SELECT COUNT(*) FROM Devoluciones"
+            command.CommandText = "select IDENT_CURRENT ('Devoluciones')"
             txtIdDevolucion.Text = command.ExecuteScalar() + 1
             txtIdVenta.Enabled = True
             txtConcepto.Enabled = True
@@ -90,7 +90,7 @@ Public Class Devoluciones
                 command.CommandText = "update Ventas set estado = 1 where idVenta = " & txtIdVenta.Text & ""
                 command.ExecuteNonQuery()
 
-                command.CommandText = "insert into Devoluciones values(" & txtIdDevolucion.Text & ", " & txtIdVenta.Text & ", '" & txtConcepto.Text & "', '" & dtpFechaD.Value.Date & "')"
+                command.CommandText = "insert into Devoluciones values(" & txtIdVenta.Text & ", '" & txtConcepto.Text & "', '" & dtpFechaD.Value.Date & "')"
                 command.ExecuteNonQuery()
 
                 For x = 0 To dgAgregar.RowCount - 1
