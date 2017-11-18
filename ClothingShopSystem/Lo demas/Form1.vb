@@ -344,7 +344,6 @@ Public Class Form1
         Dim conexion = openConnection()
         Dim command As SqlCommand = conexion.CreateCommand()
         Dim lector As SqlDataReader
-        Dim lectorDetalle As SqlDataReader
         conexion.open()
         conexionH.open()
 
@@ -386,6 +385,12 @@ Public Class Form1
         lector.Close()
 
         'Pasa ventas
+        command.CommandText = "select count(*) from Ventas where condicion = 'Efectivo'"
+        Dim len = command.ExecuteScalar
+        command.CommandText = "select count(*) from Ventas where condicion = 'Credito' and abonado >= subtotal + iva"
+        Dim len2 = command.ExecuteScalar
+        Dim y As Integer = 0
+        Dim idVentas(len + len2) As Integer
         Dim lec As Integer = 0
         command.CommandText = "select * from Ventas where condicion = 'Efectivo'"
         lector = command.ExecuteReader()
@@ -395,6 +400,8 @@ Public Class Form1
             Else
                 lec = 1
             End If
+            idVentas(y) = lector(0)
+            y += 1
             commandH.CommandText = "insert into Ventas values(" & lector(0) & "," & lector(1) & ", '" & lector(2) & "','" & lector(3) & "','" & lector(4) & "'," & lector(5) & "," & lector(6) & "," & lector(7) & "," & lector(8) & "," & lec & ")"
             commandH.ExecuteNonQuery()
         End While
@@ -407,6 +414,8 @@ Public Class Form1
             Else
                 lec = 1
             End If
+            idVentas(y) = lector(0)
+            y += 1
             commandH.CommandText = "insert into Ventas values(" & lector(0) & "," & lector(1) & ", '" & lector(2) & "','" & lector(3) & "','" & lector(4) & "'," & lector(5) & "," & lector(6) & "," & lector(7) & "," & lector(8) & "," & lec & ")"
             commandH.ExecuteNonQuery()
         End While
@@ -429,9 +438,15 @@ Public Class Form1
         lector.Close()
 
         'Pasa Apartados
+        command.CommandText = "select count(*) from Apartados where abono >= total"
+        Dim l = command.ExecuteScalar
+        Dim x As Integer = 0
+        Dim idApartados(l) As Integer
         command.CommandText = "select * from Apartados where abono >= total"
         lector = command.ExecuteReader()
         While lector.Read()
+            idApartados(x) = lector(1)
+            x += 1
             commandH.CommandText = "insert into Apartados values(" & lector(0) & "," & lector(1) & ", " & lector(2) & "," & lector(3) & ",'" & lector(4) & "','" & lector(5) & "')"
             commandH.ExecuteNonQuery()
         End While
@@ -456,22 +471,30 @@ Public Class Form1
         lector.Close()
 
         'Borrar datos de tablas
-        'command.CommandText = "delete from Ventas where condicion = 'Efectivo'"
-        'command.ExecuteNonQuery()
-        'command.CommandText = "delete from Ventas where condicion = 'Credito' and abonado >= subtotal + iva"
-        'command.ExecuteNonQuery()
-        'command.CommandText = "delete from Apartados where abono >= = total"
-        'command.ExecuteNonQuery()
-        'command.CommandText = "delete from AbonosApartados"
-        'command.ExecuteNonQuery()
-        'command.CommandText = "delete from AbonosCreditos"
-        'command.ExecuteNonQuery()
-        'command.CommandText = "delete from Compras"
-        'command.ExecuteNonQuery()
-        'command.CommandText = "delete from Devoluciones"
-        'command.ExecuteNonQuery()
-        'command.CommandText = "delete from DetalleCompras"
-        'command.ExecuteNonQuery()
+        command.CommandText = "delete from Ventas where condicion = 'Efectivo'"
+        command.ExecuteNonQuery()
+        command.CommandText = "delete from Ventas where condicion = 'Credito' and abonado >= subtotal + iva"
+        command.ExecuteNonQuery()
+        command.CommandText = "delete from Apartados where abono >= total"
+        command.ExecuteNonQuery()
+        command.CommandText = "delete from AbonosApartados"
+        command.ExecuteNonQuery()
+        command.CommandText = "delete from AbonosCreditos"
+        command.ExecuteNonQuery()
+        command.CommandText = "delete from Compras"
+        command.ExecuteNonQuery()
+        command.CommandText = "delete from Devoluciones"
+        command.ExecuteNonQuery()
+        command.CommandText = "delete from DetalleCompras"
+        command.ExecuteNonQuery()
+        For w = 0 To idApartados.Length - 1
+            command.CommandText = "delete from DetalleApartados where idApartado = " & idApartados(w)
+            command.ExecuteNonQuery()
+        Next
+        For w = 0 To idVentas.Length - 1
+            command.CommandText = "delete from DetalleVentas where idVenta = " & idVentas(w)
+            command.ExecuteNonQuery()
+        Next
 
 
 
