@@ -337,4 +337,144 @@ Public Class Form1
             System.Diagnostics.Process.Start("C:\Users\elektramovil\Documents\GitHub\ClothingShopSystem\Ayuda.chm")
         End If
     End Sub
+
+    Private Sub TraspasoHistoricoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TraspasoHistoricoToolStripMenuItem.Click
+        Dim conexionH = OpenHistorico()
+        Dim commandH As SqlCommand = conexionH.CreateCommand()
+        Dim conexion = openConnection()
+        Dim command As SqlCommand = conexion.CreateCommand()
+        Dim lector As SqlDataReader
+        Dim lectorDetalle As SqlDataReader
+        conexion.open()
+        conexionH.open()
+
+        'TRASPASO HISTORICO DE MOVIMIENTOS Y DETALLES
+        'Pasa compras
+        command.CommandText = "select * from Compras"
+        lector = command.ExecuteReader()
+        While lector.Read()
+            commandH.CommandText = "insert into Compras values(" & lector(0) & "," & lector(1) & ", '" & lector(2) & "','" & lector(3) & "'," & lector(4) & ")"
+            commandH.ExecuteNonQuery()
+        End While
+        lector.Close()
+
+        'Pasa Devoluciones
+        command.CommandText = "select * from Devoluciones"
+        lector = command.ExecuteReader()
+        While lector.Read()
+            commandH.CommandText = "insert into Devoluciones values(" & lector(0) & "," & lector(1) & ", '" & lector(2) & "','" & lector(3) & "')"
+            commandH.ExecuteNonQuery()
+        End While
+        lector.Close()
+
+        'Pasa Abonos Credito
+        command.CommandText = "select * from AbonosCreditos"
+        lector = command.ExecuteReader()
+        While lector.Read()
+            commandH.CommandText = "insert into AbonosCreditos values(" & lector(0) & "," & lector(1) & ", '" & lector(2) & "'," & lector(3) & ")"
+            commandH.ExecuteNonQuery()
+        End While
+        lector.Close()
+
+        'Pasa Abonos Apartados
+        command.CommandText = "select * from AbonosApartados"
+        lector = command.ExecuteReader()
+        While lector.Read()
+            commandH.CommandText = "insert into AbonosApartados values(" & lector(0) & "," & lector(1) & ", '" & lector(2) & "'," & lector(3) & ")"
+            commandH.ExecuteNonQuery()
+        End While
+        lector.Close()
+
+        'Pasa ventas
+        Dim lec As Integer = 0
+        command.CommandText = "select * from Ventas where condicion = 'Efectivo'"
+        lector = command.ExecuteReader()
+        While lector.Read()
+            If Not lector(9) Then
+                lec = 0
+            Else
+                lec = 1
+            End If
+            commandH.CommandText = "insert into Ventas values(" & lector(0) & "," & lector(1) & ", '" & lector(2) & "','" & lector(3) & "','" & lector(4) & "'," & lector(5) & "," & lector(6) & "," & lector(7) & "," & lector(8) & "," & lec & ")"
+            commandH.ExecuteNonQuery()
+        End While
+        lector.Close()
+        command.CommandText = "select * from Ventas where condicion = 'Credito' and abonado >= subtotal + iva"
+        lector = command.ExecuteReader()
+        While lector.Read()
+            If Not lector(9) Then
+                lec = 0
+            Else
+                lec = 1
+            End If
+            commandH.CommandText = "insert into Ventas values(" & lector(0) & "," & lector(1) & ", '" & lector(2) & "','" & lector(3) & "','" & lector(4) & "'," & lector(5) & "," & lector(6) & "," & lector(7) & "," & lector(8) & "," & lec & ")"
+            commandH.ExecuteNonQuery()
+        End While
+        lector.Close()
+
+        'Pasa detalle ventas
+        command.CommandText = "select DetalleVentas.idVenta, DetalleVentas.idProducto, DetalleVentas.cantidad, DetalleVentas.precio from DetalleVentas inner join Ventas on Ventas.idVenta = DetalleVentas.idVenta  where Ventas.condicion  = 'Efectivo'"
+        lector = command.ExecuteReader()
+        While lector.Read()
+            commandH.CommandText = "insert into DetalleVentas values(" & lector(0) & "," & lector(1) & ", " & lector(2) & "," & lector(3) & ")"
+            commandH.ExecuteNonQuery()
+        End While
+        lector.Close()
+        command.CommandText = "select DetalleVentas.idVenta, DetalleVentas.idProducto, DetalleVentas.cantidad, DetalleVentas.precio from DetalleVentas inner join Ventas on Ventas.idVenta = DetalleVentas.idVenta  where Ventas.condicion  = 'Credito' and Ventas.abonado >= Ventas.subtotal + Ventas.iva"
+        lector = command.ExecuteReader()
+        While lector.Read()
+            commandH.CommandText = "insert into DetalleVentas values(" & lector(0) & "," & lector(1) & ", " & lector(2) & "," & lector(3) & ")"
+            commandH.ExecuteNonQuery()
+        End While
+        lector.Close()
+
+        'Pasa Apartados
+        command.CommandText = "select * from Apartados where abono >= total"
+        lector = command.ExecuteReader()
+        While lector.Read()
+            commandH.CommandText = "insert into Apartados values(" & lector(0) & "," & lector(1) & ", " & lector(2) & "," & lector(3) & ",'" & lector(4) & "','" & lector(5) & "')"
+            commandH.ExecuteNonQuery()
+        End While
+        lector.Close()
+
+        'Pasa Detalle Apartados
+        command.CommandText = "select DetalleApartados.idApartado, DetalleApartados.idProducto, DetalleApartados.cantidad, DetalleApartados.precio from DetalleApartados inner join Apartados on Apartados.idApartado = DetalleApartados.idApartado  where abono >= total"
+        lector = command.ExecuteReader()
+        While lector.Read()
+            commandH.CommandText = "insert into DetalleApartados values(" & lector(0) & "," & lector(1) & ", " & lector(2) & "," & lector(3) & ")"
+            commandH.ExecuteNonQuery()
+        End While
+        lector.Close()
+
+        'Pasa Detalle Compras
+        command.CommandText = "select * from DetalleCompras"
+        lector = command.ExecuteReader()
+        While lector.Read()
+            commandH.CommandText = "insert into DetalleCompras values(" & lector(0) & "," & lector(1) & ", " & lector(2) & "," & lector(3) & ")"
+            commandH.ExecuteNonQuery()
+        End While
+        lector.Close()
+
+        'Borrar datos de tablas
+        'command.CommandText = "delete from Ventas where condicion = 'Efectivo'"
+        'command.ExecuteNonQuery()
+        'command.CommandText = "delete from Ventas where condicion = 'Credito' and abonado >= subtotal + iva"
+        'command.ExecuteNonQuery()
+        'command.CommandText = "delete from Apartados where abono >= = total"
+        'command.ExecuteNonQuery()
+        'command.CommandText = "delete from AbonosApartados"
+        'command.ExecuteNonQuery()
+        'command.CommandText = "delete from AbonosCreditos"
+        'command.ExecuteNonQuery()
+        'command.CommandText = "delete from Compras"
+        'command.ExecuteNonQuery()
+        'command.CommandText = "delete from Devoluciones"
+        'command.ExecuteNonQuery()
+        'command.CommandText = "delete from DetalleCompras"
+        'command.ExecuteNonQuery()
+
+
+
+
+    End Sub
 End Class

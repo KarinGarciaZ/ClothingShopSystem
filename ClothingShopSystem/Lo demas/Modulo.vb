@@ -59,5 +59,19 @@ Module Modulo
         End While
         Return message
     End Function
+
+    Public Function OpenHistorico()
+        Dim conexionBitacora As New SqlConnection("Data Source = KARINSPC; initial catalog='hdboClothingShopSystem'; Integrated Security = True")
+
+        Return conexionBitacora
+    End Function
+
+    Public Function cerrarHistorico()
+        Dim conexionBitacora As New SqlConnection("Data Source = KARINSPC; initial catalog='dboClothingShopSystem'; Integrated Security = True")
+
+        conexionBitacora.Close()
+
+        Return conexionBitacora
+    End Function
 End Module
 
