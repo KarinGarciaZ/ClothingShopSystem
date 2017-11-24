@@ -347,6 +347,122 @@ Public Class Form1
         conexion.open()
         conexionH.open()
 
+        'TRASPASO HISTORICO CATALOGOS
+        'Pasa categorias
+        commandH.CommandText = "DELETE Categorias"
+        commandH.ExecuteNonQuery()
+
+        command.CommandText = "SELECT * FROM Categorias"
+        lector = command.ExecuteReader()
+        While lector.Read
+            commandH.CommandText = "INSERT INTO Categorias VALUES(" & lector(0) & ", '" & lector(0) & "')"
+            commandH.ExecuteNonQuery()
+        End While
+        lector.Close()
+
+
+        'Pasa clientes
+        commandH.CommandText = "TRUNCATE TABLE Clientes"
+        commandH.ExecuteNonQuery()
+        command.CommandText = "SELECT * FROM Clientes"
+        lector = command.ExecuteReader()
+        While lector.Read
+            commandH.CommandText = "INSERT INTO Clientes VALUES(@idCliente, @nombre, @domicilio, @colonia, @ciudad, @CP, @telefono, @saldo, @limiteCredito)"
+            commandH.Parameters.AddWithValue("@idCliente", lector(0))
+            commandH.Parameters.AddWithValue("@nombre", lector(1))
+            commandH.Parameters.AddWithValue("@domicilio", lector(2))
+            commandH.Parameters.AddWithValue("@colonia", lector(3))
+            commandH.Parameters.AddWithValue("@ciudad", lector(4))
+            commandH.Parameters.AddWithValue("@CP", lector(5))
+            commandH.Parameters.AddWithValue("@telefono", lector(6))
+            commandH.Parameters.AddWithValue("@saldo", lector(7))
+            commandH.Parameters.AddWithValue("@limiteCredito", lector(8))
+
+            commandH.ExecuteNonQuery()
+            commandH.Parameters.Clear()
+        End While
+        lector.Close()
+
+        'Pasa Marcas
+        commandH.CommandText = "TRUNCATE TABLE Marcas"
+        commandH.ExecuteNonQuery()
+        command.CommandText = "SELECT * FROM Marcas"
+        lector = command.ExecuteReader()
+        While lector.Read
+            commandH.CommandText = "INSERT INTO Marcas VALUES(@idMarca, @nombre)"
+            commandH.Parameters.AddWithValue("@idMarca", lector(0))
+            commandH.Parameters.AddWithValue("@nombre", lector(1))
+
+            commandH.ExecuteNonQuery()
+            commandH.Parameters.Clear()
+
+        End While
+        lector.Close()
+
+        'Pasa Productos
+        commandH.CommandText = "TRUNCATE TABLE Productos"
+        commandH.ExecuteNonQuery()
+        command.CommandText = "SELECT * FROM Productos"
+        lector = command.ExecuteReader()
+        While lector.Read
+            commandH.CommandText = "INSERT INTO Productos VALUES(@idProducto, @idTipo, @idCategoria, @idMarca, @codigoBarras, @nombre, @costo, @precio1, @precio2, @precio3, @existencias, @apartados, @ultimaFechaCompra)"
+            commandH.Parameters.AddWithValue("@idProducto", lector(0))
+            commandH.Parameters.AddWithValue("@idTipo", lector(1))
+            commandH.Parameters.AddWithValue("@idCategoria", lector(2))
+            commandH.Parameters.AddWithValue("@idMarca", lector(3))
+            commandH.Parameters.AddWithValue("@codigoBarras", lector(4))
+            commandH.Parameters.AddWithValue("@nombre", lector(5))
+            commandH.Parameters.AddWithValue("@costo", lector(6))
+            commandH.Parameters.AddWithValue("@precio1", lector(7))
+            commandH.Parameters.AddWithValue("@precio2", lector(8))
+            commandH.Parameters.AddWithValue("@precio3", lector(9))
+            commandH.Parameters.AddWithValue("@existencias", lector(10))
+            commandH.Parameters.AddWithValue("@apartados", lector(11))
+            commandH.Parameters.AddWithValue("@ultimaFechaCompra", lector(12))
+
+            commandH.ExecuteNonQuery()
+            commandH.Parameters.Clear()
+
+        End While
+        lector.Close()
+
+        'Pasa Proveedores
+        commandH.CommandText = "TRUNCATE TABLE Proveedores"
+        commandH.ExecuteNonQuery()
+        command.CommandText = "SELECT * FROM Proveedores"
+        lector = command.ExecuteReader()
+        While lector.Read
+            commandH.CommandText = "INSERT INTO Proveedores VALUES(@idProveedor, @nombre, @telefono, @domicilio, @ciudad, @email)"
+            commandH.Parameters.AddWithValue("@idProveedor", lector(0))
+            commandH.Parameters.AddWithValue("@nombre", lector(1))
+            commandH.Parameters.AddWithValue("@telefono", lector(2))
+            commandH.Parameters.AddWithValue("@domicilio", lector(3))
+            commandH.Parameters.AddWithValue("@ciudad", lector(4))
+            commandH.Parameters.AddWithValue("@email", lector(5))
+
+            commandH.ExecuteNonQuery()
+            commandH.Parameters.Clear()
+
+        End While
+        lector.Close()
+
+
+        'Pasa Tipos
+        commandH.CommandText = "TRUNCATE TABLE Tipos"
+        commandH.ExecuteNonQuery()
+        command.CommandText = "SELECT * FROM Tipos"
+        lector = command.ExecuteReader()
+        While lector.Read
+            commandH.CommandText = "INSERT INTO Tipos VALUES(@idTipo, @nombre)"
+            commandH.Parameters.AddWithValue("@idTipo", lector(0))
+            commandH.Parameters.AddWithValue("@nombre", lector(1))
+            commandH.ExecuteNonQuery()
+            commandH.Parameters.Clear()
+
+        End While
+        lector.Close()
+
+
         'TRASPASO HISTORICO DE MOVIMIENTOS Y DETALLES
         'Pasa compras
         command.CommandText = "select * from Compras"
