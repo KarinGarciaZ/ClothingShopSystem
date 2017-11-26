@@ -204,7 +204,7 @@ Public Class frmClientes
         lector = comando.ExecuteReader()
         While lector.Read
             arrLargo(cont) = lector(0)
-            cont = +1
+            cont = cont + 1
         End While
         lector.Close()
 
