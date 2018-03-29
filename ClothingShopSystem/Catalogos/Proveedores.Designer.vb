@@ -25,8 +25,6 @@ Partial Class Proveedores
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Proveedores))
         Me.txtNombre = New System.Windows.Forms.TextBox()
-        Me.ProveedoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSet11 = New ClothingShopSystem.DataSet1()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtId = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -47,162 +45,163 @@ Partial Class Proveedores
         Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.btnUltimo = New System.Windows.Forms.Button()
         Me.btnPrimero = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DataSet11 = New ClothingShopSystem.DataSet1()
         Me.SqlSelectCommand1 = New System.Data.SqlClient.SqlCommand()
         Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection()
         Me.SqlInsertCommand1 = New System.Data.SqlClient.SqlCommand()
         Me.SqlUpdateCommand1 = New System.Data.SqlClient.SqlCommand()
         Me.SqlDeleteCommand1 = New System.Data.SqlClient.SqlCommand()
         Me.SqlDataAdapter1 = New System.Data.SqlClient.SqlDataAdapter()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.ProveedoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.IdProveedorDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TelefonoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DomicilioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CiudadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ProveedoresTableAdapter = New ClothingShopSystem.DataSet1TableAdapters.ProveedoresTableAdapter()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtNombre
         '
-        Me.txtNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "nombre", True))
         Me.txtNombre.Enabled = False
-        Me.txtNombre.Location = New System.Drawing.Point(109, 33)
+        Me.txtNombre.Location = New System.Drawing.Point(145, 41)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNombre.MaxLength = 40
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(285, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(379, 22)
         Me.txtNombre.TabIndex = 2
-        '
-        'ProveedoresBindingSource
-        '
-        Me.ProveedoresBindingSource.DataMember = "Proveedores"
-        Me.ProveedoresBindingSource.DataSource = Me.DataSet11
-        '
-        'DataSet11
-        '
-        Me.DataSet11.DataSetName = "DataSet1"
-        Me.DataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(106, 17)
+        Me.Label2.Location = New System.Drawing.Point(141, 21)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(44, 13)
+        Me.Label2.Size = New System.Drawing.Size(58, 17)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Nombre"
         '
         'txtId
         '
-        Me.txtId.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "idProveedor", True))
         Me.txtId.Enabled = False
-        Me.txtId.Location = New System.Drawing.Point(18, 33)
+        Me.txtId.Location = New System.Drawing.Point(24, 41)
+        Me.txtId.Margin = New System.Windows.Forms.Padding(4)
         Me.txtId.Name = "txtId"
-        Me.txtId.Size = New System.Drawing.Size(69, 20)
+        Me.txtId.Size = New System.Drawing.Size(91, 22)
         Me.txtId.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(18, 17)
+        Me.Label1.Location = New System.Drawing.Point(24, 21)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(16, 13)
+        Me.Label1.Size = New System.Drawing.Size(19, 17)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Id"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(216, 54)
+        Me.Label3.Location = New System.Drawing.Point(288, 66)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(49, 13)
+        Me.Label3.Size = New System.Drawing.Size(64, 17)
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Teléfono"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(12, 9)
+        Me.Label4.Location = New System.Drawing.Point(16, 11)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(49, 13)
+        Me.Label4.Size = New System.Drawing.Size(64, 17)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "Domicilio"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(216, 9)
+        Me.Label5.Location = New System.Drawing.Point(288, 11)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(40, 13)
+        Me.Label5.Size = New System.Drawing.Size(52, 17)
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "Ciudad"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(12, 54)
+        Me.Label6.Location = New System.Drawing.Point(16, 66)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(35, 13)
+        Me.Label6.Size = New System.Drawing.Size(47, 17)
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "E-mail"
         '
         'txtDomicilio
         '
-        Me.txtDomicilio.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "domicilio", True))
         Me.txtDomicilio.Enabled = False
-        Me.txtDomicilio.Location = New System.Drawing.Point(15, 25)
+        Me.txtDomicilio.Location = New System.Drawing.Point(20, 31)
+        Me.txtDomicilio.Margin = New System.Windows.Forms.Padding(4)
         Me.txtDomicilio.MaxLength = 40
         Me.txtDomicilio.Name = "txtDomicilio"
-        Me.txtDomicilio.Size = New System.Drawing.Size(195, 20)
+        Me.txtDomicilio.Size = New System.Drawing.Size(259, 22)
         Me.txtDomicilio.TabIndex = 3
         '
         'txtCiudad
         '
-        Me.txtCiudad.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "ciudad", True))
         Me.txtCiudad.Enabled = False
-        Me.txtCiudad.Location = New System.Drawing.Point(219, 25)
+        Me.txtCiudad.Location = New System.Drawing.Point(292, 31)
+        Me.txtCiudad.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCiudad.MaxLength = 25
         Me.txtCiudad.Name = "txtCiudad"
-        Me.txtCiudad.Size = New System.Drawing.Size(172, 20)
+        Me.txtCiudad.Size = New System.Drawing.Size(228, 22)
         Me.txtCiudad.TabIndex = 4
         '
         'txtEmail
         '
-        Me.txtEmail.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "email", True))
         Me.txtEmail.Enabled = False
-        Me.txtEmail.Location = New System.Drawing.Point(15, 70)
+        Me.txtEmail.Location = New System.Drawing.Point(20, 86)
+        Me.txtEmail.Margin = New System.Windows.Forms.Padding(4)
         Me.txtEmail.MaxLength = 40
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(195, 20)
+        Me.txtEmail.Size = New System.Drawing.Size(259, 22)
         Me.txtEmail.TabIndex = 5
         '
         'txtTelefono
         '
-        Me.txtTelefono.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "telefono", True))
         Me.txtTelefono.Enabled = False
-        Me.txtTelefono.Location = New System.Drawing.Point(219, 70)
+        Me.txtTelefono.Location = New System.Drawing.Point(292, 86)
+        Me.txtTelefono.Margin = New System.Windows.Forms.Padding(4)
         Me.txtTelefono.MaxLength = 20
         Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(172, 20)
+        Me.txtTelefono.Size = New System.Drawing.Size(228, 22)
         Me.txtTelefono.TabIndex = 6
         '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(75, 204)
+        Me.btnModificar.Location = New System.Drawing.Point(100, 251)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(66, 50)
+        Me.btnModificar.Size = New System.Drawing.Size(88, 62)
         Me.btnModificar.TabIndex = 28
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
         'btnNuevo
         '
-        Me.btnNuevo.Location = New System.Drawing.Point(3, 204)
+        Me.btnNuevo.Location = New System.Drawing.Point(4, 251)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4)
         Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(66, 50)
+        Me.btnNuevo.Size = New System.Drawing.Size(88, 62)
         Me.btnNuevo.TabIndex = 26
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
@@ -212,9 +211,10 @@ Partial Class Proveedores
         Me.btnCancelar.BackColor = System.Drawing.Color.Tomato
         Me.btnCancelar.Enabled = False
         Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.Location = New System.Drawing.Point(219, 204)
+        Me.btnCancelar.Location = New System.Drawing.Point(292, 251)
+        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(75, 50)
+        Me.btnCancelar.Size = New System.Drawing.Size(100, 62)
         Me.btnCancelar.TabIndex = 31
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
@@ -224,9 +224,10 @@ Partial Class Proveedores
         Me.btnAceptar.BackColor = System.Drawing.Color.PaleGreen
         Me.btnAceptar.Enabled = False
         Me.btnAceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAceptar.Location = New System.Drawing.Point(309, 174)
+        Me.btnAceptar.Location = New System.Drawing.Point(412, 214)
+        Me.btnAceptar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(85, 70)
+        Me.btnAceptar.Size = New System.Drawing.Size(113, 86)
         Me.btnAceptar.TabIndex = 30
         Me.btnAceptar.Text = "Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
@@ -241,57 +242,83 @@ Partial Class Proveedores
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Location = New System.Drawing.Point(3, 59)
+        Me.GroupBox1.Location = New System.Drawing.Point(4, 73)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(399, 99)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Size = New System.Drawing.Size(532, 122)
         Me.GroupBox1.TabIndex = 32
         Me.GroupBox1.TabStop = False
         '
         'btnAnterior
         '
-        Me.btnAnterior.Location = New System.Drawing.Point(75, 170)
+        Me.btnAnterior.Location = New System.Drawing.Point(100, 209)
+        Me.btnAnterior.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAnterior.Name = "btnAnterior"
-        Me.btnAnterior.Size = New System.Drawing.Size(66, 28)
+        Me.btnAnterior.Size = New System.Drawing.Size(88, 34)
         Me.btnAnterior.TabIndex = 36
         Me.btnAnterior.Text = "<"
         Me.btnAnterior.UseVisualStyleBackColor = True
         '
         'btnSiguiente
         '
-        Me.btnSiguiente.Location = New System.Drawing.Point(147, 170)
+        Me.btnSiguiente.Location = New System.Drawing.Point(196, 209)
+        Me.btnSiguiente.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(66, 28)
+        Me.btnSiguiente.Size = New System.Drawing.Size(88, 34)
         Me.btnSiguiente.TabIndex = 35
         Me.btnSiguiente.Text = ">"
         Me.btnSiguiente.UseVisualStyleBackColor = True
         '
         'btnUltimo
         '
-        Me.btnUltimo.Location = New System.Drawing.Point(219, 170)
+        Me.btnUltimo.Location = New System.Drawing.Point(292, 209)
+        Me.btnUltimo.Margin = New System.Windows.Forms.Padding(4)
         Me.btnUltimo.Name = "btnUltimo"
-        Me.btnUltimo.Size = New System.Drawing.Size(66, 28)
+        Me.btnUltimo.Size = New System.Drawing.Size(88, 34)
         Me.btnUltimo.TabIndex = 34
         Me.btnUltimo.Text = ">>"
         Me.btnUltimo.UseVisualStyleBackColor = True
         '
         'btnPrimero
         '
-        Me.btnPrimero.Location = New System.Drawing.Point(3, 170)
+        Me.btnPrimero.Location = New System.Drawing.Point(4, 209)
+        Me.btnPrimero.Margin = New System.Windows.Forms.Padding(4)
         Me.btnPrimero.Name = "btnPrimero"
-        Me.btnPrimero.Size = New System.Drawing.Size(66, 28)
+        Me.btnPrimero.Size = New System.Drawing.Size(88, 34)
         Me.btnPrimero.TabIndex = 33
         Me.btnPrimero.Text = "<<"
         Me.btnPrimero.UseVisualStyleBackColor = True
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdProveedorDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.TelefonoDataGridViewTextBoxColumn, Me.DomicilioDataGridViewTextBoxColumn, Me.CiudadDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.ProveedoresBindingSource
+        Me.DataGridView1.Location = New System.Drawing.Point(544, 15)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.Size = New System.Drawing.Size(591, 286)
+        Me.DataGridView1.TabIndex = 37
+        '
+        'DataSet11
+        '
+        Me.DataSet11.DataSetName = "DataSet1"
+        Me.DataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'SqlSelectCommand1
         '
-        Me.SqlSelectCommand1.CommandText = "SELECT        Proveedores.*" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            Proveedores"
+        Me.SqlSelectCommand1.CommandText = "SELECT Proveedores.*" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM     Proveedores"
         Me.SqlSelectCommand1.Connection = Me.SqlConnection1
         '
         'SqlConnection1
         '
-        Me.SqlConnection1.ConnectionString = "Data Source=KARINSPC;Initial Catalog=dboClothingShopSystem;Integrated Security=Tr" &
-    "ue"
+        Me.SqlConnection1.ConnectionString = "Data Source=LAPTOP-JHARA789\KARINSPC;Initial Catalog=dboClothingShopSystem;Integr" &
+    "ated Security=True"
         Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
         '
         'SqlInsertCommand1
@@ -320,19 +347,10 @@ Partial Class Proveedores
         Me.SqlDataAdapter1.TableMappings.AddRange(New System.Data.Common.DataTableMapping() {New System.Data.Common.DataTableMapping("Table", "Proveedores", New System.Data.Common.DataColumnMapping() {New System.Data.Common.DataColumnMapping("idProveedor", "idProveedor"), New System.Data.Common.DataColumnMapping("nombre", "nombre"), New System.Data.Common.DataColumnMapping("telefono", "telefono"), New System.Data.Common.DataColumnMapping("domicilio", "domicilio"), New System.Data.Common.DataColumnMapping("ciudad", "ciudad"), New System.Data.Common.DataColumnMapping("email", "email")})})
         Me.SqlDataAdapter1.UpdateCommand = Me.SqlUpdateCommand1
         '
-        'DataGridView1
+        'ProveedoresBindingSource
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdProveedorDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.TelefonoDataGridViewTextBoxColumn, Me.DomicilioDataGridViewTextBoxColumn, Me.CiudadDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.ProveedoresBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(408, 12)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(443, 232)
-        Me.DataGridView1.TabIndex = 37
+        Me.ProveedoresBindingSource.DataMember = "Proveedores"
+        Me.ProveedoresBindingSource.DataSource = Me.DataSet11
         '
         'IdProveedorDataGridViewTextBoxColumn
         '
@@ -340,7 +358,6 @@ Partial Class Proveedores
         Me.IdProveedorDataGridViewTextBoxColumn.HeaderText = "idProveedor"
         Me.IdProveedorDataGridViewTextBoxColumn.Name = "IdProveedorDataGridViewTextBoxColumn"
         Me.IdProveedorDataGridViewTextBoxColumn.ReadOnly = True
-        Me.IdProveedorDataGridViewTextBoxColumn.Width = 50
         '
         'NombreDataGridViewTextBoxColumn
         '
@@ -355,7 +372,6 @@ Partial Class Proveedores
         Me.TelefonoDataGridViewTextBoxColumn.HeaderText = "telefono"
         Me.TelefonoDataGridViewTextBoxColumn.Name = "TelefonoDataGridViewTextBoxColumn"
         Me.TelefonoDataGridViewTextBoxColumn.ReadOnly = True
-        Me.TelefonoDataGridViewTextBoxColumn.Width = 70
         '
         'DomicilioDataGridViewTextBoxColumn
         '
@@ -370,7 +386,6 @@ Partial Class Proveedores
         Me.CiudadDataGridViewTextBoxColumn.HeaderText = "ciudad"
         Me.CiudadDataGridViewTextBoxColumn.Name = "CiudadDataGridViewTextBoxColumn"
         Me.CiudadDataGridViewTextBoxColumn.ReadOnly = True
-        Me.CiudadDataGridViewTextBoxColumn.Width = 80
         '
         'EmailDataGridViewTextBoxColumn
         '
@@ -379,11 +394,15 @@ Partial Class Proveedores
         Me.EmailDataGridViewTextBoxColumn.Name = "EmailDataGridViewTextBoxColumn"
         Me.EmailDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'ProveedoresTableAdapter
+        '
+        Me.ProveedoresTableAdapter.ClearBeforeFill = True
+        '
         'Proveedores
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(863, 256)
+        Me.ClientSize = New System.Drawing.Size(1151, 315)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btnAnterior)
         Me.Controls.Add(Me.btnSiguiente)
@@ -399,16 +418,17 @@ Partial Class Proveedores
         Me.Controls.Add(Me.txtId)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Proveedores"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Proveedores"
-        CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSet11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -435,6 +455,7 @@ Partial Class Proveedores
     Friend WithEvents btnSiguiente As Button
     Friend WithEvents btnUltimo As Button
     Friend WithEvents btnPrimero As Button
+    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents SqlSelectCommand1 As SqlClient.SqlCommand
     Friend WithEvents SqlConnection1 As SqlClient.SqlConnection
     Friend WithEvents SqlInsertCommand1 As SqlClient.SqlCommand
@@ -443,11 +464,11 @@ Partial Class Proveedores
     Friend WithEvents SqlDataAdapter1 As SqlClient.SqlDataAdapter
     Friend WithEvents DataSet11 As DataSet1
     Friend WithEvents ProveedoresBindingSource As BindingSource
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents IdProveedorDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TelefonoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DomicilioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CiudadDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents EmailDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ProveedoresTableAdapter As DataSet1TableAdapters.ProveedoresTableAdapter
 End Class

@@ -21,17 +21,17 @@ Module Modulo
     End Function
 
     Public Function obtenerRutaReportes()
-        Return "C:\Users\elektramovil\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\Reportes\ReportesLibros"
+        Return "C:\Users\oscar\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\Reportes\ReportesLibros"
     End Function
 
     Public Function OpenBitacora()
-        Dim conexionBitacora As New SqlConnection("Data Source = KARINSPC; initial catalog='Bitacora'; Integrated Security = True")
+        Dim conexionBitacora As New SqlConnection("Data Source = LAPTOP-JHARA789\KARINSPC; initial catalog='Bitacora'; Integrated Security = True")
 
         Return conexionBitacora
     End Function
 
     Public Function cerrarBitacora()
-        Dim conexionBitacora As New SqlConnection("Data Source = KARINSPC; initial catalog='Bitacora'; Integrated Security = True")
+        Dim conexionBitacora As New SqlConnection("Data Source = LAPTOP-JHARA789\KARINSPC; initial catalog='Bitacora'; Integrated Security = True")
 
         conexionBitacora.Close()
 
@@ -39,13 +39,13 @@ Module Modulo
     End Function
 
     Public Function OpenMaster()
-        Dim conexionBitacora As New SqlConnection("Data Source = KARINSPC; initial catalog='master'; Integrated Security = True")
+        Dim conexionBitacora As New SqlConnection("Data Source = LAPTOP-JHARA789\KARINSPC; initial catalog='master'; Integrated Security = True")
 
         Return conexionBitacora
     End Function
 
     Public Function cerrarMaster()
-        Dim conexionBitacora As New SqlConnection("Data Source = KARINSPC; initial catalog='master'; Integrated Security = True")
+        Dim conexionBitacora As New SqlConnection("Data Source = LAPTOP-JHARA789\KARINSPC; initial catalog='master'; Integrated Security = True")
 
         conexionBitacora.Close()
 
@@ -61,13 +61,13 @@ Module Modulo
     End Function
 
     Public Function OpenHistorico()
-        Dim conexionBitacora As New SqlConnection("Data Source = KARINSPC; initial catalog='hdboClothingShopSystem'; Integrated Security = True")
+        Dim conexionBitacora As New SqlConnection("Data Source = LAPTOP-JHARA789\KARINSPC; initial catalog='hdboClothingShopSystem'; Integrated Security = True")
 
         Return conexionBitacora
     End Function
 
     Public Function cerrarHistorico()
-        Dim conexionBitacora As New SqlConnection("Data Source = KARINSPC; initial catalog='dboClothingShopSystem'; Integrated Security = True")
+        Dim conexionBitacora As New SqlConnection("Data Source = LAPTOP-JHARA789\KARINSPC; initial catalog='dboClothingShopSystem'; Integrated Security = True")
 
         conexionBitacora.Close()
 

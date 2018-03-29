@@ -60,9 +60,11 @@ Partial Class Tipos
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtId)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(16, 15)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(388, 59)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Size = New System.Drawing.Size(517, 73)
         Me.GroupBox1.TabIndex = 62
         Me.GroupBox1.TabStop = False
         '
@@ -70,10 +72,11 @@ Partial Class Tipos
         '
         Me.txtNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TiposBindingSource, "nombre", True))
         Me.txtNombre.Enabled = False
-        Me.txtNombre.Location = New System.Drawing.Point(99, 33)
+        Me.txtNombre.Location = New System.Drawing.Point(132, 41)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtNombre.MaxLength = 40
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(283, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(376, 22)
         Me.txtNombre.TabIndex = 15
         '
         'TiposBindingSource
@@ -89,9 +92,10 @@ Partial Class Tipos
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(96, 17)
+        Me.Label2.Location = New System.Drawing.Point(128, 21)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(44, 13)
+        Me.Label2.Size = New System.Drawing.Size(58, 17)
         Me.Label2.TabIndex = 14
         Me.Label2.Text = "Nombre"
         '
@@ -99,17 +103,19 @@ Partial Class Tipos
         '
         Me.txtId.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TiposBindingSource, "idTipo", True))
         Me.txtId.Enabled = False
-        Me.txtId.Location = New System.Drawing.Point(8, 33)
+        Me.txtId.Location = New System.Drawing.Point(11, 41)
+        Me.txtId.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtId.Name = "txtId"
-        Me.txtId.Size = New System.Drawing.Size(69, 20)
+        Me.txtId.Size = New System.Drawing.Size(91, 22)
         Me.txtId.TabIndex = 13
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(8, 17)
+        Me.Label1.Location = New System.Drawing.Point(11, 21)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(16, 13)
+        Me.Label1.Size = New System.Drawing.Size(19, 17)
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Id"
         '
@@ -118,9 +124,10 @@ Partial Class Tipos
         Me.btnCancelar.BackColor = System.Drawing.Color.Tomato
         Me.btnCancelar.Enabled = False
         Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.Location = New System.Drawing.Point(228, 116)
+        Me.btnCancelar.Location = New System.Drawing.Point(304, 143)
+        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(75, 50)
+        Me.btnCancelar.Size = New System.Drawing.Size(100, 62)
         Me.btnCancelar.TabIndex = 61
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
@@ -130,63 +137,70 @@ Partial Class Tipos
         Me.btnAceptar.BackColor = System.Drawing.Color.PaleGreen
         Me.btnAceptar.Enabled = False
         Me.btnAceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAceptar.Location = New System.Drawing.Point(309, 82)
+        Me.btnAceptar.Location = New System.Drawing.Point(412, 101)
+        Me.btnAceptar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(85, 80)
+        Me.btnAceptar.Size = New System.Drawing.Size(113, 98)
         Me.btnAceptar.TabIndex = 60
         Me.btnAceptar.Text = "Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
         'btnAnterior
         '
-        Me.btnAnterior.Location = New System.Drawing.Point(84, 82)
+        Me.btnAnterior.Location = New System.Drawing.Point(112, 101)
+        Me.btnAnterior.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAnterior.Name = "btnAnterior"
-        Me.btnAnterior.Size = New System.Drawing.Size(66, 28)
+        Me.btnAnterior.Size = New System.Drawing.Size(88, 34)
         Me.btnAnterior.TabIndex = 59
         Me.btnAnterior.Text = "<"
         Me.btnAnterior.UseVisualStyleBackColor = True
         '
         'btnSiguiente
         '
-        Me.btnSiguiente.Location = New System.Drawing.Point(156, 82)
+        Me.btnSiguiente.Location = New System.Drawing.Point(208, 101)
+        Me.btnSiguiente.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(66, 28)
+        Me.btnSiguiente.Size = New System.Drawing.Size(88, 34)
         Me.btnSiguiente.TabIndex = 58
         Me.btnSiguiente.Text = ">"
         Me.btnSiguiente.UseVisualStyleBackColor = True
         '
         'btnUltimo
         '
-        Me.btnUltimo.Location = New System.Drawing.Point(228, 82)
+        Me.btnUltimo.Location = New System.Drawing.Point(304, 101)
+        Me.btnUltimo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnUltimo.Name = "btnUltimo"
-        Me.btnUltimo.Size = New System.Drawing.Size(66, 28)
+        Me.btnUltimo.Size = New System.Drawing.Size(88, 34)
         Me.btnUltimo.TabIndex = 57
         Me.btnUltimo.Text = ">>"
         Me.btnUltimo.UseVisualStyleBackColor = True
         '
         'btnPrimero
         '
-        Me.btnPrimero.Location = New System.Drawing.Point(12, 82)
+        Me.btnPrimero.Location = New System.Drawing.Point(16, 101)
+        Me.btnPrimero.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnPrimero.Name = "btnPrimero"
-        Me.btnPrimero.Size = New System.Drawing.Size(66, 28)
+        Me.btnPrimero.Size = New System.Drawing.Size(88, 34)
         Me.btnPrimero.TabIndex = 56
         Me.btnPrimero.Text = "<<"
         Me.btnPrimero.UseVisualStyleBackColor = True
         '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(84, 116)
+        Me.btnModificar.Location = New System.Drawing.Point(112, 143)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(66, 50)
+        Me.btnModificar.Size = New System.Drawing.Size(88, 62)
         Me.btnModificar.TabIndex = 54
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
         'btnNuevo
         '
-        Me.btnNuevo.Location = New System.Drawing.Point(12, 116)
+        Me.btnNuevo.Location = New System.Drawing.Point(16, 143)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(66, 50)
+        Me.btnNuevo.Size = New System.Drawing.Size(88, 62)
         Me.btnNuevo.TabIndex = 52
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
@@ -198,8 +212,8 @@ Partial Class Tipos
         '
         'SqlConnection1
         '
-        Me.SqlConnection1.ConnectionString = "Data Source=KARINSPC;Initial Catalog=dboClothingShopSystem;Integrated Security=Tr" &
-    "ue"
+        Me.SqlConnection1.ConnectionString = "Data Source=LAPTOP-JHARA789\KARINSPC;Initial Catalog=dboClothingShopSystem;Integr" &
+    "ated Security=True"
         Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
         '
         'SqlInsertCommand1
@@ -238,10 +252,11 @@ Partial Class Tipos
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdTipoDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.TiposBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(406, 6)
+        Me.DataGridView1.Location = New System.Drawing.Point(541, 7)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(278, 160)
+        Me.DataGridView1.Size = New System.Drawing.Size(371, 197)
         Me.DataGridView1.TabIndex = 63
         '
         'IdTipoDataGridViewTextBoxColumn
@@ -262,9 +277,9 @@ Partial Class Tipos
         '
         'Tipos
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(690, 174)
+        Me.ClientSize = New System.Drawing.Size(920, 214)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnCancelar)
@@ -275,6 +290,7 @@ Partial Class Tipos
         Me.Controls.Add(Me.btnPrimero)
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnNuevo)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Tipos"

@@ -78,27 +78,30 @@ Partial Class Clientes
         '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(77, 222)
+        Me.btnModificar.Location = New System.Drawing.Point(103, 273)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(66, 50)
+        Me.btnModificar.Size = New System.Drawing.Size(88, 62)
         Me.btnModificar.TabIndex = 32
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
         'btnBuscar
         '
-        Me.btnBuscar.Location = New System.Drawing.Point(149, 222)
+        Me.btnBuscar.Location = New System.Drawing.Point(199, 273)
+        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(66, 50)
+        Me.btnBuscar.Size = New System.Drawing.Size(88, 62)
         Me.btnBuscar.TabIndex = 31
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'btnNuevo
         '
-        Me.btnNuevo.Location = New System.Drawing.Point(5, 222)
+        Me.btnNuevo.Location = New System.Drawing.Point(7, 273)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(66, 50)
+        Me.btnNuevo.Size = New System.Drawing.Size(88, 62)
         Me.btnNuevo.TabIndex = 30
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
@@ -108,9 +111,10 @@ Partial Class Clientes
         Me.btnCancelar.BackColor = System.Drawing.Color.Tomato
         Me.btnCancelar.Enabled = False
         Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.Location = New System.Drawing.Point(221, 219)
+        Me.btnCancelar.Location = New System.Drawing.Point(295, 270)
+        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(72, 53)
+        Me.btnCancelar.Size = New System.Drawing.Size(96, 65)
         Me.btnCancelar.TabIndex = 35
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
@@ -120,45 +124,50 @@ Partial Class Clientes
         Me.btnAceptar.BackColor = System.Drawing.Color.PaleGreen
         Me.btnAceptar.Enabled = False
         Me.btnAceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAceptar.Location = New System.Drawing.Point(299, 199)
+        Me.btnAceptar.Location = New System.Drawing.Point(399, 245)
+        Me.btnAceptar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(92, 73)
+        Me.btnAceptar.Size = New System.Drawing.Size(123, 90)
         Me.btnAceptar.TabIndex = 34
         Me.btnAceptar.Text = "Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
         'btnAnterior
         '
-        Me.btnAnterior.Location = New System.Drawing.Point(77, 188)
+        Me.btnAnterior.Location = New System.Drawing.Point(103, 231)
+        Me.btnAnterior.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAnterior.Name = "btnAnterior"
-        Me.btnAnterior.Size = New System.Drawing.Size(66, 28)
+        Me.btnAnterior.Size = New System.Drawing.Size(88, 34)
         Me.btnAnterior.TabIndex = 40
         Me.btnAnterior.Text = "<"
         Me.btnAnterior.UseVisualStyleBackColor = True
         '
         'btnSiguiente
         '
-        Me.btnSiguiente.Location = New System.Drawing.Point(149, 188)
+        Me.btnSiguiente.Location = New System.Drawing.Point(199, 231)
+        Me.btnSiguiente.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(66, 28)
+        Me.btnSiguiente.Size = New System.Drawing.Size(88, 34)
         Me.btnSiguiente.TabIndex = 39
         Me.btnSiguiente.Text = ">"
         Me.btnSiguiente.UseVisualStyleBackColor = True
         '
         'btnUltimo
         '
-        Me.btnUltimo.Location = New System.Drawing.Point(221, 188)
+        Me.btnUltimo.Location = New System.Drawing.Point(295, 231)
+        Me.btnUltimo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnUltimo.Name = "btnUltimo"
-        Me.btnUltimo.Size = New System.Drawing.Size(66, 28)
+        Me.btnUltimo.Size = New System.Drawing.Size(88, 34)
         Me.btnUltimo.TabIndex = 38
         Me.btnUltimo.Text = ">>"
         Me.btnUltimo.UseVisualStyleBackColor = True
         '
         'btnPrimero
         '
-        Me.btnPrimero.Location = New System.Drawing.Point(5, 188)
+        Me.btnPrimero.Location = New System.Drawing.Point(7, 231)
+        Me.btnPrimero.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnPrimero.Name = "btnPrimero"
-        Me.btnPrimero.Size = New System.Drawing.Size(66, 28)
+        Me.btnPrimero.Size = New System.Drawing.Size(88, 34)
         Me.btnPrimero.TabIndex = 37
         Me.btnPrimero.Text = "<<"
         Me.btnPrimero.UseVisualStyleBackColor = True
@@ -167,10 +176,11 @@ Partial Class Clientes
         '
         Me.txtLimite.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "limiteCredito", True))
         Me.txtLimite.Enabled = False
-        Me.txtLimite.Location = New System.Drawing.Point(65, 159)
+        Me.txtLimite.Location = New System.Drawing.Point(87, 196)
+        Me.txtLimite.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtLimite.MaxLength = 8
         Me.txtLimite.Name = "txtLimite"
-        Me.txtLimite.Size = New System.Drawing.Size(130, 20)
+        Me.txtLimite.Size = New System.Drawing.Size(172, 22)
         Me.txtLimite.TabIndex = 55
         '
         'ClientesBindingSource
@@ -186,9 +196,10 @@ Partial Class Clientes
         'lblLimite
         '
         Me.lblLimite.AutoSize = True
-        Me.lblLimite.Location = New System.Drawing.Point(62, 143)
+        Me.lblLimite.Location = New System.Drawing.Point(83, 176)
+        Me.lblLimite.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblLimite.Name = "lblLimite"
-        Me.lblLimite.Size = New System.Drawing.Size(72, 13)
+        Me.lblLimite.Size = New System.Drawing.Size(94, 17)
         Me.lblLimite.TabIndex = 54
         Me.lblLimite.Text = "Límite Crédito"
         '
@@ -196,17 +207,19 @@ Partial Class Clientes
         '
         Me.txtSaldo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "saldo", True))
         Me.txtSaldo.Enabled = False
-        Me.txtSaldo.Location = New System.Drawing.Point(221, 159)
+        Me.txtSaldo.Location = New System.Drawing.Point(295, 196)
+        Me.txtSaldo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtSaldo.Name = "txtSaldo"
-        Me.txtSaldo.Size = New System.Drawing.Size(108, 20)
+        Me.txtSaldo.Size = New System.Drawing.Size(143, 22)
         Me.txtSaldo.TabIndex = 51
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(221, 143)
+        Me.Label4.Location = New System.Drawing.Point(295, 176)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(34, 13)
+        Me.Label4.Size = New System.Drawing.Size(44, 17)
         Me.Label4.TabIndex = 50
         Me.Label4.Text = "Saldo"
         '
@@ -214,18 +227,20 @@ Partial Class Clientes
         '
         Me.txtTelefono.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "telefono", True))
         Me.txtTelefono.Enabled = False
-        Me.txtTelefono.Location = New System.Drawing.Point(248, 108)
+        Me.txtTelefono.Location = New System.Drawing.Point(331, 133)
+        Me.txtTelefono.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtTelefono.MaxLength = 20
         Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(130, 20)
+        Me.txtTelefono.Size = New System.Drawing.Size(172, 22)
         Me.txtTelefono.TabIndex = 49
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(248, 92)
+        Me.Label3.Location = New System.Drawing.Point(331, 113)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(49, 13)
+        Me.Label3.Size = New System.Drawing.Size(64, 17)
         Me.Label3.TabIndex = 48
         Me.Label3.Text = "Teléfono"
         '
@@ -233,18 +248,20 @@ Partial Class Clientes
         '
         Me.txtNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "nombre", True))
         Me.txtNombre.Enabled = False
-        Me.txtNombre.Location = New System.Drawing.Point(95, 29)
+        Me.txtNombre.Location = New System.Drawing.Point(127, 36)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtNombre.MaxLength = 40
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(283, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(376, 22)
         Me.txtNombre.TabIndex = 47
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(92, 13)
+        Me.Label2.Location = New System.Drawing.Point(123, 16)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(44, 13)
+        Me.Label2.Size = New System.Drawing.Size(58, 17)
         Me.Label2.TabIndex = 46
         Me.Label2.Text = "Nombre"
         '
@@ -252,17 +269,19 @@ Partial Class Clientes
         '
         Me.txtId.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "idCliente", True))
         Me.txtId.Enabled = False
-        Me.txtId.Location = New System.Drawing.Point(4, 29)
+        Me.txtId.Location = New System.Drawing.Point(5, 36)
+        Me.txtId.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtId.Name = "txtId"
-        Me.txtId.Size = New System.Drawing.Size(69, 20)
+        Me.txtId.Size = New System.Drawing.Size(91, 22)
         Me.txtId.TabIndex = 45
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(4, 13)
+        Me.Label1.Location = New System.Drawing.Point(5, 16)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(16, 13)
+        Me.Label1.Size = New System.Drawing.Size(19, 17)
         Me.Label1.TabIndex = 44
         Me.Label1.Text = "Id"
         '
@@ -274,10 +293,11 @@ Partial Class Clientes
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdClienteDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.DomicilioDataGridViewTextBoxColumn, Me.ColoniaDataGridViewTextBoxColumn, Me.CiudadDataGridViewTextBoxColumn, Me.CPDataGridViewTextBoxColumn, Me.TelefonoDataGridViewTextBoxColumn, Me.SaldoDataGridViewTextBoxColumn, Me.LimiteCreditoDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.ClientesBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(397, 4)
+        Me.DataGridView1.Location = New System.Drawing.Point(529, 5)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(465, 268)
+        Me.DataGridView1.Size = New System.Drawing.Size(620, 330)
         Me.DataGridView1.TabIndex = 56
         '
         'IdClienteDataGridViewTextBoxColumn
@@ -355,8 +375,8 @@ Partial Class Clientes
         '
         'SqlConnection1
         '
-        Me.SqlConnection1.ConnectionString = "Data Source=KARINSPC;Initial Catalog=dboClothingShopSystem;Integrated Security=Tr" &
-    "ue"
+        Me.SqlConnection1.ConnectionString = "Data Source=LAPTOP-JHARA789\KARINSPC;Initial Catalog=dboClothingShopSystem;Integr" &
+    "ated Security=True"
         Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
         '
         'SqlInsertCommand1
@@ -389,18 +409,20 @@ Partial Class Clientes
         '
         Me.txtDomicilio.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "domicilio", True))
         Me.txtDomicilio.Enabled = False
-        Me.txtDomicilio.Location = New System.Drawing.Point(4, 69)
+        Me.txtDomicilio.Location = New System.Drawing.Point(5, 85)
+        Me.txtDomicilio.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtDomicilio.MaxLength = 40
         Me.txtDomicilio.Name = "txtDomicilio"
-        Me.txtDomicilio.Size = New System.Drawing.Size(218, 20)
+        Me.txtDomicilio.Size = New System.Drawing.Size(289, 22)
         Me.txtDomicilio.TabIndex = 58
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(4, 53)
+        Me.Label5.Location = New System.Drawing.Point(5, 65)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(49, 13)
+        Me.Label5.Size = New System.Drawing.Size(64, 17)
         Me.Label5.TabIndex = 57
         Me.Label5.Text = "Domicilio"
         '
@@ -408,18 +430,20 @@ Partial Class Clientes
         '
         Me.txtColonia.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "colonia", True))
         Me.txtColonia.Enabled = False
-        Me.txtColonia.Location = New System.Drawing.Point(228, 69)
+        Me.txtColonia.Location = New System.Drawing.Point(304, 85)
+        Me.txtColonia.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtColonia.MaxLength = 30
         Me.txtColonia.Name = "txtColonia"
-        Me.txtColonia.Size = New System.Drawing.Size(150, 20)
+        Me.txtColonia.Size = New System.Drawing.Size(199, 22)
         Me.txtColonia.TabIndex = 60
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(228, 53)
+        Me.Label6.Location = New System.Drawing.Point(304, 65)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(42, 13)
+        Me.Label6.Size = New System.Drawing.Size(55, 17)
         Me.Label6.TabIndex = 59
         Me.Label6.Text = "Colonia"
         '
@@ -427,18 +451,20 @@ Partial Class Clientes
         '
         Me.txtCiudad.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "ciudad", True))
         Me.txtCiudad.Enabled = False
-        Me.txtCiudad.Location = New System.Drawing.Point(4, 108)
+        Me.txtCiudad.Location = New System.Drawing.Point(5, 133)
+        Me.txtCiudad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtCiudad.MaxLength = 30
         Me.txtCiudad.Name = "txtCiudad"
-        Me.txtCiudad.Size = New System.Drawing.Size(156, 20)
+        Me.txtCiudad.Size = New System.Drawing.Size(207, 22)
         Me.txtCiudad.TabIndex = 62
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(4, 92)
+        Me.Label7.Location = New System.Drawing.Point(5, 113)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(40, 13)
+        Me.Label7.Size = New System.Drawing.Size(52, 17)
         Me.Label7.TabIndex = 61
         Me.Label7.Text = "Ciudad"
         '
@@ -446,18 +472,20 @@ Partial Class Clientes
         '
         Me.txtCP.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "CP", True))
         Me.txtCP.Enabled = False
-        Me.txtCP.Location = New System.Drawing.Point(166, 108)
+        Me.txtCP.Location = New System.Drawing.Point(221, 133)
+        Me.txtCP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtCP.MaxLength = 5
         Me.txtCP.Name = "txtCP"
-        Me.txtCP.Size = New System.Drawing.Size(76, 20)
+        Me.txtCP.Size = New System.Drawing.Size(100, 22)
         Me.txtCP.TabIndex = 64
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(166, 92)
+        Me.Label8.Location = New System.Drawing.Point(221, 113)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(21, 13)
+        Me.Label8.Size = New System.Drawing.Size(26, 17)
         Me.Label8.TabIndex = 63
         Me.Label8.Text = "CP"
         '
@@ -477,17 +505,19 @@ Partial Class Clientes
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtId)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(7, 4)
+        Me.GroupBox1.Location = New System.Drawing.Point(9, 5)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(384, 136)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Size = New System.Drawing.Size(512, 167)
         Me.GroupBox1.TabIndex = 65
         Me.GroupBox1.TabStop = False
         '
         'Clientes
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(864, 279)
+        Me.ClientSize = New System.Drawing.Size(1152, 343)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.txtLimite)
@@ -503,6 +533,7 @@ Partial Class Clientes
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.btnNuevo)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Clientes"

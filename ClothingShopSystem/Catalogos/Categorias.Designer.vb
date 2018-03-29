@@ -40,14 +40,14 @@ Partial Class Categorias
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.IdCategoriaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SqlSelectCommand1 = New System.Data.SqlClient.SqlCommand()
         Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection()
         Me.SqlInsertCommand1 = New System.Data.SqlClient.SqlCommand()
         Me.SqlUpdateCommand1 = New System.Data.SqlClient.SqlCommand()
         Me.SqlDeleteCommand1 = New System.Data.SqlClient.SqlCommand()
         Me.SqlDataAdapter1 = New System.Data.SqlClient.SqlDataAdapter()
-        Me.IdCategoriaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.CategoriasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,9 +60,11 @@ Partial Class Categorias
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtId)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(8, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(11, 15)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(390, 59)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Size = New System.Drawing.Size(520, 73)
         Me.GroupBox1.TabIndex = 73
         Me.GroupBox1.TabStop = False
         '
@@ -70,10 +72,11 @@ Partial Class Categorias
         '
         Me.txtNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CategoriasBindingSource, "nombre", True))
         Me.txtNombre.Enabled = False
-        Me.txtNombre.Location = New System.Drawing.Point(101, 33)
+        Me.txtNombre.Location = New System.Drawing.Point(135, 41)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtNombre.MaxLength = 40
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(283, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(376, 22)
         Me.txtNombre.TabIndex = 15
         '
         'CategoriasBindingSource
@@ -89,9 +92,10 @@ Partial Class Categorias
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(98, 17)
+        Me.Label2.Location = New System.Drawing.Point(131, 21)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(44, 13)
+        Me.Label2.Size = New System.Drawing.Size(58, 17)
         Me.Label2.TabIndex = 14
         Me.Label2.Text = "Nombre"
         '
@@ -99,17 +103,19 @@ Partial Class Categorias
         '
         Me.txtId.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CategoriasBindingSource, "idCategoria", True))
         Me.txtId.Enabled = False
-        Me.txtId.Location = New System.Drawing.Point(10, 33)
+        Me.txtId.Location = New System.Drawing.Point(13, 41)
+        Me.txtId.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtId.Name = "txtId"
-        Me.txtId.Size = New System.Drawing.Size(69, 20)
+        Me.txtId.Size = New System.Drawing.Size(91, 22)
         Me.txtId.TabIndex = 13
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(10, 17)
+        Me.Label1.Location = New System.Drawing.Point(13, 21)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(16, 13)
+        Me.Label1.Size = New System.Drawing.Size(19, 17)
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Id"
         '
@@ -118,9 +124,10 @@ Partial Class Categorias
         Me.btnCancelar.BackColor = System.Drawing.Color.Tomato
         Me.btnCancelar.Enabled = False
         Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.Location = New System.Drawing.Point(218, 86)
+        Me.btnCancelar.Location = New System.Drawing.Point(291, 106)
+        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(76, 55)
+        Me.btnCancelar.Size = New System.Drawing.Size(101, 68)
         Me.btnCancelar.TabIndex = 84
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
@@ -130,63 +137,70 @@ Partial Class Categorias
         Me.btnAceptar.BackColor = System.Drawing.Color.PaleGreen
         Me.btnAceptar.Enabled = False
         Me.btnAceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAceptar.Location = New System.Drawing.Point(307, 86)
+        Me.btnAceptar.Location = New System.Drawing.Point(409, 106)
+        Me.btnAceptar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(91, 92)
+        Me.btnAceptar.Size = New System.Drawing.Size(121, 113)
         Me.btnAceptar.TabIndex = 83
         Me.btnAceptar.Text = "Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
         'btnAnterior
         '
-        Me.btnAnterior.Location = New System.Drawing.Point(84, 147)
+        Me.btnAnterior.Location = New System.Drawing.Point(112, 181)
+        Me.btnAnterior.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAnterior.Name = "btnAnterior"
-        Me.btnAnterior.Size = New System.Drawing.Size(66, 28)
+        Me.btnAnterior.Size = New System.Drawing.Size(88, 34)
         Me.btnAnterior.TabIndex = 82
         Me.btnAnterior.Text = "<"
         Me.btnAnterior.UseVisualStyleBackColor = True
         '
         'btnSiguiente
         '
-        Me.btnSiguiente.Location = New System.Drawing.Point(156, 147)
+        Me.btnSiguiente.Location = New System.Drawing.Point(208, 181)
+        Me.btnSiguiente.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(66, 28)
+        Me.btnSiguiente.Size = New System.Drawing.Size(88, 34)
         Me.btnSiguiente.TabIndex = 81
         Me.btnSiguiente.Text = ">"
         Me.btnSiguiente.UseVisualStyleBackColor = True
         '
         'btnUltimo
         '
-        Me.btnUltimo.Location = New System.Drawing.Point(228, 147)
+        Me.btnUltimo.Location = New System.Drawing.Point(304, 181)
+        Me.btnUltimo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnUltimo.Name = "btnUltimo"
-        Me.btnUltimo.Size = New System.Drawing.Size(66, 28)
+        Me.btnUltimo.Size = New System.Drawing.Size(88, 34)
         Me.btnUltimo.TabIndex = 80
         Me.btnUltimo.Text = ">>"
         Me.btnUltimo.UseVisualStyleBackColor = True
         '
         'btnPrimero
         '
-        Me.btnPrimero.Location = New System.Drawing.Point(12, 147)
+        Me.btnPrimero.Location = New System.Drawing.Point(16, 181)
+        Me.btnPrimero.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnPrimero.Name = "btnPrimero"
-        Me.btnPrimero.Size = New System.Drawing.Size(66, 28)
+        Me.btnPrimero.Size = New System.Drawing.Size(88, 34)
         Me.btnPrimero.TabIndex = 79
         Me.btnPrimero.Text = "<<"
         Me.btnPrimero.UseVisualStyleBackColor = True
         '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(128, 91)
+        Me.btnModificar.Location = New System.Drawing.Point(171, 112)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(66, 50)
+        Me.btnModificar.Size = New System.Drawing.Size(88, 62)
         Me.btnModificar.TabIndex = 77
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
         'btnNuevo
         '
-        Me.btnNuevo.Location = New System.Drawing.Point(56, 91)
+        Me.btnNuevo.Location = New System.Drawing.Point(75, 112)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(66, 50)
+        Me.btnNuevo.Size = New System.Drawing.Size(88, 62)
         Me.btnNuevo.TabIndex = 75
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
@@ -199,12 +213,29 @@ Partial Class Categorias
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdCategoriaDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.CategoriasBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(404, 12)
+        Me.DataGridView1.Location = New System.Drawing.Point(539, 15)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(269, 163)
+        Me.DataGridView1.Size = New System.Drawing.Size(359, 201)
         Me.DataGridView1.TabIndex = 85
+        '
+        'IdCategoriaDataGridViewTextBoxColumn
+        '
+        Me.IdCategoriaDataGridViewTextBoxColumn.DataPropertyName = "idCategoria"
+        Me.IdCategoriaDataGridViewTextBoxColumn.HeaderText = "idCategoria"
+        Me.IdCategoriaDataGridViewTextBoxColumn.Name = "IdCategoriaDataGridViewTextBoxColumn"
+        Me.IdCategoriaDataGridViewTextBoxColumn.ReadOnly = True
+        Me.IdCategoriaDataGridViewTextBoxColumn.Width = 70
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
+        Me.NombreDataGridViewTextBoxColumn.Width = 150
         '
         'SqlSelectCommand1
         '
@@ -213,8 +244,8 @@ Partial Class Categorias
         '
         'SqlConnection1
         '
-        Me.SqlConnection1.ConnectionString = "Data Source=KARINSPC;Initial Catalog=dboClothingShopSystem;Integrated Security=Tr" &
-    "ue"
+        Me.SqlConnection1.ConnectionString = "Data Source=LAPTOP-JHARA789\KARINSPC;Initial Catalog=dboClothingShopSystem;Integr" &
+    "ated Security=True"
         Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
         '
         'SqlInsertCommand1
@@ -246,27 +277,11 @@ Partial Class Categorias
         Me.SqlDataAdapter1.TableMappings.AddRange(New System.Data.Common.DataTableMapping() {New System.Data.Common.DataTableMapping("Table", "Categorias", New System.Data.Common.DataColumnMapping() {New System.Data.Common.DataColumnMapping("idCategoria", "idCategoria"), New System.Data.Common.DataColumnMapping("nombre", "nombre")})})
         Me.SqlDataAdapter1.UpdateCommand = Me.SqlUpdateCommand1
         '
-        'IdCategoriaDataGridViewTextBoxColumn
-        '
-        Me.IdCategoriaDataGridViewTextBoxColumn.DataPropertyName = "idCategoria"
-        Me.IdCategoriaDataGridViewTextBoxColumn.HeaderText = "idCategoria"
-        Me.IdCategoriaDataGridViewTextBoxColumn.Name = "IdCategoriaDataGridViewTextBoxColumn"
-        Me.IdCategoriaDataGridViewTextBoxColumn.ReadOnly = True
-        Me.IdCategoriaDataGridViewTextBoxColumn.Width = 70
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
-        Me.NombreDataGridViewTextBoxColumn.Width = 150
-        '
         'Categorias
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(680, 187)
+        Me.ClientSize = New System.Drawing.Size(907, 230)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
@@ -277,6 +292,7 @@ Partial Class Categorias
         Me.Controls.Add(Me.btnUltimo)
         Me.Controls.Add(Me.btnPrimero)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Categorias"

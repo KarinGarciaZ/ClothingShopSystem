@@ -58,10 +58,11 @@ Partial Class Marcas
         '
         Me.txtNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MarcasBindingSource, "nombre", True))
         Me.txtNombre.Enabled = False
-        Me.txtNombre.Location = New System.Drawing.Point(100, 33)
+        Me.txtNombre.Location = New System.Drawing.Point(133, 41)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtNombre.MaxLength = 40
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(283, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(376, 22)
         Me.txtNombre.TabIndex = 15
         '
         'MarcasBindingSource
@@ -77,9 +78,10 @@ Partial Class Marcas
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(97, 17)
+        Me.Label2.Location = New System.Drawing.Point(129, 21)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(44, 13)
+        Me.Label2.Size = New System.Drawing.Size(58, 17)
         Me.Label2.TabIndex = 14
         Me.Label2.Text = "Nombre"
         '
@@ -87,70 +89,78 @@ Partial Class Marcas
         '
         Me.txtId.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MarcasBindingSource, "idMarca", True))
         Me.txtId.Enabled = False
-        Me.txtId.Location = New System.Drawing.Point(9, 33)
+        Me.txtId.Location = New System.Drawing.Point(12, 41)
+        Me.txtId.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtId.Name = "txtId"
-        Me.txtId.Size = New System.Drawing.Size(69, 20)
+        Me.txtId.Size = New System.Drawing.Size(91, 22)
         Me.txtId.TabIndex = 13
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(9, 17)
+        Me.Label1.Location = New System.Drawing.Point(12, 21)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(16, 13)
+        Me.Label1.Size = New System.Drawing.Size(19, 17)
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Id"
         '
         'btnAnterior
         '
-        Me.btnAnterior.Location = New System.Drawing.Point(83, 75)
+        Me.btnAnterior.Location = New System.Drawing.Point(111, 92)
+        Me.btnAnterior.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAnterior.Name = "btnAnterior"
-        Me.btnAnterior.Size = New System.Drawing.Size(66, 28)
+        Me.btnAnterior.Size = New System.Drawing.Size(88, 34)
         Me.btnAnterior.TabIndex = 48
         Me.btnAnterior.Text = "<"
         Me.btnAnterior.UseVisualStyleBackColor = True
         '
         'btnSiguiente
         '
-        Me.btnSiguiente.Location = New System.Drawing.Point(155, 75)
+        Me.btnSiguiente.Location = New System.Drawing.Point(207, 92)
+        Me.btnSiguiente.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(66, 28)
+        Me.btnSiguiente.Size = New System.Drawing.Size(88, 34)
         Me.btnSiguiente.TabIndex = 47
         Me.btnSiguiente.Text = ">"
         Me.btnSiguiente.UseVisualStyleBackColor = True
         '
         'btnUltimo
         '
-        Me.btnUltimo.Location = New System.Drawing.Point(227, 75)
+        Me.btnUltimo.Location = New System.Drawing.Point(303, 92)
+        Me.btnUltimo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnUltimo.Name = "btnUltimo"
-        Me.btnUltimo.Size = New System.Drawing.Size(66, 28)
+        Me.btnUltimo.Size = New System.Drawing.Size(88, 34)
         Me.btnUltimo.TabIndex = 46
         Me.btnUltimo.Text = ">>"
         Me.btnUltimo.UseVisualStyleBackColor = True
         '
         'btnPrimero
         '
-        Me.btnPrimero.Location = New System.Drawing.Point(11, 75)
+        Me.btnPrimero.Location = New System.Drawing.Point(15, 92)
+        Me.btnPrimero.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnPrimero.Name = "btnPrimero"
-        Me.btnPrimero.Size = New System.Drawing.Size(66, 28)
+        Me.btnPrimero.Size = New System.Drawing.Size(88, 34)
         Me.btnPrimero.TabIndex = 45
         Me.btnPrimero.Text = "<<"
         Me.btnPrimero.UseVisualStyleBackColor = True
         '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(83, 109)
+        Me.btnModificar.Location = New System.Drawing.Point(111, 134)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(66, 50)
+        Me.btnModificar.Size = New System.Drawing.Size(88, 62)
         Me.btnModificar.TabIndex = 43
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
         'btnNuevo
         '
-        Me.btnNuevo.Location = New System.Drawing.Point(11, 109)
+        Me.btnNuevo.Location = New System.Drawing.Point(15, 134)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(66, 50)
+        Me.btnNuevo.Size = New System.Drawing.Size(88, 62)
         Me.btnNuevo.TabIndex = 41
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
@@ -160,9 +170,10 @@ Partial Class Marcas
         Me.btnCancelar.BackColor = System.Drawing.Color.Tomato
         Me.btnCancelar.Enabled = False
         Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.Location = New System.Drawing.Point(227, 110)
+        Me.btnCancelar.Location = New System.Drawing.Point(303, 135)
+        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(75, 50)
+        Me.btnCancelar.Size = New System.Drawing.Size(100, 62)
         Me.btnCancelar.TabIndex = 50
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
@@ -172,9 +183,10 @@ Partial Class Marcas
         Me.btnAceptar.BackColor = System.Drawing.Color.PaleGreen
         Me.btnAceptar.Enabled = False
         Me.btnAceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAceptar.Location = New System.Drawing.Point(314, 90)
+        Me.btnAceptar.Location = New System.Drawing.Point(419, 111)
+        Me.btnAceptar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(80, 70)
+        Me.btnAceptar.Size = New System.Drawing.Size(107, 86)
         Me.btnAceptar.TabIndex = 49
         Me.btnAceptar.Text = "Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
@@ -185,9 +197,11 @@ Partial Class Marcas
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtId)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(11, 10)
+        Me.GroupBox1.Location = New System.Drawing.Point(15, 12)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(389, 59)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Size = New System.Drawing.Size(519, 73)
         Me.GroupBox1.TabIndex = 51
         Me.GroupBox1.TabStop = False
         '
@@ -198,8 +212,8 @@ Partial Class Marcas
         '
         'SqlConnection1
         '
-        Me.SqlConnection1.ConnectionString = "Data Source=KARINSPC;Initial Catalog=dboClothingShopSystem;Integrated Security=Tr" &
-    "ue"
+        Me.SqlConnection1.ConnectionString = "Data Source=LAPTOP-JHARA789\KARINSPC;Initial Catalog=dboClothingShopSystem;Integr" &
+    "ated Security=True"
         Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
         '
         'SqlInsertCommand1
@@ -238,10 +252,11 @@ Partial Class Marcas
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdMarcaDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.MarcasBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(406, 10)
+        Me.DataGridView1.Location = New System.Drawing.Point(541, 12)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(281, 150)
+        Me.DataGridView1.Size = New System.Drawing.Size(375, 185)
         Me.DataGridView1.TabIndex = 52
         '
         'IdMarcaDataGridViewTextBoxColumn
@@ -262,9 +277,9 @@ Partial Class Marcas
         '
         'Marcas
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(705, 167)
+        Me.ClientSize = New System.Drawing.Size(940, 206)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnCancelar)
@@ -275,6 +290,7 @@ Partial Class Marcas
         Me.Controls.Add(Me.btnPrimero)
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnNuevo)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Marcas"

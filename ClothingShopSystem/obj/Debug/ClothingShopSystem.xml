@@ -141,6 +141,16 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:ClothingShopSystem.DataSet1.Proveedores1DataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ClothingShopSystem.DataSet1.Proveedores2DataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:ClothingShopSystem.DataSet1.MarcasRow">
 <summary>
 Represents strongly named DataRow class.
@@ -271,6 +281,16 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
+<member name="T:ClothingShopSystem.DataSet1.Proveedores1Row">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ClothingShopSystem.DataSet1.Proveedores2Row">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
 <member name="T:ClothingShopSystem.DataSet1.MarcasRowChangeEvent">
 <summary>
 Row event argument class
@@ -397,6 +417,16 @@ Row event argument class
 </summary>
 </member>
 <member name="T:ClothingShopSystem.DataSet1.Categorias2RowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ClothingShopSystem.DataSet1.Proveedores1RowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ClothingShopSystem.DataSet1.Proveedores2RowChangeEvent">
 <summary>
 Row event argument class
 </summary>

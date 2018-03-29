@@ -21,7 +21,10 @@ Public Class Proveedores
     End Sub
 
     Private Sub Proveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'DataSet11.Proveedores' Puede moverla o quitarla según sea necesario.
         SqlDataAdapter1.Fill(DataSet11.Proveedores)
+        'Me.ProveedoresTableAdapter.Fill(Me.DataSet11.Proveedores)
+
     End Sub
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
@@ -100,7 +103,7 @@ Public Class Proveedores
         Me.Dispose()
     End Sub
 
-    Private Sub SqlDataAdapter1_RowUpdated(sender As Object, e As SqlRowUpdatedEventArgs) Handles SqlDataAdapter1.RowUpdated
+    Private Sub SqlDataAdapter1_RowUpdated(sender As Object, e As SqlRowUpdatedEventArgs)
         If e.Status = UpdateStatus.ErrorsOccurred Then
             MessageBox.Show(e.Errors.Message & vbCrLf &
             e.Row.Item("NOMBRE", DataRowVersion.Original) & vbCrLf &
@@ -118,6 +121,7 @@ Public Class Proveedores
             e.Handled = True
         End If
     End Sub
+
 
 
     '    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click

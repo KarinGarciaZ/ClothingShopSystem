@@ -68,28 +68,32 @@ Partial Class Usuarios
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtId)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(16, 15)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(456, 126)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Size = New System.Drawing.Size(608, 155)
         Me.GroupBox1.TabIndex = 84
         Me.GroupBox1.TabStop = False
         '
         'txtConfirmar
         '
         Me.txtConfirmar.Enabled = False
-        Me.txtConfirmar.Location = New System.Drawing.Point(238, 84)
+        Me.txtConfirmar.Location = New System.Drawing.Point(317, 103)
+        Me.txtConfirmar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtConfirmar.MaxLength = 16
         Me.txtConfirmar.Name = "txtConfirmar"
         Me.txtConfirmar.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtConfirmar.Size = New System.Drawing.Size(163, 20)
+        Me.txtConfirmar.Size = New System.Drawing.Size(216, 22)
         Me.txtConfirmar.TabIndex = 21
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(235, 68)
+        Me.Label5.Location = New System.Drawing.Point(313, 84)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(108, 13)
+        Me.Label5.Size = New System.Drawing.Size(146, 17)
         Me.Label5.TabIndex = 20
         Me.Label5.Text = "Confirmar Contraseña"
         '
@@ -99,9 +103,10 @@ Partial Class Usuarios
         Me.cbPuesto.Enabled = False
         Me.cbPuesto.FormattingEnabled = True
         Me.cbPuesto.Items.AddRange(New Object() {"Empleado", "Encargado o dueño"})
-        Me.cbPuesto.Location = New System.Drawing.Point(319, 26)
+        Me.cbPuesto.Location = New System.Drawing.Point(425, 32)
+        Me.cbPuesto.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cbPuesto.Name = "cbPuesto"
-        Me.cbPuesto.Size = New System.Drawing.Size(121, 21)
+        Me.cbPuesto.Size = New System.Drawing.Size(160, 24)
         Me.cbPuesto.TabIndex = 19
         '
         'UsuariosBindingSource
@@ -117,9 +122,10 @@ Partial Class Usuarios
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(316, 10)
+        Me.Label3.Location = New System.Drawing.Point(421, 12)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(40, 13)
+        Me.Label3.Size = New System.Drawing.Size(52, 17)
         Me.Label3.TabIndex = 18
         Me.Label3.Text = "Puesto"
         '
@@ -127,19 +133,21 @@ Partial Class Usuarios
         '
         Me.txtContrase.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "contrasena", True))
         Me.txtContrase.Enabled = False
-        Me.txtContrase.Location = New System.Drawing.Point(28, 84)
+        Me.txtContrase.Location = New System.Drawing.Point(37, 103)
+        Me.txtContrase.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtContrase.MaxLength = 16
         Me.txtContrase.Name = "txtContrase"
         Me.txtContrase.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtContrase.Size = New System.Drawing.Size(146, 20)
+        Me.txtContrase.Size = New System.Drawing.Size(193, 22)
         Me.txtContrase.TabIndex = 17
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(25, 67)
+        Me.Label4.Location = New System.Drawing.Point(33, 82)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(61, 13)
+        Me.Label4.Size = New System.Drawing.Size(81, 17)
         Me.Label4.TabIndex = 16
         Me.Label4.Text = "Contraseña"
         '
@@ -147,18 +155,20 @@ Partial Class Usuarios
         '
         Me.txtNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "nombre", True))
         Me.txtNombre.Enabled = False
-        Me.txtNombre.Location = New System.Drawing.Point(6, 26)
+        Me.txtNombre.Location = New System.Drawing.Point(8, 32)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtNombre.MaxLength = 40
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(283, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(376, 22)
         Me.txtNombre.TabIndex = 15
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(3, 10)
+        Me.Label2.Location = New System.Drawing.Point(4, 12)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(83, 13)
+        Me.Label2.Size = New System.Drawing.Size(111, 17)
         Me.Label2.TabIndex = 14
         Me.Label2.Text = "Nombre Usuario"
         '
@@ -166,17 +176,19 @@ Partial Class Usuarios
         '
         Me.txtId.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "idUsuario", True))
         Me.txtId.Enabled = False
-        Me.txtId.Location = New System.Drawing.Point(377, 26)
+        Me.txtId.Location = New System.Drawing.Point(503, 32)
+        Me.txtId.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtId.Name = "txtId"
-        Me.txtId.Size = New System.Drawing.Size(69, 20)
+        Me.txtId.Size = New System.Drawing.Size(91, 22)
         Me.txtId.TabIndex = 13
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(28, 10)
+        Me.Label1.Location = New System.Drawing.Point(37, 12)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(16, 13)
+        Me.Label1.Size = New System.Drawing.Size(19, 17)
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Id"
         Me.Label1.Visible = False
@@ -186,9 +198,10 @@ Partial Class Usuarios
         Me.btnCancelar.BackColor = System.Drawing.Color.Tomato
         Me.btnCancelar.Enabled = False
         Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.Location = New System.Drawing.Point(384, 170)
+        Me.btnCancelar.Location = New System.Drawing.Point(512, 209)
+        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(74, 69)
+        Me.btnCancelar.Size = New System.Drawing.Size(99, 85)
         Me.btnCancelar.TabIndex = 83
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
@@ -198,63 +211,70 @@ Partial Class Usuarios
         Me.btnAceptar.BackColor = System.Drawing.Color.PaleGreen
         Me.btnAceptar.Enabled = False
         Me.btnAceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAceptar.Location = New System.Drawing.Point(304, 170)
+        Me.btnAceptar.Location = New System.Drawing.Point(405, 209)
+        Me.btnAceptar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(74, 69)
+        Me.btnAceptar.Size = New System.Drawing.Size(99, 85)
         Me.btnAceptar.TabIndex = 82
         Me.btnAceptar.Text = "Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
         'btnAnterior
         '
-        Me.btnAnterior.Location = New System.Drawing.Point(86, 211)
+        Me.btnAnterior.Location = New System.Drawing.Point(115, 260)
+        Me.btnAnterior.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAnterior.Name = "btnAnterior"
-        Me.btnAnterior.Size = New System.Drawing.Size(66, 28)
+        Me.btnAnterior.Size = New System.Drawing.Size(88, 34)
         Me.btnAnterior.TabIndex = 81
         Me.btnAnterior.Text = "<"
         Me.btnAnterior.UseVisualStyleBackColor = True
         '
         'btnSiguiente
         '
-        Me.btnSiguiente.Location = New System.Drawing.Point(158, 211)
+        Me.btnSiguiente.Location = New System.Drawing.Point(211, 260)
+        Me.btnSiguiente.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(66, 28)
+        Me.btnSiguiente.Size = New System.Drawing.Size(88, 34)
         Me.btnSiguiente.TabIndex = 80
         Me.btnSiguiente.Text = ">"
         Me.btnSiguiente.UseVisualStyleBackColor = True
         '
         'btnUltimo
         '
-        Me.btnUltimo.Location = New System.Drawing.Point(230, 211)
+        Me.btnUltimo.Location = New System.Drawing.Point(307, 260)
+        Me.btnUltimo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnUltimo.Name = "btnUltimo"
-        Me.btnUltimo.Size = New System.Drawing.Size(66, 28)
+        Me.btnUltimo.Size = New System.Drawing.Size(88, 34)
         Me.btnUltimo.TabIndex = 79
         Me.btnUltimo.Text = ">>"
         Me.btnUltimo.UseVisualStyleBackColor = True
         '
         'btnPrimero
         '
-        Me.btnPrimero.Location = New System.Drawing.Point(14, 211)
+        Me.btnPrimero.Location = New System.Drawing.Point(19, 260)
+        Me.btnPrimero.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnPrimero.Name = "btnPrimero"
-        Me.btnPrimero.Size = New System.Drawing.Size(66, 28)
+        Me.btnPrimero.Size = New System.Drawing.Size(88, 34)
         Me.btnPrimero.TabIndex = 78
         Me.btnPrimero.Text = "<<"
         Me.btnPrimero.UseVisualStyleBackColor = True
         '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(158, 155)
+        Me.btnModificar.Location = New System.Drawing.Point(211, 191)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(66, 50)
+        Me.btnModificar.Size = New System.Drawing.Size(88, 62)
         Me.btnModificar.TabIndex = 76
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
         'btnNuevo
         '
-        Me.btnNuevo.Location = New System.Drawing.Point(86, 155)
+        Me.btnNuevo.Location = New System.Drawing.Point(115, 191)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(66, 50)
+        Me.btnNuevo.Size = New System.Drawing.Size(88, 62)
         Me.btnNuevo.TabIndex = 74
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
@@ -266,8 +286,8 @@ Partial Class Usuarios
         '
         'SqlConnection1
         '
-        Me.SqlConnection1.ConnectionString = "Data Source=KARINSPC;Initial Catalog=dboClothingShopSystem;Integrated Security=Tr" &
-    "ue"
+        Me.SqlConnection1.ConnectionString = "Data Source=LAPTOP-JHARA789\KARINSPC;Initial Catalog=dboClothingShopSystem;Integr" &
+    "ated Security=True"
         Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
         '
         'SqlInsertCommand1
@@ -298,9 +318,9 @@ Partial Class Usuarios
         '
         'Usuarios
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(477, 245)
+        Me.ClientSize = New System.Drawing.Size(636, 302)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
@@ -310,6 +330,7 @@ Partial Class Usuarios
         Me.Controls.Add(Me.btnPrimero)
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnNuevo)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Usuarios"

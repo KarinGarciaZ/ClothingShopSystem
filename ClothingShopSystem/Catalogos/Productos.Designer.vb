@@ -116,9 +116,10 @@ Partial Class Productos
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Location = New System.Drawing.Point(16, 11)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(16, 13)
+        Me.Label1.Size = New System.Drawing.Size(19, 17)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Id"
         '
@@ -126,9 +127,10 @@ Partial Class Productos
         '
         Me.txtId.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Productos1BindingSource, "idProducto", True))
         Me.txtId.Enabled = False
-        Me.txtId.Location = New System.Drawing.Point(12, 25)
+        Me.txtId.Location = New System.Drawing.Point(16, 31)
+        Me.txtId.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtId.Name = "txtId"
-        Me.txtId.Size = New System.Drawing.Size(69, 20)
+        Me.txtId.Size = New System.Drawing.Size(91, 22)
         Me.txtId.TabIndex = 1
         '
         'Productos1BindingSource
@@ -144,9 +146,10 @@ Partial Class Productos
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(122, 9)
+        Me.Label2.Location = New System.Drawing.Point(163, 11)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(44, 13)
+        Me.Label2.Size = New System.Drawing.Size(58, 17)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Nombre"
         '
@@ -154,46 +157,51 @@ Partial Class Productos
         '
         Me.txtNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Productos1BindingSource, "nombre", True))
         Me.txtNombre.Enabled = False
-        Me.txtNombre.Location = New System.Drawing.Point(125, 25)
+        Me.txtNombre.Location = New System.Drawing.Point(167, 31)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtNombre.MaxLength = 45
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(398, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(529, 22)
         Me.txtNombre.TabIndex = 3
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(316, 2)
+        Me.Label3.Location = New System.Drawing.Point(421, 2)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(28, 13)
+        Me.Label3.Size = New System.Drawing.Size(36, 17)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Tipo"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(160, 2)
+        Me.Label4.Location = New System.Drawing.Point(213, 2)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(54, 13)
+        Me.Label4.Size = New System.Drawing.Size(69, 17)
         Me.Label4.TabIndex = 5
         Me.Label4.Text = "Categoría"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(9, 2)
+        Me.Label5.Location = New System.Drawing.Point(12, 2)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(37, 13)
+        Me.Label5.Size = New System.Drawing.Size(47, 17)
         Me.Label5.TabIndex = 6
         Me.Label5.Text = "Marca"
         '
         'txtCosto
         '
         Me.txtCosto.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Productos1BindingSource, "costo", True))
-        Me.txtCosto.Location = New System.Drawing.Point(64, 26)
+        Me.txtCosto.Location = New System.Drawing.Point(85, 32)
+        Me.txtCosto.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtCosto.MaxLength = 8
         Me.txtCosto.Name = "txtCosto"
-        Me.txtCosto.Size = New System.Drawing.Size(104, 20)
+        Me.txtCosto.Size = New System.Drawing.Size(137, 22)
         Me.txtCosto.TabIndex = 7
         '
         'cbMarca
@@ -203,9 +211,10 @@ Partial Class Productos
         Me.cbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbMarca.Enabled = False
         Me.cbMarca.FormattingEnabled = True
-        Me.cbMarca.Location = New System.Drawing.Point(9, 32)
+        Me.cbMarca.Location = New System.Drawing.Point(12, 39)
+        Me.cbMarca.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cbMarca.Name = "cbMarca"
-        Me.cbMarca.Size = New System.Drawing.Size(121, 21)
+        Me.cbMarca.Size = New System.Drawing.Size(160, 24)
         Me.cbMarca.TabIndex = 10
         Me.cbMarca.ValueMember = "idMarca"
         '
@@ -221,9 +230,10 @@ Partial Class Productos
         Me.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbCategoria.Enabled = False
         Me.cbCategoria.FormattingEnabled = True
-        Me.cbCategoria.Location = New System.Drawing.Point(163, 32)
+        Me.cbCategoria.Location = New System.Drawing.Point(217, 39)
+        Me.cbCategoria.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cbCategoria.Name = "cbCategoria"
-        Me.cbCategoria.Size = New System.Drawing.Size(121, 21)
+        Me.cbCategoria.Size = New System.Drawing.Size(160, 24)
         Me.cbCategoria.TabIndex = 11
         Me.cbCategoria.ValueMember = "idCategoria"
         '
@@ -239,9 +249,10 @@ Partial Class Productos
         Me.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbTipo.Enabled = False
         Me.cbTipo.FormattingEnabled = True
-        Me.cbTipo.Location = New System.Drawing.Point(319, 32)
+        Me.cbTipo.Location = New System.Drawing.Point(425, 39)
+        Me.cbTipo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cbTipo.Name = "cbTipo"
-        Me.cbTipo.Size = New System.Drawing.Size(192, 21)
+        Me.cbTipo.Size = New System.Drawing.Size(255, 24)
         Me.cbTipo.TabIndex = 12
         Me.cbTipo.ValueMember = "idTipo"
         '
@@ -253,18 +264,20 @@ Partial Class Productos
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(6, 81)
+        Me.Label7.Location = New System.Drawing.Point(8, 100)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(55, 13)
+        Me.Label7.Size = New System.Drawing.Size(72, 17)
         Me.Label7.TabIndex = 14
         Me.Label7.Text = "Precio1: $"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(6, 29)
+        Me.Label8.Location = New System.Drawing.Point(8, 36)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(55, 13)
+        Me.Label8.Size = New System.Drawing.Size(72, 17)
         Me.Label8.TabIndex = 15
         Me.Label8.Text = "Costo:    $"
         '
@@ -276,9 +289,11 @@ Partial Class Productos
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 97)
+        Me.GroupBox1.Location = New System.Drawing.Point(16, 119)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(517, 68)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Size = New System.Drawing.Size(689, 84)
         Me.GroupBox1.TabIndex = 16
         Me.GroupBox1.TabStop = False
         '
@@ -293,9 +308,11 @@ Partial Class Productos
         Me.GroupBox2.Controls.Add(Me.txtCosto)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Enabled = False
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 171)
+        Me.GroupBox2.Location = New System.Drawing.Point(16, 210)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(174, 154)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Size = New System.Drawing.Size(232, 190)
         Me.GroupBox2.TabIndex = 17
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Precios"
@@ -303,45 +320,50 @@ Partial Class Productos
         'txtPrecio3
         '
         Me.txtPrecio3.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Productos1BindingSource, "precio3", True))
-        Me.txtPrecio3.Location = New System.Drawing.Point(64, 126)
+        Me.txtPrecio3.Location = New System.Drawing.Point(85, 155)
+        Me.txtPrecio3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtPrecio3.MaxLength = 8
         Me.txtPrecio3.Name = "txtPrecio3"
-        Me.txtPrecio3.Size = New System.Drawing.Size(104, 20)
+        Me.txtPrecio3.Size = New System.Drawing.Size(137, 22)
         Me.txtPrecio3.TabIndex = 20
         '
         'txtPrecio2
         '
         Me.txtPrecio2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Productos1BindingSource, "precio2", True))
-        Me.txtPrecio2.Location = New System.Drawing.Point(64, 102)
+        Me.txtPrecio2.Location = New System.Drawing.Point(85, 126)
+        Me.txtPrecio2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtPrecio2.MaxLength = 8
         Me.txtPrecio2.Name = "txtPrecio2"
-        Me.txtPrecio2.Size = New System.Drawing.Size(104, 20)
+        Me.txtPrecio2.Size = New System.Drawing.Size(137, 22)
         Me.txtPrecio2.TabIndex = 19
         '
         'txtPrecio1
         '
         Me.txtPrecio1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Productos1BindingSource, "precio1", True))
-        Me.txtPrecio1.Location = New System.Drawing.Point(64, 78)
+        Me.txtPrecio1.Location = New System.Drawing.Point(85, 96)
+        Me.txtPrecio1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtPrecio1.MaxLength = 8
         Me.txtPrecio1.Name = "txtPrecio1"
-        Me.txtPrecio1.Size = New System.Drawing.Size(104, 20)
+        Me.txtPrecio1.Size = New System.Drawing.Size(137, 22)
         Me.txtPrecio1.TabIndex = 18
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(6, 129)
+        Me.Label10.Location = New System.Drawing.Point(8, 159)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(55, 13)
+        Me.Label10.Size = New System.Drawing.Size(72, 17)
         Me.Label10.TabIndex = 17
         Me.Label10.Text = "Precio3: $"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(6, 105)
+        Me.Label9.Location = New System.Drawing.Point(8, 129)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(55, 13)
+        Me.Label9.Size = New System.Drawing.Size(72, 17)
         Me.Label9.TabIndex = 16
         Me.Label9.Text = "Precio2: $"
         '
@@ -352,9 +374,11 @@ Partial Class Productos
         Me.GroupBox3.Controls.Add(Me.Label13)
         Me.GroupBox3.Controls.Add(Me.Label6)
         Me.GroupBox3.Enabled = False
-        Me.GroupBox3.Location = New System.Drawing.Point(203, 171)
+        Me.GroupBox3.Location = New System.Drawing.Point(271, 210)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(320, 87)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Size = New System.Drawing.Size(427, 107)
         Me.GroupBox3.TabIndex = 18
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Existencias"
@@ -362,36 +386,40 @@ Partial Class Productos
         'txtExistencia
         '
         Me.txtExistencia.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Productos1BindingSource, "existencia", True))
-        Me.txtExistencia.Location = New System.Drawing.Point(70, 26)
+        Me.txtExistencia.Location = New System.Drawing.Point(93, 32)
+        Me.txtExistencia.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtExistencia.MaxLength = 6
         Me.txtExistencia.Name = "txtExistencia"
-        Me.txtExistencia.Size = New System.Drawing.Size(104, 20)
+        Me.txtExistencia.Size = New System.Drawing.Size(137, 22)
         Me.txtExistencia.TabIndex = 28
         '
         'txtApartados
         '
         Me.txtApartados.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Productos1BindingSource, "apartados", True))
-        Me.txtApartados.Location = New System.Drawing.Point(70, 52)
+        Me.txtApartados.Location = New System.Drawing.Point(93, 64)
+        Me.txtApartados.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtApartados.MaxLength = 6
         Me.txtApartados.Name = "txtApartados"
-        Me.txtApartados.Size = New System.Drawing.Size(104, 20)
+        Me.txtApartados.Size = New System.Drawing.Size(137, 22)
         Me.txtApartados.TabIndex = 27
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(6, 29)
+        Me.Label13.Location = New System.Drawing.Point(8, 36)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(58, 13)
+        Me.Label13.Size = New System.Drawing.Size(75, 17)
         Me.Label13.TabIndex = 24
         Me.Label13.Text = "Existencia:"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 55)
+        Me.Label6.Location = New System.Drawing.Point(8, 68)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(58, 13)
+        Me.Label6.Size = New System.Drawing.Size(77, 17)
         Me.Label6.TabIndex = 21
         Me.Label6.Text = "Apartados:"
         '
@@ -399,61 +427,68 @@ Partial Class Productos
         '
         Me.txtCodigoBarras.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Productos1BindingSource, "codigoBarras", True))
         Me.txtCodigoBarras.Enabled = False
-        Me.txtCodigoBarras.Location = New System.Drawing.Point(12, 71)
+        Me.txtCodigoBarras.Location = New System.Drawing.Point(16, 87)
+        Me.txtCodigoBarras.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtCodigoBarras.MaxLength = 40
         Me.txtCodigoBarras.Name = "txtCodigoBarras"
-        Me.txtCodigoBarras.Size = New System.Drawing.Size(242, 20)
+        Me.txtCodigoBarras.Size = New System.Drawing.Size(321, 22)
         Me.txtCodigoBarras.TabIndex = 20
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(12, 55)
+        Me.Label14.Location = New System.Drawing.Point(16, 68)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(87, 13)
+        Me.Label14.Size = New System.Drawing.Size(117, 17)
         Me.Label14.TabIndex = 19
         Me.Label14.Text = "Código de barras"
         '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(270, 55)
+        Me.Label15.Location = New System.Drawing.Point(360, 68)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(120, 13)
+        Me.Label15.Size = New System.Drawing.Size(159, 17)
         Me.Label15.TabIndex = 21
         Me.Label15.Text = "Fecha de última compra"
         '
         'dtpFecha
         '
         Me.dtpFecha.Enabled = False
-        Me.dtpFecha.Location = New System.Drawing.Point(273, 71)
+        Me.dtpFecha.Location = New System.Drawing.Point(364, 87)
+        Me.dtpFecha.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(200, 20)
+        Me.dtpFecha.Size = New System.Drawing.Size(265, 22)
         Me.dtpFecha.TabIndex = 22
         '
         'btnNuevo
         '
-        Me.btnNuevo.Location = New System.Drawing.Point(15, 376)
+        Me.btnNuevo.Location = New System.Drawing.Point(20, 463)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(81, 43)
+        Me.btnNuevo.Size = New System.Drawing.Size(108, 53)
         Me.btnNuevo.TabIndex = 0
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
         '
         'btnBuscar
         '
-        Me.btnBuscar.Location = New System.Drawing.Point(192, 376)
+        Me.btnBuscar.Location = New System.Drawing.Point(256, 463)
+        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(81, 43)
+        Me.btnBuscar.Size = New System.Drawing.Size(108, 53)
         Me.btnBuscar.TabIndex = 23
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(105, 376)
+        Me.btnModificar.Location = New System.Drawing.Point(140, 463)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(81, 43)
+        Me.btnModificar.Size = New System.Drawing.Size(108, 53)
         Me.btnModificar.TabIndex = 24
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
@@ -463,9 +498,10 @@ Partial Class Productos
         Me.btnAceptar.BackColor = System.Drawing.Color.PaleGreen
         Me.btnAceptar.Enabled = False
         Me.btnAceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAceptar.Location = New System.Drawing.Point(376, 347)
+        Me.btnAceptar.Location = New System.Drawing.Point(501, 427)
+        Me.btnAceptar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(118, 72)
+        Me.btnAceptar.Size = New System.Drawing.Size(157, 89)
         Me.btnAceptar.TabIndex = 26
         Me.btnAceptar.Text = "Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
@@ -475,45 +511,50 @@ Partial Class Productos
         Me.btnCancelar.BackColor = System.Drawing.Color.Tomato
         Me.btnCancelar.Enabled = False
         Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.Location = New System.Drawing.Point(279, 376)
+        Me.btnCancelar.Location = New System.Drawing.Point(372, 463)
+        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(81, 43)
+        Me.btnCancelar.Size = New System.Drawing.Size(108, 53)
         Me.btnCancelar.TabIndex = 27
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'btnAnterior
         '
-        Me.btnAnterior.Location = New System.Drawing.Point(105, 342)
+        Me.btnAnterior.Location = New System.Drawing.Point(140, 421)
+        Me.btnAnterior.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAnterior.Name = "btnAnterior"
-        Me.btnAnterior.Size = New System.Drawing.Size(81, 28)
+        Me.btnAnterior.Size = New System.Drawing.Size(108, 34)
         Me.btnAnterior.TabIndex = 40
         Me.btnAnterior.Text = "<"
         Me.btnAnterior.UseVisualStyleBackColor = True
         '
         'btnSiguiente
         '
-        Me.btnSiguiente.Location = New System.Drawing.Point(192, 342)
+        Me.btnSiguiente.Location = New System.Drawing.Point(256, 421)
+        Me.btnSiguiente.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(81, 28)
+        Me.btnSiguiente.Size = New System.Drawing.Size(108, 34)
         Me.btnSiguiente.TabIndex = 39
         Me.btnSiguiente.Text = ">"
         Me.btnSiguiente.UseVisualStyleBackColor = True
         '
         'btnUltimo
         '
-        Me.btnUltimo.Location = New System.Drawing.Point(279, 342)
+        Me.btnUltimo.Location = New System.Drawing.Point(372, 421)
+        Me.btnUltimo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnUltimo.Name = "btnUltimo"
-        Me.btnUltimo.Size = New System.Drawing.Size(81, 28)
+        Me.btnUltimo.Size = New System.Drawing.Size(108, 34)
         Me.btnUltimo.TabIndex = 38
         Me.btnUltimo.Text = ">>"
         Me.btnUltimo.UseVisualStyleBackColor = True
         '
         'btnPrimero
         '
-        Me.btnPrimero.Location = New System.Drawing.Point(15, 342)
+        Me.btnPrimero.Location = New System.Drawing.Point(20, 421)
+        Me.btnPrimero.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnPrimero.Name = "btnPrimero"
-        Me.btnPrimero.Size = New System.Drawing.Size(81, 28)
+        Me.btnPrimero.Size = New System.Drawing.Size(108, 34)
         Me.btnPrimero.TabIndex = 37
         Me.btnPrimero.Text = "<<"
         Me.btnPrimero.UseVisualStyleBackColor = True
@@ -526,11 +567,12 @@ Partial Class Productos
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdProductoDataGridViewTextBoxColumn, Me.IdTipoDataGridViewTextBoxColumn, Me.IdCategoriaDataGridViewTextBoxColumn, Me.IdMarcaDataGridViewTextBoxColumn, Me.CodigoBarrasDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.CostoDataGridViewTextBoxColumn, Me.Precio1DataGridViewTextBoxColumn, Me.Precio2DataGridViewTextBoxColumn, Me.Precio3DataGridViewTextBoxColumn, Me.ExistenciaDataGridViewTextBoxColumn, Me.ApartadosDataGridViewTextBoxColumn, Me.UltimaFechaCompraDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.Productos1BindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(535, 9)
+        Me.DataGridView1.Location = New System.Drawing.Point(713, 11)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(689, 410)
+        Me.DataGridView1.Size = New System.Drawing.Size(919, 505)
         Me.DataGridView1.TabIndex = 41
         '
         'IdProductoDataGridViewTextBoxColumn
@@ -631,8 +673,8 @@ Partial Class Productos
         '
         'SqlConnection1
         '
-        Me.SqlConnection1.ConnectionString = "Data Source=KARINSPC;Initial Catalog=dboClothingShopSystem;Integrated Security=Tr" &
-    "ue"
+        Me.SqlConnection1.ConnectionString = "Data Source=LAPTOP-JHARA789\KARINSPC;Initial Catalog=dboClothingShopSystem;Integr" &
+    "ated Security=True"
         Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
         '
         'SqlInsertCommand1
@@ -763,9 +805,9 @@ Partial Class Productos
         '
         'Productos
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1236, 424)
+        Me.ClientSize = New System.Drawing.Size(1648, 522)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btnAnterior)
         Me.Controls.Add(Me.btnSiguiente)
@@ -787,6 +829,7 @@ Partial Class Productos
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtId)
         Me.Controls.Add(Me.Label1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Productos"

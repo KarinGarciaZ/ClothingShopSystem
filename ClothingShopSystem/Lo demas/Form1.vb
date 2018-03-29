@@ -329,12 +329,12 @@ Public Class Form1
     End Sub
 
     Private Sub AyudaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AyudaToolStripMenuItem.Click
-        System.Diagnostics.Process.Start("C:\Users\elektramovil\Documents\GitHub\ClothingShopSystem\Ayuda.chm")
+        System.Diagnostics.Process.Start("C:\Users\oscar\Documents\GitHub\ClothingShopSystem\Ayuda.chm")
     End Sub
 
     Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If e.KeyCode = Keys.F1 Then
-            System.Diagnostics.Process.Start("C:\Users\elektramovil\Documents\GitHub\ClothingShopSystem\Ayuda.chm")
+            System.Diagnostics.Process.Start("C:\Users\oscar\Documents\GitHub\ClothingShopSystem\Ayuda.chm")
         End If
     End Sub
 
@@ -612,7 +612,7 @@ Public Class Form1
             command.ExecuteNonQuery()
         Next
 
-
+        MsgBox("Finalizado!")
 
 
     End Sub
