@@ -8,10 +8,11 @@ Public Class Bitacora
         dgAgregar.Rows.Clear()
         Try
             conexionBitacora.Open
+
             BitacoraComando.CommandText = "select * from bitacora order by idError desc"
             lector = BitacoraComando.ExecuteReader
             While lector.Read
-                dgAgregar.Rows.Add(lector(0).ToString, lector(1).ToString, lector(2).ToString, lector(3).ToString, lector(4).ToString, lector(5).ToString, lector(6).ToString)
+                dgAgregar.Rows.Add(lector(0).ToString, lector(1).ToString, lector(2).ToString, lector(3).ToString, lector(4).ToString, lector(5).ToString)
             End While
             lector.Close()
         Catch ex As Exception

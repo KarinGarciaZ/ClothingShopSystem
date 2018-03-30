@@ -76,10 +76,12 @@ Partial Class Form1
         '
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatálogosToolStripMenuItem, Me.MovimientosToolStripMenuItem, Me.ConsultasToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.UtileriasToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(151, 383)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
+        Me.MenuStrip1.Size = New System.Drawing.Size(192, 471)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -88,69 +90,69 @@ Partial Class Form1
         Me.CatálogosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductosToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.MarcasToolStripMenuItem, Me.TiposToolStripMenuItem, Me.CategoriasToolStripMenuItem, Me.UsuariosToolStripMenuItem})
         Me.CatálogosToolStripMenuItem.Image = CType(resources.GetObject("CatálogosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CatálogosToolStripMenuItem.Name = "CatálogosToolStripMenuItem"
-        Me.CatálogosToolStripMenuItem.Size = New System.Drawing.Size(138, 34)
+        Me.CatálogosToolStripMenuItem.Size = New System.Drawing.Size(175, 41)
         Me.CatálogosToolStripMenuItem.Text = "Catálogos"
         '
         'ProductosToolStripMenuItem
         '
         Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
-        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(200, 34)
+        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(247, 42)
         Me.ProductosToolStripMenuItem.Text = "Productos"
         '
         'ProveedoresToolStripMenuItem
         '
         Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
-        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(200, 34)
+        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(247, 42)
         Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
         '
         'ClientesToolStripMenuItem
         '
         Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
-        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(200, 34)
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(247, 42)
         Me.ClientesToolStripMenuItem.Text = "Clientes"
         '
         'MarcasToolStripMenuItem
         '
         Me.MarcasToolStripMenuItem.Name = "MarcasToolStripMenuItem"
-        Me.MarcasToolStripMenuItem.Size = New System.Drawing.Size(200, 34)
+        Me.MarcasToolStripMenuItem.Size = New System.Drawing.Size(247, 42)
         Me.MarcasToolStripMenuItem.Text = "Marcas"
         '
         'TiposToolStripMenuItem
         '
         Me.TiposToolStripMenuItem.Name = "TiposToolStripMenuItem"
-        Me.TiposToolStripMenuItem.Size = New System.Drawing.Size(200, 34)
+        Me.TiposToolStripMenuItem.Size = New System.Drawing.Size(247, 42)
         Me.TiposToolStripMenuItem.Text = "Tipos"
         '
         'CategoriasToolStripMenuItem
         '
         Me.CategoriasToolStripMenuItem.Name = "CategoriasToolStripMenuItem"
-        Me.CategoriasToolStripMenuItem.Size = New System.Drawing.Size(200, 34)
+        Me.CategoriasToolStripMenuItem.Size = New System.Drawing.Size(247, 42)
         Me.CategoriasToolStripMenuItem.Text = "Categorias"
         '
         'UsuariosToolStripMenuItem
         '
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(200, 34)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(247, 42)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
         'MovimientosToolStripMenuItem
         '
         Me.MovimientosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ComprasToolStripMenuItem, Me.VentasToolStripMenuItem, Me.ApartadosToolStripMenuItem, Me.AbonoCreditoToolStripMenuItem, Me.AbonoApartadoToolStripMenuItem, Me.DevolucionesToolStripMenuItem})
         Me.MovimientosToolStripMenuItem.Name = "MovimientosToolStripMenuItem"
-        Me.MovimientosToolStripMenuItem.Size = New System.Drawing.Size(138, 34)
+        Me.MovimientosToolStripMenuItem.Size = New System.Drawing.Size(175, 41)
         Me.MovimientosToolStripMenuItem.Text = "Movimientos"
         '
         'ComprasToolStripMenuItem
         '
         Me.ComprasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaToolStripMenuItem})
         Me.ComprasToolStripMenuItem.Name = "ComprasToolStripMenuItem"
-        Me.ComprasToolStripMenuItem.Size = New System.Drawing.Size(240, 34)
+        Me.ComprasToolStripMenuItem.Size = New System.Drawing.Size(298, 42)
         Me.ComprasToolStripMenuItem.Text = "Compras"
         '
         'ConsultaToolStripMenuItem
         '
         Me.ConsultaToolStripMenuItem.Name = "ConsultaToolStripMenuItem"
-        Me.ConsultaToolStripMenuItem.Size = New System.Drawing.Size(167, 34)
+        Me.ConsultaToolStripMenuItem.Size = New System.Drawing.Size(204, 42)
         Me.ConsultaToolStripMenuItem.Text = "Consulta"
         '
         'VentasToolStripMenuItem
@@ -158,200 +160,200 @@ Partial Class Form1
         Me.VentasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaToolStripMenuItem1})
         Me.VentasToolStripMenuItem.Image = CType(resources.GetObject("VentasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.VentasToolStripMenuItem.Name = "VentasToolStripMenuItem"
-        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(240, 34)
+        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(298, 42)
         Me.VentasToolStripMenuItem.Text = "Ventas"
         '
         'ConsultaToolStripMenuItem1
         '
         Me.ConsultaToolStripMenuItem1.Name = "ConsultaToolStripMenuItem1"
-        Me.ConsultaToolStripMenuItem1.Size = New System.Drawing.Size(167, 34)
+        Me.ConsultaToolStripMenuItem1.Size = New System.Drawing.Size(204, 42)
         Me.ConsultaToolStripMenuItem1.Text = "Consulta"
         '
         'ApartadosToolStripMenuItem
         '
         Me.ApartadosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaToolStripMenuItem2})
         Me.ApartadosToolStripMenuItem.Name = "ApartadosToolStripMenuItem"
-        Me.ApartadosToolStripMenuItem.Size = New System.Drawing.Size(240, 34)
+        Me.ApartadosToolStripMenuItem.Size = New System.Drawing.Size(298, 42)
         Me.ApartadosToolStripMenuItem.Text = "Apartados"
         '
         'ConsultaToolStripMenuItem2
         '
         Me.ConsultaToolStripMenuItem2.Name = "ConsultaToolStripMenuItem2"
-        Me.ConsultaToolStripMenuItem2.Size = New System.Drawing.Size(167, 34)
+        Me.ConsultaToolStripMenuItem2.Size = New System.Drawing.Size(204, 42)
         Me.ConsultaToolStripMenuItem2.Text = "Consulta"
         '
         'AbonoCreditoToolStripMenuItem
         '
         Me.AbonoCreditoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaToolStripMenuItem3})
         Me.AbonoCreditoToolStripMenuItem.Name = "AbonoCreditoToolStripMenuItem"
-        Me.AbonoCreditoToolStripMenuItem.Size = New System.Drawing.Size(240, 34)
+        Me.AbonoCreditoToolStripMenuItem.Size = New System.Drawing.Size(298, 42)
         Me.AbonoCreditoToolStripMenuItem.Text = "Abono Credito"
         '
         'ConsultaToolStripMenuItem3
         '
         Me.ConsultaToolStripMenuItem3.Name = "ConsultaToolStripMenuItem3"
-        Me.ConsultaToolStripMenuItem3.Size = New System.Drawing.Size(167, 34)
+        Me.ConsultaToolStripMenuItem3.Size = New System.Drawing.Size(204, 42)
         Me.ConsultaToolStripMenuItem3.Text = "Consulta"
         '
         'AbonoApartadoToolStripMenuItem
         '
         Me.AbonoApartadoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaToolStripMenuItem4})
         Me.AbonoApartadoToolStripMenuItem.Name = "AbonoApartadoToolStripMenuItem"
-        Me.AbonoApartadoToolStripMenuItem.Size = New System.Drawing.Size(240, 34)
+        Me.AbonoApartadoToolStripMenuItem.Size = New System.Drawing.Size(298, 42)
         Me.AbonoApartadoToolStripMenuItem.Text = "Abono Apartado"
         '
         'ConsultaToolStripMenuItem4
         '
         Me.ConsultaToolStripMenuItem4.Name = "ConsultaToolStripMenuItem4"
-        Me.ConsultaToolStripMenuItem4.Size = New System.Drawing.Size(167, 34)
+        Me.ConsultaToolStripMenuItem4.Size = New System.Drawing.Size(204, 42)
         Me.ConsultaToolStripMenuItem4.Text = "Consulta"
         '
         'DevolucionesToolStripMenuItem
         '
         Me.DevolucionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaToolStripMenuItem5})
         Me.DevolucionesToolStripMenuItem.Name = "DevolucionesToolStripMenuItem"
-        Me.DevolucionesToolStripMenuItem.Size = New System.Drawing.Size(240, 34)
+        Me.DevolucionesToolStripMenuItem.Size = New System.Drawing.Size(298, 42)
         Me.DevolucionesToolStripMenuItem.Text = "Devoluciones"
         '
         'ConsultaToolStripMenuItem5
         '
         Me.ConsultaToolStripMenuItem5.Name = "ConsultaToolStripMenuItem5"
-        Me.ConsultaToolStripMenuItem5.Size = New System.Drawing.Size(167, 34)
+        Me.ConsultaToolStripMenuItem5.Size = New System.Drawing.Size(204, 42)
         Me.ConsultaToolStripMenuItem5.Text = "Consulta"
         '
         'ConsultasToolStripMenuItem
         '
         Me.ConsultasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductosToolStripMenuItem1, Me.ClientesToolStripMenuItem1})
         Me.ConsultasToolStripMenuItem.Name = "ConsultasToolStripMenuItem"
-        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(138, 34)
+        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(175, 41)
         Me.ConsultasToolStripMenuItem.Text = "Consultas"
         '
         'ProductosToolStripMenuItem1
         '
         Me.ProductosToolStripMenuItem1.Name = "ProductosToolStripMenuItem1"
-        Me.ProductosToolStripMenuItem1.Size = New System.Drawing.Size(179, 34)
+        Me.ProductosToolStripMenuItem1.Size = New System.Drawing.Size(219, 42)
         Me.ProductosToolStripMenuItem1.Text = "Productos"
         '
         'ClientesToolStripMenuItem1
         '
         Me.ClientesToolStripMenuItem1.Name = "ClientesToolStripMenuItem1"
-        Me.ClientesToolStripMenuItem1.Size = New System.Drawing.Size(179, 34)
+        Me.ClientesToolStripMenuItem1.Size = New System.Drawing.Size(219, 42)
         Me.ClientesToolStripMenuItem1.Text = "Clientes"
         '
         'ReportesToolStripMenuItem
         '
         Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ApartadosPorClienteToolStripMenuItem, Me.ProductosVendidosPorPeriodoToolStripMenuItem, Me.DevolucionesPorPeriodoToolStripMenuItem, Me.ProductosToolStripMenuItem2, Me.ClientesDeudoresToolStripMenuItem, Me.VentasPorPeriodoToolStripMenuItem, Me.ComprasPorPeriodoToolStripMenuItem, Me.ApartadosNoPagadosToolStripMenuItem, Me.EstadoDeCuentaToolStripMenuItem, Me.EstadoDeCuentaDeudorToolStripMenuItem, Me.IngresosDiariosToolStripMenuItem})
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(138, 34)
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(175, 41)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
         'ApartadosPorClienteToolStripMenuItem
         '
         Me.ApartadosPorClienteToolStripMenuItem.Name = "ApartadosPorClienteToolStripMenuItem"
-        Me.ApartadosPorClienteToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.ApartadosPorClienteToolStripMenuItem.Size = New System.Drawing.Size(483, 42)
         Me.ApartadosPorClienteToolStripMenuItem.Text = "Apartados por Cliente"
         '
         'ProductosVendidosPorPeriodoToolStripMenuItem
         '
         Me.ProductosVendidosPorPeriodoToolStripMenuItem.Name = "ProductosVendidosPorPeriodoToolStripMenuItem"
-        Me.ProductosVendidosPorPeriodoToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.ProductosVendidosPorPeriodoToolStripMenuItem.Size = New System.Drawing.Size(483, 42)
         Me.ProductosVendidosPorPeriodoToolStripMenuItem.Text = "Productos Vendidos por Periodo"
         '
         'DevolucionesPorPeriodoToolStripMenuItem
         '
         Me.DevolucionesPorPeriodoToolStripMenuItem.Name = "DevolucionesPorPeriodoToolStripMenuItem"
-        Me.DevolucionesPorPeriodoToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.DevolucionesPorPeriodoToolStripMenuItem.Size = New System.Drawing.Size(483, 42)
         Me.DevolucionesPorPeriodoToolStripMenuItem.Text = "Devoluciones por Periodo"
         '
         'ProductosToolStripMenuItem2
         '
         Me.ProductosToolStripMenuItem2.Name = "ProductosToolStripMenuItem2"
-        Me.ProductosToolStripMenuItem2.Size = New System.Drawing.Size(385, 34)
+        Me.ProductosToolStripMenuItem2.Size = New System.Drawing.Size(483, 42)
         Me.ProductosToolStripMenuItem2.Text = "Productos"
         '
         'ClientesDeudoresToolStripMenuItem
         '
         Me.ClientesDeudoresToolStripMenuItem.Name = "ClientesDeudoresToolStripMenuItem"
-        Me.ClientesDeudoresToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.ClientesDeudoresToolStripMenuItem.Size = New System.Drawing.Size(483, 42)
         Me.ClientesDeudoresToolStripMenuItem.Text = "Clientes Deudores"
         '
         'VentasPorPeriodoToolStripMenuItem
         '
         Me.VentasPorPeriodoToolStripMenuItem.Name = "VentasPorPeriodoToolStripMenuItem"
-        Me.VentasPorPeriodoToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.VentasPorPeriodoToolStripMenuItem.Size = New System.Drawing.Size(483, 42)
         Me.VentasPorPeriodoToolStripMenuItem.Text = "Ventas por Periodo"
         '
         'ComprasPorPeriodoToolStripMenuItem
         '
         Me.ComprasPorPeriodoToolStripMenuItem.Name = "ComprasPorPeriodoToolStripMenuItem"
-        Me.ComprasPorPeriodoToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.ComprasPorPeriodoToolStripMenuItem.Size = New System.Drawing.Size(483, 42)
         Me.ComprasPorPeriodoToolStripMenuItem.Text = "Compras por Periodo"
         '
         'ApartadosNoPagadosToolStripMenuItem
         '
         Me.ApartadosNoPagadosToolStripMenuItem.Name = "ApartadosNoPagadosToolStripMenuItem"
-        Me.ApartadosNoPagadosToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.ApartadosNoPagadosToolStripMenuItem.Size = New System.Drawing.Size(483, 42)
         Me.ApartadosNoPagadosToolStripMenuItem.Text = "Apartados no pagados"
         '
         'EstadoDeCuentaToolStripMenuItem
         '
         Me.EstadoDeCuentaToolStripMenuItem.Name = "EstadoDeCuentaToolStripMenuItem"
-        Me.EstadoDeCuentaToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.EstadoDeCuentaToolStripMenuItem.Size = New System.Drawing.Size(483, 42)
         Me.EstadoDeCuentaToolStripMenuItem.Text = "Estado de cuenta"
         '
         'EstadoDeCuentaDeudorToolStripMenuItem
         '
         Me.EstadoDeCuentaDeudorToolStripMenuItem.Name = "EstadoDeCuentaDeudorToolStripMenuItem"
-        Me.EstadoDeCuentaDeudorToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.EstadoDeCuentaDeudorToolStripMenuItem.Size = New System.Drawing.Size(483, 42)
         Me.EstadoDeCuentaDeudorToolStripMenuItem.Text = "Estado de Cuenta (Deudor)"
         '
         'IngresosDiariosToolStripMenuItem
         '
         Me.IngresosDiariosToolStripMenuItem.Name = "IngresosDiariosToolStripMenuItem"
-        Me.IngresosDiariosToolStripMenuItem.Size = New System.Drawing.Size(385, 34)
+        Me.IngresosDiariosToolStripMenuItem.Size = New System.Drawing.Size(483, 42)
         Me.IngresosDiariosToolStripMenuItem.Text = "Ingresos Diarios"
         '
         'UtileriasToolStripMenuItem
         '
         Me.UtileriasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AyudaToolStripMenuItem, Me.RespaldarToolStripMenuItem, Me.RestaurarToolStripMenuItem, Me.BitacoraToolStripMenuItem, Me.TraspasoHistoricoToolStripMenuItem, Me.DiscoDeDistrubuciónToolStripMenuItem})
         Me.UtileriasToolStripMenuItem.Name = "UtileriasToolStripMenuItem"
-        Me.UtileriasToolStripMenuItem.Size = New System.Drawing.Size(138, 34)
+        Me.UtileriasToolStripMenuItem.Size = New System.Drawing.Size(175, 41)
         Me.UtileriasToolStripMenuItem.Text = "Utilerias"
         '
         'AyudaToolStripMenuItem
         '
         Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
-        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(290, 34)
+        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(360, 42)
         Me.AyudaToolStripMenuItem.Text = "Ayuda"
         '
         'RespaldarToolStripMenuItem
         '
         Me.RespaldarToolStripMenuItem.Name = "RespaldarToolStripMenuItem"
-        Me.RespaldarToolStripMenuItem.Size = New System.Drawing.Size(290, 34)
+        Me.RespaldarToolStripMenuItem.Size = New System.Drawing.Size(360, 42)
         Me.RespaldarToolStripMenuItem.Text = "Respaldar"
         '
         'RestaurarToolStripMenuItem
         '
         Me.RestaurarToolStripMenuItem.Name = "RestaurarToolStripMenuItem"
-        Me.RestaurarToolStripMenuItem.Size = New System.Drawing.Size(290, 34)
+        Me.RestaurarToolStripMenuItem.Size = New System.Drawing.Size(360, 42)
         Me.RestaurarToolStripMenuItem.Text = "Restaurar"
         '
         'BitacoraToolStripMenuItem
         '
         Me.BitacoraToolStripMenuItem.Name = "BitacoraToolStripMenuItem"
-        Me.BitacoraToolStripMenuItem.Size = New System.Drawing.Size(290, 34)
+        Me.BitacoraToolStripMenuItem.Size = New System.Drawing.Size(360, 42)
         Me.BitacoraToolStripMenuItem.Text = "Bitacora"
         '
         'TraspasoHistoricoToolStripMenuItem
         '
         Me.TraspasoHistoricoToolStripMenuItem.Name = "TraspasoHistoricoToolStripMenuItem"
-        Me.TraspasoHistoricoToolStripMenuItem.Size = New System.Drawing.Size(290, 34)
+        Me.TraspasoHistoricoToolStripMenuItem.Size = New System.Drawing.Size(360, 42)
         Me.TraspasoHistoricoToolStripMenuItem.Text = "Traspaso Historico"
         '
         'DiscoDeDistrubuciónToolStripMenuItem
         '
         Me.DiscoDeDistrubuciónToolStripMenuItem.Name = "DiscoDeDistrubuciónToolStripMenuItem"
-        Me.DiscoDeDistrubuciónToolStripMenuItem.Size = New System.Drawing.Size(290, 34)
+        Me.DiscoDeDistrubuciónToolStripMenuItem.Size = New System.Drawing.Size(360, 42)
         Me.DiscoDeDistrubuciónToolStripMenuItem.Text = "Disco de Distrubución"
         '
         'OpenFileDialog1
@@ -360,13 +362,14 @@ Partial Class Form1
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.ClothingShopSystem.My.Resources.Resources.tienda_ropa
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(772, 383)
+        Me.ClientSize = New System.Drawing.Size(1029, 471)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Form1"
         Me.Text = "ClothingShopSystem"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

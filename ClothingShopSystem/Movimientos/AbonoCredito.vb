@@ -11,9 +11,8 @@ Public Class AbonoCredito
 
     Private Sub AbonoCredito_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            connection.Open()
             conexionBitacora.open()
-
+            connection.Open()
         Catch ex As Exception
             MsgBox("Error al iniciar la conexión")
             Dim errMessage As String = quitarComillas(ex.Message)

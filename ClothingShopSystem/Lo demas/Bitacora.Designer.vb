@@ -24,7 +24,6 @@ Partial Class Bitacora
     Private Sub InitializeComponent()
         Me.dgAgregar = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -38,11 +37,12 @@ Partial Class Bitacora
         Me.dgAgregar.AllowUserToAddRows = False
         Me.dgAgregar.AllowUserToDeleteRows = False
         Me.dgAgregar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgAgregar.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7})
-        Me.dgAgregar.Location = New System.Drawing.Point(12, 12)
+        Me.dgAgregar.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7})
+        Me.dgAgregar.Location = New System.Drawing.Point(16, 15)
+        Me.dgAgregar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dgAgregar.Name = "dgAgregar"
         Me.dgAgregar.ReadOnly = True
-        Me.dgAgregar.Size = New System.Drawing.Size(909, 399)
+        Me.dgAgregar.Size = New System.Drawing.Size(1212, 491)
         Me.dgAgregar.TabIndex = 0
         '
         'Column1
@@ -51,12 +51,6 @@ Partial Class Bitacora
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
         Me.Column1.Width = 60
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "ID Error Corrida"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
         '
         'Column3
         '
@@ -93,10 +87,11 @@ Partial Class Bitacora
         '
         'Bitacora
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(928, 423)
+        Me.ClientSize = New System.Drawing.Size(1237, 521)
         Me.Controls.Add(Me.dgAgregar)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Bitacora"
         Me.Text = "Bitacora"
         CType(Me.dgAgregar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -106,7 +101,6 @@ Partial Class Bitacora
 
     Friend WithEvents dgAgregar As DataGridView
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
