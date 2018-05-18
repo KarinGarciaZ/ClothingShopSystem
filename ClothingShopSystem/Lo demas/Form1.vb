@@ -1,6 +1,9 @@
 ﻿Imports System.Data.SqlClient
 Imports Microsoft.Reporting.WinForms
 Imports System.Configuration
+Imports System
+Imports System.IO
+Imports System.Collections
 Public Class Form1
     Dim Conexion As SqlConnection
 
@@ -329,7 +332,7 @@ Public Class Form1
     End Sub
 
     Private Sub AyudaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AyudaToolStripMenuItem.Click
-        System.Diagnostics.Process.Start("C:\Users\oscar\Documents\GitHub\ClothingShopSystem\Ayuda.chm")
+        System.Diagnostics.Process.Start("C:\Users\NETXBAX\Proyects\visualBasic\ClothingShopSystem\Ayuda.chm")
     End Sub
 
     Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
@@ -615,5 +618,51 @@ Public Class Form1
         MsgBox("Finalizado!")
 
 
+    End Sub
+
+    Private Sub RestaurarDesdeArchivoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RestaurarDesdeArchivoToolStripMenuItem.Click
+        Dim conexion = openConnection()
+        Dim command As SqlCommand = conexion.CreateCommand()
+        Dim lector As SqlDataReader
+        conexion.open()
+        Dim linia As String
+        Dim arrText As New ArrayList
+        Dim campo() As String
+        Try
+            Dim res As DialogResult
+            res = OpenFileDialog1.ShowDialog()
+            If res = DialogResult.OK Then
+                Dim path As String = OpenFileDialog1.FileName
+                MsgBox(path)
+                Dim objReader As New StreamReader(path)
+                Do
+                    linia = objReader.ReadLine
+                    If Not linia Is Nothing Then
+                        arrText.Add(linia)
+                    End If
+                Loop Until linia Is Nothing
+                objReader.Close()
+                Dim ban As Boolean = False
+                For Each linia In arrText
+
+                    campo = linia.Split(",")
+                    If ban Then
+                        command.CommandText = "insert into Productos values(" & Val(campo(0)) & "," & Val(campo(1)) & ", " & Val(campo(2)) & "," & Val(campo(3)) & ",'" & campo(4) & "', '" & campo(5) & "','" & campo(6) & campo(7) & "', '" & campo(8) & "','" & campo(8) & "','" & campo(9) & "', '" & campo(10) & "','" & campo(11) & "','" & campo(12) & "')"
+                        command.ExecuteNonQuery()
+                    End If
+                    ban = True
+                Next
+                MsgBox("Se añadieron Productos")
+            End If
+        Catch ex As Exception
+            conexionBitacora.open()
+
+            MsgBox("Error al abrir el archivo")
+            Dim errMessage As String = quitarComillas(ex.Message)
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(27, '" & errMessage & "', 'Form1.Restaurar','" & Now.Date & "'," & Err.Number & ", '" & moduloUsuario & "')"
+            BitacoraComando.ExecuteNonQuery()
+
+            conexionBitacora = cerrarBitacora()
+        End Try
     End Sub
 End Class
