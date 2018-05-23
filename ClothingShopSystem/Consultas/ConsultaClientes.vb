@@ -63,4 +63,26 @@ Public Class ConsultaClientes
             BitacoraComando.ExecuteNonQuery()
         End Try
     End Sub
+
+    Private Sub txtIdCliente_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtIdCliente.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            dgAgregar.Rows.Clear()
+            command.CommandText = "select * from Clientes WHERE idCliente like '%" & txtIdCliente.Text & "%'"
+            lector = command.ExecuteReader
+            If lector.Read() Then
+                dgAgregar.Rows.Add(lector(0).ToString, lector(1).ToString, lector(2).ToString, lector(3).ToString, lector(4).ToString, lector(5).ToString, lector(6).ToString, lector(7).ToString, lector(8).ToString)
+            Else
+                MsgBox("No existe este producto")
+            End If
+            lector.Close()
+        End If
+    End Sub
 End Class

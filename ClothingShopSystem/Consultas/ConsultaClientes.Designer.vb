@@ -22,8 +22,8 @@ Partial Class ConsultaClientes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgAgregar = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -36,6 +36,8 @@ Partial Class ConsultaClientes
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtCliente = New System.Windows.Forms.TextBox()
         Me.Nombre = New System.Windows.Forms.Label()
+        Me.txtIdCliente = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.dgAgregar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -45,10 +47,11 @@ Partial Class ConsultaClientes
         Me.dgAgregar.AllowUserToDeleteRows = False
         Me.dgAgregar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgAgregar.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column8, Me.Column4, Me.Column9, Me.Column7, Me.Column5, Me.Column6, Me.Column3})
-        Me.dgAgregar.Location = New System.Drawing.Point(12, 51)
+        Me.dgAgregar.Location = New System.Drawing.Point(16, 63)
+        Me.dgAgregar.Margin = New System.Windows.Forms.Padding(4)
         Me.dgAgregar.Name = "dgAgregar"
         Me.dgAgregar.ReadOnly = True
-        Me.dgAgregar.Size = New System.Drawing.Size(957, 254)
+        Me.dgAgregar.Size = New System.Drawing.Size(1276, 313)
         Me.dgAgregar.TabIndex = 125
         '
         'Column1
@@ -86,8 +89,8 @@ Partial Class ConsultaClientes
         '
         'Column7
         '
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.Column7.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.NullValue = Nothing
+        Me.Column7.DefaultCellStyle = DataGridViewCellStyle1
         Me.Column7.HeaderText = "CP"
         Me.Column7.Name = "Column7"
         Me.Column7.ReadOnly = True
@@ -109,9 +112,9 @@ Partial Class ConsultaClientes
         '
         'Column3
         '
-        DataGridViewCellStyle4.Format = "C2"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Format = "C2"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle2
         Me.Column3.HeaderText = "Limite Crédito"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
@@ -119,28 +122,50 @@ Partial Class ConsultaClientes
         '
         'txtCliente
         '
-        Me.txtCliente.Location = New System.Drawing.Point(323, 25)
+        Me.txtCliente.Location = New System.Drawing.Point(431, 31)
+        Me.txtCliente.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCliente.Name = "txtCliente"
-        Me.txtCliente.Size = New System.Drawing.Size(234, 20)
+        Me.txtCliente.Size = New System.Drawing.Size(311, 22)
         Me.txtCliente.TabIndex = 126
         '
         'Nombre
         '
         Me.Nombre.AutoSize = True
-        Me.Nombre.Location = New System.Drawing.Point(408, 9)
+        Me.Nombre.Location = New System.Drawing.Point(544, 11)
+        Me.Nombre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Nombre.Name = "Nombre"
-        Me.Nombre.Size = New System.Drawing.Size(44, 13)
+        Me.Nombre.Size = New System.Drawing.Size(58, 17)
         Me.Nombre.TabIndex = 132
         Me.Nombre.Text = "Nombre"
         '
+        'txtIdCliente
+        '
+        Me.txtIdCliente.Location = New System.Drawing.Point(226, 31)
+        Me.txtIdCliente.Name = "txtIdCliente"
+        Me.txtIdCliente.Size = New System.Drawing.Size(100, 22)
+        Me.txtIdCliente.TabIndex = 133
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(249, 11)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(68, 17)
+        Me.Label1.TabIndex = 134
+        Me.Label1.Text = "ID Cliente"
+        '
         'ConsultaClientes
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(966, 317)
+        Me.ClientSize = New System.Drawing.Size(1288, 390)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.txtIdCliente)
         Me.Controls.Add(Me.Nombre)
         Me.Controls.Add(Me.txtCliente)
         Me.Controls.Add(Me.dgAgregar)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "ConsultaClientes"
         Me.Text = "ConsultaClientes"
         CType(Me.dgAgregar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -161,4 +186,6 @@ Partial Class ConsultaClientes
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents txtCliente As TextBox
     Friend WithEvents Nombre As Label
+    Friend WithEvents txtIdCliente As TextBox
+    Friend WithEvents Label1 As Label
 End Class
