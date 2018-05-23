@@ -391,6 +391,8 @@
     <EmbeddedResource Include="Reportes\frmReportes\IngresosDiarios.resx">
       <DependentUpon>IngresosDiarios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportesLibros\ComprasPorProveedor2.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesLibros\ComprasPorProveedor3.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteCategorias.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteClientes.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteEstadoCuenta.rdlc" />
