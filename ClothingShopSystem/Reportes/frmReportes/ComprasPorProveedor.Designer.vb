@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Reporte
+Partial Class ComprasPorProveedor
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,34 +22,28 @@ Partial Class Reporte
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Reportito = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.cbProveedores = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
-        'Reportito
+        'cbProveedores
         '
-        Me.Reportito.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Reportito.Location = New System.Drawing.Point(4, 3)
-        Me.Reportito.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Reportito.Name = "Reportito"
-        Me.Reportito.Size = New System.Drawing.Size(1304, 635)
-        Me.Reportito.TabIndex = 0
+        Me.cbProveedores.FormattingEnabled = True
+        Me.cbProveedores.Location = New System.Drawing.Point(194, 55)
+        Me.cbProveedores.Name = "cbProveedores"
+        Me.cbProveedores.Size = New System.Drawing.Size(290, 24)
+        Me.cbProveedores.TabIndex = 0
         '
-        'Reporte
+        'ComprasPorProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1325, 653)
-        Me.Controls.Add(Me.Reportito)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.MaximizeBox = False
-        Me.MinimizeBox = False
-        Me.Name = "Reporte"
-        Me.ShowIcon = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Reporte"
+        Me.ClientSize = New System.Drawing.Size(714, 533)
+        Me.Controls.Add(Me.cbProveedores)
+        Me.Name = "ComprasPorProveedor"
+        Me.Text = "ComprasPorProveedor"
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents Reportito As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents cbProveedores As ComboBox
 End Class

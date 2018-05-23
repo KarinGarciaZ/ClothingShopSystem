@@ -3,6 +3,8 @@ Imports System.Configuration
 Module Modulo
 
     Public moduloUsuario As String
+    Public nombreUsuarioModulo As String
+
 
     Public Function openConnection()
         Dim conexionsql As SqlConnection
@@ -59,6 +61,8 @@ Module Modulo
         End While
         Return message
     End Function
+
+
 
     Public Function OpenHistorico()
         Dim conexionBitacora As New SqlConnection("Data Source = LAPTOP-JHARA789\KARINSPC; initial catalog='hdboClothingShopSystem'; Integrated Security = True")

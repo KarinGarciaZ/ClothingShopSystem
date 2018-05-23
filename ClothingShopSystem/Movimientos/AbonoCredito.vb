@@ -168,7 +168,7 @@ Public Class AbonoCredito
                 command.Connection = connection
                 command.Transaction = transaction
                 Try
-                    command.CommandText = "INSERT INTO AbonosCreditos VALUES (" & cbVentas.Text & ",'" & dtpFecha.Value.Date & "'," & txtImporte.Text & ")"
+                    command.CommandText = "INSERT INTO AbonosCreditos VALUES (" & cbVentas.Text & ",'" & dtpFecha.Value.Date & "'," & txtImporte.Text & ",'" & nombreUsuarioModulo & "')"
                     command.ExecuteNonQuery()
 
                     command.CommandText = "UPDATE Ventas SET abonado += " & txtImporte.Text & " where idVenta = " & cbVentas.Text & ""

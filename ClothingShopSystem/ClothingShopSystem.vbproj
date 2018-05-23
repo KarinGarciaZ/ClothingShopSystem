@@ -47,6 +47,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -76,6 +79,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Catalogos\Calles.Designer.vb">
+      <DependentUpon>Calles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\Calles.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Catalogos\Categorias.Designer.vb">
       <DependentUpon>Categorias.vb</DependentUpon>
     </Compile>
@@ -151,16 +160,29 @@
     <Compile Include="Lo demas\DataSet1.vb">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Lo demas\ModuloExportar.vb" />
     <Compile Include="Lo demas\PrincipaUsuarios.Designer.vb">
       <DependentUpon>PrincipaUsuarios.vb</DependentUpon>
     </Compile>
     <Compile Include="Lo demas\PrincipaUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Movimientos\ExportarExcel.Designer.vb">
+      <DependentUpon>ExportarExcel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimientos\ExportarExcel.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\frmReportes\ComprasPorPeriodo.Designer.vb">
       <DependentUpon>ComprasPorPeriodo.vb</DependentUpon>
     </Compile>
     <Compile Include="Reportes\frmReportes\ComprasPorPeriodo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReportes\ComprasPorProveedor.Designer.vb">
+      <DependentUpon>ComprasPorProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReportes\ComprasPorProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\frmReportes\Fechas.Designer.vb">
@@ -306,6 +328,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Catalogos\Calles.resx">
+      <DependentUpon>Calles.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Categorias.resx">
       <DependentUpon>Categorias.vb</DependentUpon>
     </EmbeddedResource>
@@ -345,8 +370,14 @@
     <EmbeddedResource Include="Lo demas\PrincipaUsuarios.resx">
       <DependentUpon>PrincipaUsuarios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\ExportarExcel.resx">
+      <DependentUpon>ExportarExcel.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Movimientos\frmAbonosApartados.resx">
       <DependentUpon>frmAbonosApartados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReportes\ComprasPorProveedor.resx">
+      <DependentUpon>ComprasPorProveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmReportes\frmClientes.resx">
       <DependentUpon>frmClientes.vb</DependentUpon>
@@ -360,6 +391,8 @@
     <EmbeddedResource Include="Reportes\frmReportes\IngresosDiarios.resx">
       <DependentUpon>IngresosDiarios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteCategorias.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteClientes.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteEstadoCuenta.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteEstadoCuentaDeudor.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteIngresosDiarios.rdlc" />
@@ -370,6 +403,7 @@
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteClientesDeudores.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteComprasPeriodo.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteDevolucion.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteMarcas.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteNoApartados.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteProductos.rdlc" />
     <EmbeddedResource Include="Reportes\frmReportes\ProductosVendidosPorPeriodo.resx">
@@ -418,8 +452,11 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteProductosPeriodo.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteProveedores.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteTipos.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteVentasContadoPeriodo.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteVentasCreditoPeriodo.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteVentasPorEmpleado.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Lo demas\DataSet1.xsc">

@@ -90,7 +90,7 @@ Public Class Devoluciones
                 command.CommandText = "update Ventas set estado = 1 where idVenta = " & txtIdVenta.Text & ""
                 command.ExecuteNonQuery()
 
-                command.CommandText = "insert into Devoluciones values(" & txtIdVenta.Text & ", '" & txtConcepto.Text & "', '" & dtpFechaD.Value.Date & "')"
+                command.CommandText = "insert into Devoluciones values(" & txtIdVenta.Text & ", '" & txtConcepto.Text & "', '" & dtpFechaD.Value.Date & "','" & nombreUsuarioModulo & "')"
                 command.ExecuteNonQuery()
 
                 For x = 0 To dgAgregar.RowCount - 1

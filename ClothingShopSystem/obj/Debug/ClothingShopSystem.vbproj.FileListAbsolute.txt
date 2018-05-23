@@ -345,3 +345,10 @@ C:\Users\oscar\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\
 C:\Users\oscar\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.Ventas.resources
 C:\Users\oscar\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.Resources.resources
 C:\Users\oscar\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.vbproj.GenerateResource.Cache
+C:\Users\oscar\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\oscar\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\oscar\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\RdlCompile.cache
+C:\Users\oscar\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\RdlCompile.compiled
+C:\Users\oscar\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.ComprasPorProveedor.resources
+C:\Users\oscar\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.Calles.resources
+C:\Users\oscar\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.ExportarExcel.resources

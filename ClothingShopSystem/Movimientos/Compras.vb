@@ -72,7 +72,7 @@ Public Class Compras
                 command.Connection = connection
                 command.Transaction = transaction
                 Try
-                    command.CommandText = "INSERT INTO Compras VALUES (" & txtIdProveedor.Text & ",'" & dtpFecha.Value.Date & "','" & txtFactura.Text & "'," & lblTotal.Text & ")"
+                    command.CommandText = "INSERT INTO Compras VALUES (" & txtIdProveedor.Text & ",'" & dtpFecha.Value.Date & "','" & txtFactura.Text & "'," & lblTotal.Text & ",'" & nombreUsuarioModulo & "')"
                     command.ExecuteNonQuery()
 
                     For x = 0 To dgAgregar.RowCount - 1

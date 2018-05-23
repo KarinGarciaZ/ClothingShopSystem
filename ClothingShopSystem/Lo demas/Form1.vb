@@ -616,4 +616,220 @@ Public Class Form1
 
 
     End Sub
+
+    Private Sub ClientesToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem2.Click
+        Try
+            Conexion = openConnection()
+            Conexion.Open()
+
+            Dim Cmd As New SqlCommand("ReporteClientes", Conexion)
+
+            Cmd.CommandType = CommandType.StoredProcedure
+
+            Dim Adaptador As New SqlDataAdapter(Cmd)
+            Dim Data As New Data.DataSet
+
+            Adaptador.Fill(Data)
+            Data.DataSetName = "DataSet1"
+
+            Dim Reportes As New ReportDataSource("DataSet1", Data.Tables(0))
+
+            Reporte.Reportito.LocalReport.DataSources.Clear()
+            Reporte.Reportito.LocalReport.DataSources.Add(Reportes)
+            Reporte.Reportito.LocalReport.ReportPath = obtenerRutaReportes() & "\ReporteClientes.rdlc"
+            Reporte.Reportito.RefreshReport()
+            Reporte.Show()
+            Conexion.Close()
+        Catch ex As Exception
+            conexionBitacora.open()
+
+            MsgBox("Error reporte")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(18, '" & ex.Message & "', 'Prncipal.ApartadosPorCliente','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+
+            conexionBitacora = cerrarBitacora()
+        End Try
+    End Sub
+
+    Private Sub VentasPorEmpleadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VentasPorEmpleadoToolStripMenuItem.Click
+        Try
+            Conexion = openConnection()
+            Conexion.Open()
+
+            Dim Cmd As New SqlCommand("ReporteVentasPorEmpleado", Conexion)
+
+            Cmd.CommandType = CommandType.StoredProcedure
+
+            Dim Adaptador As New SqlDataAdapter(Cmd)
+            Dim Data As New Data.DataSet
+
+            Adaptador.Fill(Data)
+            Data.DataSetName = "DataSet1"
+
+            Dim Reportes As New ReportDataSource("DataSet1", Data.Tables(0))
+
+            Reporte.Reportito.LocalReport.DataSources.Clear()
+            Reporte.Reportito.LocalReport.DataSources.Add(Reportes)
+            Reporte.Reportito.LocalReport.ReportPath = obtenerRutaReportes() & "\ReporteVentasPorEmpleado.rdlc"
+            Reporte.Reportito.RefreshReport()
+            Reporte.Show()
+            Conexion.Close()
+        Catch ex As Exception
+            conexionBitacora.open()
+
+            MsgBox("Error reporte")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(18, '" & ex.Message & "', 'Prncipal.ApartadosPorCliente','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+
+            conexionBitacora = cerrarBitacora()
+        End Try
+    End Sub
+
+    Private Sub ProveedoresToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ProveedoresToolStripMenuItem1.Click
+        Try
+            Conexion = openConnection()
+            Conexion.Open()
+
+            Dim Cmd As New SqlCommand("ReporteProveedores", Conexion)
+
+            Cmd.CommandType = CommandType.StoredProcedure
+
+            Dim Adaptador As New SqlDataAdapter(Cmd)
+            Dim Data As New Data.DataSet
+
+            Adaptador.Fill(Data)
+            Data.DataSetName = "DataSet1"
+
+            Dim Reportes As New ReportDataSource("DataSet1", Data.Tables(0))
+
+            Reporte.Reportito.LocalReport.DataSources.Clear()
+            Reporte.Reportito.LocalReport.DataSources.Add(Reportes)
+            Reporte.Reportito.LocalReport.ReportPath = obtenerRutaReportes() & "\ReporteProveedores.rdlc"
+            Reporte.Reportito.RefreshReport()
+            Reporte.Show()
+            Conexion.Close()
+        Catch ex As Exception
+            conexionBitacora.open()
+
+            MsgBox("Error reporte")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(18, '" & ex.Message & "', 'Prncipal.ApartadosPorCliente','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+
+            conexionBitacora = cerrarBitacora()
+        End Try
+    End Sub
+
+    Private Sub MarcasToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles MarcasToolStripMenuItem1.Click
+        Try
+            Conexion = openConnection()
+            Conexion.Open()
+
+            Dim Cmd As New SqlCommand("ReporteMarcas", Conexion)
+
+            Cmd.CommandType = CommandType.StoredProcedure
+
+            Dim Adaptador As New SqlDataAdapter(Cmd)
+            Dim Data As New Data.DataSet
+
+            Adaptador.Fill(Data)
+            Data.DataSetName = "DataSet1"
+
+            Dim Reportes As New ReportDataSource("DataSet1", Data.Tables(0))
+
+            Reporte.Reportito.LocalReport.DataSources.Clear()
+            Reporte.Reportito.LocalReport.DataSources.Add(Reportes)
+            Reporte.Reportito.LocalReport.ReportPath = obtenerRutaReportes() & "\ReporteMarcas.rdlc"
+            Reporte.Reportito.RefreshReport()
+            Reporte.Show()
+            Conexion.Close()
+        Catch ex As Exception
+            conexionBitacora.open()
+
+            MsgBox("Error reporte")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(18, '" & ex.Message & "', 'Prncipal.ApartadosPorCliente','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+
+            conexionBitacora = cerrarBitacora()
+        End Try
+    End Sub
+
+    Private Sub TiposToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles TiposToolStripMenuItem1.Click
+        Try
+            Conexion = openConnection()
+            Conexion.Open()
+
+            Dim Cmd As New SqlCommand("ReporteTipos", Conexion)
+
+            Cmd.CommandType = CommandType.StoredProcedure
+
+            Dim Adaptador As New SqlDataAdapter(Cmd)
+            Dim Data As New Data.DataSet
+
+            Adaptador.Fill(Data)
+            Data.DataSetName = "DataSet1"
+
+            Dim Reportes As New ReportDataSource("DataSet1", Data.Tables(0))
+
+            Reporte.Reportito.LocalReport.DataSources.Clear()
+            Reporte.Reportito.LocalReport.DataSources.Add(Reportes)
+            Reporte.Reportito.LocalReport.ReportPath = obtenerRutaReportes() & "\ReporteTipos.rdlc"
+            Reporte.Reportito.RefreshReport()
+            Reporte.Show()
+            Conexion.Close()
+        Catch ex As Exception
+            conexionBitacora.open()
+
+            MsgBox("Error reporte")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(18, '" & ex.Message & "', 'Prncipal.ApartadosPorCliente','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+
+            conexionBitacora = cerrarBitacora()
+        End Try
+    End Sub
+
+    Private Sub CategoriasToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CategoriasToolStripMenuItem1.Click
+        Try
+            Conexion = openConnection()
+            Conexion.Open()
+
+            Dim Cmd As New SqlCommand("ReporteCategorias", Conexion)
+
+            Cmd.CommandType = CommandType.StoredProcedure
+
+            Dim Adaptador As New SqlDataAdapter(Cmd)
+            Dim Data As New Data.DataSet
+
+            Adaptador.Fill(Data)
+            Data.DataSetName = "DataSet1"
+
+            Dim Reportes As New ReportDataSource("DataSet1", Data.Tables(0))
+
+            Reporte.Reportito.LocalReport.DataSources.Clear()
+            Reporte.Reportito.LocalReport.DataSources.Add(Reportes)
+            Reporte.Reportito.LocalReport.ReportPath = obtenerRutaReportes() & "\ReporteCategorias.rdlc"
+            Reporte.Reportito.RefreshReport()
+            Reporte.Show()
+            Conexion.Close()
+        Catch ex As Exception
+            conexionBitacora.open()
+
+            MsgBox("Error reporte")
+            BitacoraComando.CommandText = "INSERT INTO bitacora VALUES(18, '" & ex.Message & "', 'Prncipal.ApartadosPorCliente','" & Now.Date & "'," & Err.Number & ")"
+            BitacoraComando.ExecuteNonQuery()
+
+            conexionBitacora = cerrarBitacora()
+        End Try
+    End Sub
+
+    Private Sub ComprassToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComprassToolStripMenuItem.Click
+        ComprasPorProveedor.ShowDialog()
+    End Sub
+
+    Private Sub CallesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CallesToolStripMenuItem.Click
+        Calles.ShowDialog()
+    End Sub
+
+    Private Sub ExportarAExcelDe2TablasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExportarAExcelDe2TablasToolStripMenuItem.Click
+        ExportarExcel.ShowDialog()
+    End Sub
 End Class

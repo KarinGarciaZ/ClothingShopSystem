@@ -160,7 +160,7 @@ Public Class frmAbonosApartados
             comando.Connection = conexion
             comando.Transaction = transaccion
             Try
-                comando.CommandText = "INSERT INTO AbonosApartados VALUES (" & txtIdApartado.Text & ",'" & dtpFecha.Value.Date & "'," & txtAbono.Text & ")"
+                comando.CommandText = "INSERT INTO AbonosApartados VALUES (" & txtIdApartado.Text & ",'" & dtpFecha.Value.Date & "'," & txtAbono.Text & ",'" & nombreUsuarioModulo & "')"
                 comando.ExecuteNonQuery()
 
                 comando.CommandText = "UPDATE Apartados SET abono = abono + " & txtAbono.Text & "WHERE idApartado = " & txtIdApartado.Text

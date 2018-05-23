@@ -29,12 +29,16 @@ Public Class PrimeraVentana
                     moduloUsuario = txtNombre.Text
                     If Not lector(1).ToString.Equals("Empleado") Then
                         Me.Hide()
+                        nombreUsuarioModulo = txtNombre.Text
+
                         Form1.ShowDialog()
                         conexionsql = cerrarConexion()
                         conexionBitacora = cerrarBitacora()
                         Me.Dispose()
                     Else
                         Me.Hide()
+                        nombreUsuarioModulo = txtNombre.Text
+
                         PrincipaUsuarios.ShowDialog()
                         conexionsql = cerrarConexion()
                         conexionBitacora = cerrarBitacora()

@@ -3,6 +3,7 @@
 Public Class Clientes
     Private Sub Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SqlDataAdapter1.Fill(DataSet11.Clientes)
+        SqlDataAdapter2.Fill(DataSet11.Calles)
     End Sub
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click

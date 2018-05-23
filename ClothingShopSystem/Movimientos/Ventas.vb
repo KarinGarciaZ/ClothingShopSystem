@@ -298,7 +298,7 @@ Public Class Ventas
                         End If
 
                         If ban Then
-                            command.CommandText = "INSERT INTO Ventas VALUES (" & txtIdCliente.Text & ",'" & dtpFecha.Value.Date & "','" & dtpFechaVen.Value.Date & "','Credito'," & lblSubtotal.Text & "," & lblIVA.Text & "," & txtDescuento.Text & ",0,0)"
+                            command.CommandText = "INSERT INTO Ventas VALUES (" & txtIdCliente.Text & ",'" & dtpFecha.Value.Date & "','" & dtpFechaVen.Value.Date & "','Credito'," & lblSubtotal.Text & "," & lblIVA.Text & "," & txtDescuento.Text & ",0,0,'" & nombreUsuarioModulo & "')"
                             command.ExecuteNonQuery()
 
                             command.CommandText = "UPDATE Clientes SET Saldo += " & lblTotal.Text & " WHERE idCliente = " & txtIdCliente.Text
@@ -316,7 +316,7 @@ Public Class Ventas
                         If Not txtIdCliente.Text = "" Then
                             idCliente = txtIdCliente.Text
                         End If
-                        command.CommandText = "INSERT INTO Ventas VALUES (" & idCliente & ",'" & dtpFecha.Value.Date & "','31-12-9999','Efectivo'," & lblSubtotal.Text & "," & lblIVA.Text & "," & txtDescuento.Text & ",0,0)"
+                        command.CommandText = "INSERT INTO Ventas VALUES (" & idCliente & ",'" & dtpFecha.Value.Date & "','31-12-9999','Efectivo'," & lblSubtotal.Text & "," & lblIVA.Text & "," & txtDescuento.Text & ",0,0,'" & nombreUsuarioModulo & "')"
                         command.ExecuteNonQuery()
 
                         For x = 0 To dgAgregar.RowCount - 1

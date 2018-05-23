@@ -61,9 +61,9 @@ Partial Class Categorias
         Me.GroupBox1.Controls.Add(Me.txtId)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(11, 15)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(520, 73)
         Me.GroupBox1.TabIndex = 73
         Me.GroupBox1.TabStop = False
@@ -71,9 +71,8 @@ Partial Class Categorias
         'txtNombre
         '
         Me.txtNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CategoriasBindingSource, "nombre", True))
-        Me.txtNombre.Enabled = False
         Me.txtNombre.Location = New System.Drawing.Point(135, 41)
-        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNombre.MaxLength = 40
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(376, 22)
@@ -102,9 +101,8 @@ Partial Class Categorias
         'txtId
         '
         Me.txtId.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CategoriasBindingSource, "idCategoria", True))
-        Me.txtId.Enabled = False
         Me.txtId.Location = New System.Drawing.Point(13, 41)
-        Me.txtId.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtId.Margin = New System.Windows.Forms.Padding(4)
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(91, 22)
         Me.txtId.TabIndex = 13
@@ -125,7 +123,7 @@ Partial Class Categorias
         Me.btnCancelar.Enabled = False
         Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.Location = New System.Drawing.Point(291, 106)
-        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(101, 68)
         Me.btnCancelar.TabIndex = 84
@@ -138,7 +136,7 @@ Partial Class Categorias
         Me.btnAceptar.Enabled = False
         Me.btnAceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAceptar.Location = New System.Drawing.Point(409, 106)
-        Me.btnAceptar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAceptar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(121, 113)
         Me.btnAceptar.TabIndex = 83
@@ -148,7 +146,7 @@ Partial Class Categorias
         'btnAnterior
         '
         Me.btnAnterior.Location = New System.Drawing.Point(112, 181)
-        Me.btnAnterior.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAnterior.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAnterior.Name = "btnAnterior"
         Me.btnAnterior.Size = New System.Drawing.Size(88, 34)
         Me.btnAnterior.TabIndex = 82
@@ -158,7 +156,7 @@ Partial Class Categorias
         'btnSiguiente
         '
         Me.btnSiguiente.Location = New System.Drawing.Point(208, 181)
-        Me.btnSiguiente.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSiguiente.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSiguiente.Name = "btnSiguiente"
         Me.btnSiguiente.Size = New System.Drawing.Size(88, 34)
         Me.btnSiguiente.TabIndex = 81
@@ -168,7 +166,7 @@ Partial Class Categorias
         'btnUltimo
         '
         Me.btnUltimo.Location = New System.Drawing.Point(304, 181)
-        Me.btnUltimo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnUltimo.Margin = New System.Windows.Forms.Padding(4)
         Me.btnUltimo.Name = "btnUltimo"
         Me.btnUltimo.Size = New System.Drawing.Size(88, 34)
         Me.btnUltimo.TabIndex = 80
@@ -178,7 +176,7 @@ Partial Class Categorias
         'btnPrimero
         '
         Me.btnPrimero.Location = New System.Drawing.Point(16, 181)
-        Me.btnPrimero.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnPrimero.Margin = New System.Windows.Forms.Padding(4)
         Me.btnPrimero.Name = "btnPrimero"
         Me.btnPrimero.Size = New System.Drawing.Size(88, 34)
         Me.btnPrimero.TabIndex = 79
@@ -188,7 +186,7 @@ Partial Class Categorias
         'btnModificar
         '
         Me.btnModificar.Location = New System.Drawing.Point(171, 112)
-        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(88, 62)
         Me.btnModificar.TabIndex = 77
@@ -198,7 +196,7 @@ Partial Class Categorias
         'btnNuevo
         '
         Me.btnNuevo.Location = New System.Drawing.Point(75, 112)
-        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(88, 62)
         Me.btnNuevo.TabIndex = 75
@@ -214,7 +212,7 @@ Partial Class Categorias
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdCategoriaDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.CategoriasBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(539, 15)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -292,7 +290,7 @@ Partial Class Categorias
         Me.Controls.Add(Me.btnUltimo)
         Me.Controls.Add(Me.btnPrimero)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Categorias"

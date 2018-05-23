@@ -70,16 +70,24 @@ Partial Class Clientes
         Me.txtCP = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.CallesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SqlSelectCommand2 = New System.Data.SqlClient.SqlCommand()
+        Me.SqlInsertCommand2 = New System.Data.SqlClient.SqlCommand()
+        Me.SqlUpdateCommand2 = New System.Data.SqlClient.SqlCommand()
+        Me.SqlDeleteCommand2 = New System.Data.SqlClient.SqlCommand()
+        Me.SqlDataAdapter2 = New System.Data.SqlClient.SqlDataAdapter()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.CallesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnModificar
         '
         Me.btnModificar.Location = New System.Drawing.Point(103, 273)
-        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(88, 62)
         Me.btnModificar.TabIndex = 32
@@ -89,7 +97,7 @@ Partial Class Clientes
         'btnBuscar
         '
         Me.btnBuscar.Location = New System.Drawing.Point(199, 273)
-        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(88, 62)
         Me.btnBuscar.TabIndex = 31
@@ -99,7 +107,7 @@ Partial Class Clientes
         'btnNuevo
         '
         Me.btnNuevo.Location = New System.Drawing.Point(7, 273)
-        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(88, 62)
         Me.btnNuevo.TabIndex = 30
@@ -112,7 +120,7 @@ Partial Class Clientes
         Me.btnCancelar.Enabled = False
         Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.Location = New System.Drawing.Point(295, 270)
-        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(96, 65)
         Me.btnCancelar.TabIndex = 35
@@ -125,7 +133,7 @@ Partial Class Clientes
         Me.btnAceptar.Enabled = False
         Me.btnAceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAceptar.Location = New System.Drawing.Point(399, 245)
-        Me.btnAceptar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAceptar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(123, 90)
         Me.btnAceptar.TabIndex = 34
@@ -135,7 +143,7 @@ Partial Class Clientes
         'btnAnterior
         '
         Me.btnAnterior.Location = New System.Drawing.Point(103, 231)
-        Me.btnAnterior.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAnterior.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAnterior.Name = "btnAnterior"
         Me.btnAnterior.Size = New System.Drawing.Size(88, 34)
         Me.btnAnterior.TabIndex = 40
@@ -145,7 +153,7 @@ Partial Class Clientes
         'btnSiguiente
         '
         Me.btnSiguiente.Location = New System.Drawing.Point(199, 231)
-        Me.btnSiguiente.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSiguiente.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSiguiente.Name = "btnSiguiente"
         Me.btnSiguiente.Size = New System.Drawing.Size(88, 34)
         Me.btnSiguiente.TabIndex = 39
@@ -155,7 +163,7 @@ Partial Class Clientes
         'btnUltimo
         '
         Me.btnUltimo.Location = New System.Drawing.Point(295, 231)
-        Me.btnUltimo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnUltimo.Margin = New System.Windows.Forms.Padding(4)
         Me.btnUltimo.Name = "btnUltimo"
         Me.btnUltimo.Size = New System.Drawing.Size(88, 34)
         Me.btnUltimo.TabIndex = 38
@@ -165,7 +173,7 @@ Partial Class Clientes
         'btnPrimero
         '
         Me.btnPrimero.Location = New System.Drawing.Point(7, 231)
-        Me.btnPrimero.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnPrimero.Margin = New System.Windows.Forms.Padding(4)
         Me.btnPrimero.Name = "btnPrimero"
         Me.btnPrimero.Size = New System.Drawing.Size(88, 34)
         Me.btnPrimero.TabIndex = 37
@@ -177,7 +185,7 @@ Partial Class Clientes
         Me.txtLimite.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "limiteCredito", True))
         Me.txtLimite.Enabled = False
         Me.txtLimite.Location = New System.Drawing.Point(87, 196)
-        Me.txtLimite.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtLimite.Margin = New System.Windows.Forms.Padding(4)
         Me.txtLimite.MaxLength = 8
         Me.txtLimite.Name = "txtLimite"
         Me.txtLimite.Size = New System.Drawing.Size(172, 22)
@@ -208,7 +216,7 @@ Partial Class Clientes
         Me.txtSaldo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "saldo", True))
         Me.txtSaldo.Enabled = False
         Me.txtSaldo.Location = New System.Drawing.Point(295, 196)
-        Me.txtSaldo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSaldo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtSaldo.Name = "txtSaldo"
         Me.txtSaldo.Size = New System.Drawing.Size(143, 22)
         Me.txtSaldo.TabIndex = 51
@@ -228,7 +236,7 @@ Partial Class Clientes
         Me.txtTelefono.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "telefono", True))
         Me.txtTelefono.Enabled = False
         Me.txtTelefono.Location = New System.Drawing.Point(331, 133)
-        Me.txtTelefono.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtTelefono.Margin = New System.Windows.Forms.Padding(4)
         Me.txtTelefono.MaxLength = 20
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(172, 22)
@@ -249,7 +257,7 @@ Partial Class Clientes
         Me.txtNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "nombre", True))
         Me.txtNombre.Enabled = False
         Me.txtNombre.Location = New System.Drawing.Point(127, 36)
-        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNombre.MaxLength = 40
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(376, 22)
@@ -270,7 +278,7 @@ Partial Class Clientes
         Me.txtId.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "idCliente", True))
         Me.txtId.Enabled = False
         Me.txtId.Location = New System.Drawing.Point(5, 36)
-        Me.txtId.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtId.Margin = New System.Windows.Forms.Padding(4)
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(91, 22)
         Me.txtId.TabIndex = 45
@@ -294,7 +302,7 @@ Partial Class Clientes
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdClienteDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.DomicilioDataGridViewTextBoxColumn, Me.ColoniaDataGridViewTextBoxColumn, Me.CiudadDataGridViewTextBoxColumn, Me.CPDataGridViewTextBoxColumn, Me.TelefonoDataGridViewTextBoxColumn, Me.SaldoDataGridViewTextBoxColumn, Me.LimiteCreditoDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.ClientesBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(529, 5)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(620, 330)
@@ -410,7 +418,7 @@ Partial Class Clientes
         Me.txtDomicilio.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "domicilio", True))
         Me.txtDomicilio.Enabled = False
         Me.txtDomicilio.Location = New System.Drawing.Point(5, 85)
-        Me.txtDomicilio.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtDomicilio.Margin = New System.Windows.Forms.Padding(4)
         Me.txtDomicilio.MaxLength = 40
         Me.txtDomicilio.Name = "txtDomicilio"
         Me.txtDomicilio.Size = New System.Drawing.Size(289, 22)
@@ -431,7 +439,7 @@ Partial Class Clientes
         Me.txtColonia.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "colonia", True))
         Me.txtColonia.Enabled = False
         Me.txtColonia.Location = New System.Drawing.Point(304, 85)
-        Me.txtColonia.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtColonia.Margin = New System.Windows.Forms.Padding(4)
         Me.txtColonia.MaxLength = 30
         Me.txtColonia.Name = "txtColonia"
         Me.txtColonia.Size = New System.Drawing.Size(199, 22)
@@ -451,12 +459,13 @@ Partial Class Clientes
         '
         Me.txtCiudad.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "ciudad", True))
         Me.txtCiudad.Enabled = False
-        Me.txtCiudad.Location = New System.Drawing.Point(5, 133)
-        Me.txtCiudad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCiudad.Location = New System.Drawing.Point(8, 137)
+        Me.txtCiudad.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCiudad.MaxLength = 30
         Me.txtCiudad.Name = "txtCiudad"
         Me.txtCiudad.Size = New System.Drawing.Size(207, 22)
         Me.txtCiudad.TabIndex = 62
+        Me.txtCiudad.Visible = False
         '
         'Label7
         '
@@ -473,7 +482,7 @@ Partial Class Clientes
         Me.txtCP.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "CP", True))
         Me.txtCP.Enabled = False
         Me.txtCP.Location = New System.Drawing.Point(221, 133)
-        Me.txtCP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCP.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCP.MaxLength = 5
         Me.txtCP.Name = "txtCP"
         Me.txtCP.Size = New System.Drawing.Size(100, 22)
@@ -491,6 +500,7 @@ Partial Class Clientes
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Controls.Add(Me.txtCP)
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.txtCiudad)
@@ -506,12 +516,62 @@ Partial Class Clientes
         Me.GroupBox1.Controls.Add(Me.txtId)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(9, 5)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(512, 167)
         Me.GroupBox1.TabIndex = 65
         Me.GroupBox1.TabStop = False
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.DataSource = Me.CallesBindingSource
+        Me.ComboBox1.DisplayMember = "nombre"
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(8, 133)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(207, 24)
+        Me.ComboBox1.TabIndex = 65
+        '
+        'CallesBindingSource
+        '
+        Me.CallesBindingSource.DataMember = "Calles"
+        Me.CallesBindingSource.DataSource = Me.DataSet11
+        '
+        'SqlSelectCommand2
+        '
+        Me.SqlSelectCommand2.CommandText = "SELECT Calles.*" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM     Calles"
+        Me.SqlSelectCommand2.Connection = Me.SqlConnection1
+        '
+        'SqlInsertCommand2
+        '
+        Me.SqlInsertCommand2.CommandText = "INSERT INTO [Calles] ([id], [nombre]) VALUES (@id, @nombre);" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SELECT id, nombre F" &
+    "ROM Calles WHERE (id = @id)"
+        Me.SqlInsertCommand2.Connection = Me.SqlConnection1
+        Me.SqlInsertCommand2.Parameters.AddRange(New System.Data.SqlClient.SqlParameter() {New System.Data.SqlClient.SqlParameter("@id", System.Data.SqlDbType.Int, 0, "id"), New System.Data.SqlClient.SqlParameter("@nombre", System.Data.SqlDbType.VarChar, 0, "nombre")})
+        '
+        'SqlUpdateCommand2
+        '
+        Me.SqlUpdateCommand2.CommandText = "UPDATE [Calles] SET [id] = @id, [nombre] = @nombre WHERE (([id] = @Original_id) A" &
+    "ND ([nombre] = @Original_nombre));" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SELECT id, nombre FROM Calles WHERE (id = @i" &
+    "d)"
+        Me.SqlUpdateCommand2.Connection = Me.SqlConnection1
+        Me.SqlUpdateCommand2.Parameters.AddRange(New System.Data.SqlClient.SqlParameter() {New System.Data.SqlClient.SqlParameter("@id", System.Data.SqlDbType.Int, 0, "id"), New System.Data.SqlClient.SqlParameter("@nombre", System.Data.SqlDbType.VarChar, 0, "nombre"), New System.Data.SqlClient.SqlParameter("@Original_id", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "id", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@Original_nombre", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "nombre", System.Data.DataRowVersion.Original, Nothing)})
+        '
+        'SqlDeleteCommand2
+        '
+        Me.SqlDeleteCommand2.CommandText = "DELETE FROM [Calles] WHERE (([id] = @Original_id) AND ([nombre] = @Original_nombr" &
+    "e))"
+        Me.SqlDeleteCommand2.Connection = Me.SqlConnection1
+        Me.SqlDeleteCommand2.Parameters.AddRange(New System.Data.SqlClient.SqlParameter() {New System.Data.SqlClient.SqlParameter("@Original_id", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "id", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@Original_nombre", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "nombre", System.Data.DataRowVersion.Original, Nothing)})
+        '
+        'SqlDataAdapter2
+        '
+        Me.SqlDataAdapter2.DeleteCommand = Me.SqlDeleteCommand2
+        Me.SqlDataAdapter2.InsertCommand = Me.SqlInsertCommand2
+        Me.SqlDataAdapter2.SelectCommand = Me.SqlSelectCommand2
+        Me.SqlDataAdapter2.TableMappings.AddRange(New System.Data.Common.DataTableMapping() {New System.Data.Common.DataTableMapping("Table", "Calles", New System.Data.Common.DataColumnMapping() {New System.Data.Common.DataColumnMapping("id", "id"), New System.Data.Common.DataColumnMapping("nombre", "nombre")})})
+        Me.SqlDataAdapter2.UpdateCommand = Me.SqlUpdateCommand2
         '
         'Clientes
         '
@@ -533,7 +593,7 @@ Partial Class Clientes
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.btnNuevo)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Clientes"
@@ -544,6 +604,7 @@ Partial Class Clientes
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.CallesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -594,4 +655,11 @@ Partial Class Clientes
     Friend WithEvents TelefonoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SaldoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents LimiteCreditoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents CallesBindingSource As BindingSource
+    Friend WithEvents SqlSelectCommand2 As SqlClient.SqlCommand
+    Friend WithEvents SqlInsertCommand2 As SqlClient.SqlCommand
+    Friend WithEvents SqlUpdateCommand2 As SqlClient.SqlCommand
+    Friend WithEvents SqlDeleteCommand2 As SqlClient.SqlCommand
+    Friend WithEvents SqlDataAdapter2 As SqlClient.SqlDataAdapter
 End Class
