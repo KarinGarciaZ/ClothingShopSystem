@@ -832,4 +832,8 @@ Public Class Form1
     Private Sub ExportarAExcelDe2TablasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExportarAExcelDe2TablasToolStripMenuItem.Click
         ExportarExcel.ShowDialog()
     End Sub
+
+    Private Sub ImportarProductosDesdeTxtToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImportarProductosDesdeTxtToolStripMenuItem.Click
+        ImportarTxt.ShowDialog()
+    End Sub
 End Class

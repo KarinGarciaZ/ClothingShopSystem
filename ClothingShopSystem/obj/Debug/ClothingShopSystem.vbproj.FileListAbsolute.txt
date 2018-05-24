@@ -352,3 +352,4 @@ C:\Users\oscar\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\
 C:\Users\oscar\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.ComprasPorProveedor.resources
 C:\Users\oscar\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.Calles.resources
 C:\Users\oscar\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.ExportarExcel.resources
+C:\Users\oscar\Documents\GitHub\ClothingShopSystem\ClothingShopSystem\obj\Debug\ClothingShopSystem.ImportarTxt.resources

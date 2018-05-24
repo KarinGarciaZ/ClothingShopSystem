@@ -173,6 +173,12 @@
     <Compile Include="Movimientos\ExportarExcel.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Movimientos\ImportarTxt.Designer.vb">
+      <DependentUpon>ImportarTxt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimientos\ImportarTxt.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\frmReportes\ComprasPorPeriodo.Designer.vb">
       <DependentUpon>ComprasPorPeriodo.vb</DependentUpon>
     </Compile>
@@ -375,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movimientos\frmAbonosApartados.resx">
       <DependentUpon>frmAbonosApartados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\ImportarTxt.resx">
+      <DependentUpon>ImportarTxt.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmReportes\ComprasPorProveedor.resx">
       <DependentUpon>ComprasPorProveedor.vb</DependentUpon>

@@ -47,6 +47,7 @@ Partial Class Form1
         Me.DevolucionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultaToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExportarAExcelDe2TablasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ImportarProductosDesdeTxtToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -152,7 +153,7 @@ Partial Class Form1
         '
         'MovimientosToolStripMenuItem
         '
-        Me.MovimientosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ComprasToolStripMenuItem, Me.VentasToolStripMenuItem, Me.ApartadosToolStripMenuItem, Me.AbonoCreditoToolStripMenuItem, Me.AbonoApartadoToolStripMenuItem, Me.DevolucionesToolStripMenuItem, Me.ExportarAExcelDe2TablasToolStripMenuItem})
+        Me.MovimientosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ComprasToolStripMenuItem, Me.VentasToolStripMenuItem, Me.ApartadosToolStripMenuItem, Me.AbonoCreditoToolStripMenuItem, Me.AbonoApartadoToolStripMenuItem, Me.DevolucionesToolStripMenuItem, Me.ExportarAExcelDe2TablasToolStripMenuItem, Me.ImportarProductosDesdeTxtToolStripMenuItem})
         Me.MovimientosToolStripMenuItem.Name = "MovimientosToolStripMenuItem"
         Me.MovimientosToolStripMenuItem.Size = New System.Drawing.Size(175, 41)
         Me.MovimientosToolStripMenuItem.Text = "Movimientos"
@@ -161,7 +162,7 @@ Partial Class Form1
         '
         Me.ComprasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaToolStripMenuItem})
         Me.ComprasToolStripMenuItem.Name = "ComprasToolStripMenuItem"
-        Me.ComprasToolStripMenuItem.Size = New System.Drawing.Size(423, 42)
+        Me.ComprasToolStripMenuItem.Size = New System.Drawing.Size(445, 42)
         Me.ComprasToolStripMenuItem.Text = "Compras"
         '
         'ConsultaToolStripMenuItem
@@ -175,7 +176,7 @@ Partial Class Form1
         Me.VentasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaToolStripMenuItem1})
         Me.VentasToolStripMenuItem.Image = CType(resources.GetObject("VentasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.VentasToolStripMenuItem.Name = "VentasToolStripMenuItem"
-        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(423, 42)
+        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(445, 42)
         Me.VentasToolStripMenuItem.Text = "Ventas"
         '
         'ConsultaToolStripMenuItem1
@@ -188,7 +189,7 @@ Partial Class Form1
         '
         Me.ApartadosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaToolStripMenuItem2})
         Me.ApartadosToolStripMenuItem.Name = "ApartadosToolStripMenuItem"
-        Me.ApartadosToolStripMenuItem.Size = New System.Drawing.Size(423, 42)
+        Me.ApartadosToolStripMenuItem.Size = New System.Drawing.Size(445, 42)
         Me.ApartadosToolStripMenuItem.Text = "Apartados"
         '
         'ConsultaToolStripMenuItem2
@@ -201,7 +202,7 @@ Partial Class Form1
         '
         Me.AbonoCreditoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaToolStripMenuItem3})
         Me.AbonoCreditoToolStripMenuItem.Name = "AbonoCreditoToolStripMenuItem"
-        Me.AbonoCreditoToolStripMenuItem.Size = New System.Drawing.Size(423, 42)
+        Me.AbonoCreditoToolStripMenuItem.Size = New System.Drawing.Size(445, 42)
         Me.AbonoCreditoToolStripMenuItem.Text = "Abono Credito"
         '
         'ConsultaToolStripMenuItem3
@@ -214,7 +215,7 @@ Partial Class Form1
         '
         Me.AbonoApartadoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaToolStripMenuItem4})
         Me.AbonoApartadoToolStripMenuItem.Name = "AbonoApartadoToolStripMenuItem"
-        Me.AbonoApartadoToolStripMenuItem.Size = New System.Drawing.Size(423, 42)
+        Me.AbonoApartadoToolStripMenuItem.Size = New System.Drawing.Size(445, 42)
         Me.AbonoApartadoToolStripMenuItem.Text = "Abono Apartado"
         '
         'ConsultaToolStripMenuItem4
@@ -227,7 +228,7 @@ Partial Class Form1
         '
         Me.DevolucionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaToolStripMenuItem5})
         Me.DevolucionesToolStripMenuItem.Name = "DevolucionesToolStripMenuItem"
-        Me.DevolucionesToolStripMenuItem.Size = New System.Drawing.Size(423, 42)
+        Me.DevolucionesToolStripMenuItem.Size = New System.Drawing.Size(445, 42)
         Me.DevolucionesToolStripMenuItem.Text = "Devoluciones"
         '
         'ConsultaToolStripMenuItem5
@@ -239,8 +240,14 @@ Partial Class Form1
         'ExportarAExcelDe2TablasToolStripMenuItem
         '
         Me.ExportarAExcelDe2TablasToolStripMenuItem.Name = "ExportarAExcelDe2TablasToolStripMenuItem"
-        Me.ExportarAExcelDe2TablasToolStripMenuItem.Size = New System.Drawing.Size(423, 42)
+        Me.ExportarAExcelDe2TablasToolStripMenuItem.Size = New System.Drawing.Size(445, 42)
         Me.ExportarAExcelDe2TablasToolStripMenuItem.Text = "Exportar a excel de 2 tablas"
+        '
+        'ImportarProductosDesdeTxtToolStripMenuItem
+        '
+        Me.ImportarProductosDesdeTxtToolStripMenuItem.Name = "ImportarProductosDesdeTxtToolStripMenuItem"
+        Me.ImportarProductosDesdeTxtToolStripMenuItem.Size = New System.Drawing.Size(445, 42)
+        Me.ImportarProductosDesdeTxtToolStripMenuItem.Text = "Importar productos desde txt"
         '
         'ConsultasToolStripMenuItem
         '
@@ -498,4 +505,5 @@ Partial Class Form1
     Friend WithEvents ComprassToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CallesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExportarAExcelDe2TablasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ImportarProductosDesdeTxtToolStripMenuItem As ToolStripMenuItem
 End Class
