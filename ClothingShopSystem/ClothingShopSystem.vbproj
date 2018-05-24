@@ -179,6 +179,12 @@
     <Compile Include="Movimientos\ImportarTxt.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\frmReportes\Abonos.Designer.vb">
+      <DependentUpon>Abonos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReportes\Abonos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\frmReportes\ComprasPorPeriodo.Designer.vb">
       <DependentUpon>ComprasPorPeriodo.vb</DependentUpon>
     </Compile>
@@ -385,6 +391,9 @@
     <EmbeddedResource Include="Movimientos\ImportarTxt.resx">
       <DependentUpon>ImportarTxt.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReportes\Abonos.resx">
+      <DependentUpon>Abonos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmReportes\ComprasPorProveedor.resx">
       <DependentUpon>ComprasPorProveedor.vb</DependentUpon>
     </EmbeddedResource>
@@ -402,6 +411,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReportesLibros\ComprasPorProveedor2.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ComprasPorProveedor3.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteAbonosApartados.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesLibros\ReporteAbonosVentas.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteCategorias.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteClientes.rdlc" />
     <EmbeddedResource Include="Reportes\ReportesLibros\ReporteEstadoCuenta.rdlc" />

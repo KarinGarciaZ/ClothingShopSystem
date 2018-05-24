@@ -248,13 +248,13 @@ Public Class Form1
         Fechas.ShowDialog()
     End Sub
 
-    Private Sub EstadoDeCuentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EstadoDeCuentaToolStripMenuItem.Click
+    Private Sub EstadoDeCuentaToolStripMenuItem_Click(sender As Object, e As EventArgs)
         frmClientes.btnConsulta.Visible = True
         frmClientes.btnConsultaD.Visible = False
         frmClientes.ShowDialog()
     End Sub
 
-    Private Sub EstadoDeCuentaDeudorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EstadoDeCuentaDeudorToolStripMenuItem.Click
+    Private Sub EstadoDeCuentaDeudorToolStripMenuItem_Click(sender As Object, e As EventArgs)
         frmClientes.btnConsulta.Visible = False
         frmClientes.btnConsultaD.Visible = True
         frmClientes.ShowDialog()
@@ -835,5 +835,9 @@ Public Class Form1
 
     Private Sub ImportarProductosDesdeTxtToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImportarProductosDesdeTxtToolStripMenuItem.Click
         ImportarTxt.ShowDialog()
+    End Sub
+
+    Private Sub AbonosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AbonosToolStripMenuItem.Click
+        Abonos.ShowDialog()
     End Sub
 End Class

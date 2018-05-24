@@ -60,8 +60,6 @@ Partial Class Form1
         Me.VentasPorPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComprasPorPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ApartadosNoPagadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EstadoDeCuentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EstadoDeCuentaDeudorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IngresosDiariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentasPorEmpleadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -79,6 +77,7 @@ Partial Class Form1
         Me.DiscoDeDistrubuciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.AbonosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -270,7 +269,7 @@ Partial Class Form1
         '
         'ReportesToolStripMenuItem
         '
-        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ApartadosPorClienteToolStripMenuItem, Me.ProductosVendidosPorPeriodoToolStripMenuItem, Me.DevolucionesPorPeriodoToolStripMenuItem, Me.ProductosToolStripMenuItem2, Me.ClientesDeudoresToolStripMenuItem, Me.VentasPorPeriodoToolStripMenuItem, Me.ComprasPorPeriodoToolStripMenuItem, Me.ApartadosNoPagadosToolStripMenuItem, Me.EstadoDeCuentaToolStripMenuItem, Me.EstadoDeCuentaDeudorToolStripMenuItem, Me.IngresosDiariosToolStripMenuItem, Me.ClientesToolStripMenuItem2, Me.VentasPorEmpleadoToolStripMenuItem, Me.ProveedoresToolStripMenuItem1, Me.MarcasToolStripMenuItem1, Me.TiposToolStripMenuItem1, Me.CategoriasToolStripMenuItem1, Me.ComprassToolStripMenuItem})
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ApartadosPorClienteToolStripMenuItem, Me.ProductosVendidosPorPeriodoToolStripMenuItem, Me.DevolucionesPorPeriodoToolStripMenuItem, Me.ProductosToolStripMenuItem2, Me.ClientesDeudoresToolStripMenuItem, Me.VentasPorPeriodoToolStripMenuItem, Me.ComprasPorPeriodoToolStripMenuItem, Me.ApartadosNoPagadosToolStripMenuItem, Me.IngresosDiariosToolStripMenuItem, Me.ClientesToolStripMenuItem2, Me.VentasPorEmpleadoToolStripMenuItem, Me.ProveedoresToolStripMenuItem1, Me.MarcasToolStripMenuItem1, Me.TiposToolStripMenuItem1, Me.CategoriasToolStripMenuItem1, Me.ComprassToolStripMenuItem, Me.AbonosToolStripMenuItem})
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(175, 41)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
@@ -322,18 +321,6 @@ Partial Class Form1
         Me.ApartadosNoPagadosToolStripMenuItem.Name = "ApartadosNoPagadosToolStripMenuItem"
         Me.ApartadosNoPagadosToolStripMenuItem.Size = New System.Drawing.Size(483, 42)
         Me.ApartadosNoPagadosToolStripMenuItem.Text = "Apartados no pagados"
-        '
-        'EstadoDeCuentaToolStripMenuItem
-        '
-        Me.EstadoDeCuentaToolStripMenuItem.Name = "EstadoDeCuentaToolStripMenuItem"
-        Me.EstadoDeCuentaToolStripMenuItem.Size = New System.Drawing.Size(483, 42)
-        Me.EstadoDeCuentaToolStripMenuItem.Text = "Estado de cuenta"
-        '
-        'EstadoDeCuentaDeudorToolStripMenuItem
-        '
-        Me.EstadoDeCuentaDeudorToolStripMenuItem.Name = "EstadoDeCuentaDeudorToolStripMenuItem"
-        Me.EstadoDeCuentaDeudorToolStripMenuItem.Size = New System.Drawing.Size(483, 42)
-        Me.EstadoDeCuentaDeudorToolStripMenuItem.Text = "Estado de Cuenta (Deudor)"
         '
         'IngresosDiariosToolStripMenuItem
         '
@@ -430,6 +417,12 @@ Partial Class Form1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'AbonosToolStripMenuItem
+        '
+        Me.AbonosToolStripMenuItem.Name = "AbonosToolStripMenuItem"
+        Me.AbonosToolStripMenuItem.Size = New System.Drawing.Size(483, 42)
+        Me.AbonosToolStripMenuItem.Text = "Abonos"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -484,8 +477,6 @@ Partial Class Form1
     Friend WithEvents ComprasPorPeriodoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ApartadosNoPagadosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DevolucionesPorPeriodoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EstadoDeCuentaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EstadoDeCuentaDeudorToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents IngresosDiariosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UtileriasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AyudaToolStripMenuItem As ToolStripMenuItem
@@ -506,4 +497,5 @@ Partial Class Form1
     Friend WithEvents CallesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExportarAExcelDe2TablasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ImportarProductosDesdeTxtToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AbonosToolStripMenuItem As ToolStripMenuItem
 End Class
